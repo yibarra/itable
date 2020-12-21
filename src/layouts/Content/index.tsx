@@ -1,4 +1,5 @@
 import React, { FC, useContext, useEffect } from 'react';
+import RangeSlider from '../../components/Form/RangeSlider';
 
 import { TableContext } from '../../providers/TableProvider';
 
@@ -18,7 +19,7 @@ const Content: FC<any> = ({ isLoading, value }) => {
   // render
   return (
     <div className="">
-      content
+      <RangeSlider />
     </div>
   );
 };
