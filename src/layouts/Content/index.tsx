@@ -19,7 +19,9 @@ const Content: FC<any> = ({ isLoading, value }) => {
   // render
   return (
     <div className="">
-      <RangeSlider />
+      <RangeSlider min={1500} max={2007} label="years" />
+      <RangeSlider min={0} max={100} label="grams/mole" />
+      <RangeSlider min={10} max={40} label="grams/mole" />
     </div>
   );
 };

@@ -1,21 +1,26 @@
-import React, { FC, useCallback, MouseEvent, useState, useRef } from 'react';
+import React, { FC, useState, useRef } from 'react';
 import styled from 'styled-components';
-import UseDimension from '../../../uses/UseDimension';
-import RangeSliderPoint from './RangeSliderPoint';
 
-import { animated as a } from 'react-spring';
+import RangeSliderLabel from './RangeSliderLabel';
+import RangeSliderPoint from './RangeSliderPoint';
 import RangeSliderLine from './RangeSliderLine';
 
+import UseDimension from '../../../uses/UseDimension';
+
+// range
 const Range = styled.div`
   float: left;
   position: relative;
   width: 100%;
 `;
 
-const RangeSlider: FC<any> = () => {
+// range slider
+const RangeSlider: FC<any> = ({ min, max, label }) => {
+  // value
   const [ value, setValue ] = useState<number>(0);
-  const element = useRef<HTMLDivElement | null>(null);
 
+  // element
+  const element = useRef<HTMLDivElement | null>(null);
   const { width } = UseDimension(element);
 
   // render
@@ -23,6 +28,7 @@ const RangeSlider: FC<any> = () => {
     <Range ref={element}>
       <RangeSliderPoint width={width} value={value} setValue={setValue} />
       <RangeSliderLine width={width} value={value} />
+      <RangeSliderLabel value={value} width={width} min={min} max={max} label={label} />
     </Range>
   );
 };

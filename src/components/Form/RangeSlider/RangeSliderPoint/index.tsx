@@ -30,6 +30,7 @@ const RangeSliderPoint: FC<any> = ({ value, width, setValue }) => {
     }
   }, {
     bounds: { left: 0, right: width },
+    delay: 0
   });
 
   // render
