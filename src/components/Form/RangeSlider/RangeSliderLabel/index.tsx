@@ -1,39 +1,23 @@
 import React, { FC, useCallback } from 'react';
 import styled from 'styled-components';
 
+// label
 const Label = styled.p`
   float: left;
-  margin: 0 0 10px;
+  margin: 0;
   padding: 30px 10px 0;
   position: relative;
   text-align: center;
   width: 100%;
 
   .label,
-  .min,
-  .max,
   .value {
     font-family: 'Roboto Mono', monospace;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
   }
 
-  .min,
-  .max {
-    bottom: 0;
-    position: absolute;
-  }
-
-  .min {
-    left: 0;
-  }
-
-  .max {
-    right: 0;
-  }
-
   .label {
-    font-size: 12px;
     margin: 0 0 0 5px;
   }
 
@@ -58,14 +42,8 @@ const RangeSliderLabel: FC<any> = ({ min, max, label, value, width }) => {
   // render
   return (
     <Label>
-      
       <span className="value">{getValue().toString()}</span>
       <span className="label">{label}</span>
-
-      {(min > 0 && max) && <>
-        <span className="min">{min}</span>
-        <span className="max">{max}</span>
-      </>}
     </Label>
   );
 };
