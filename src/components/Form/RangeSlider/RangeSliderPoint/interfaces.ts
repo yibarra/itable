@@ -1,6 +1,7 @@
 export interface IRangeSliderPoint {
-  pointWidth: number;
-  width: number;
+  fill: string;
+  size: number;
   setValue: (value: any) => void;
+  width: number;
   value: number;
 }

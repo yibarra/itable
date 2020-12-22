@@ -1,0 +1,40 @@
+@import-normalize; /* bring in normalize.css styles */
+
+html,
+body,
+body * {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: top;
+}
+
+html,
+body {
+  float: left;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  vertical-align: top;
+}
+
+html {
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+body {
+  height: auto;
+  overflow-anchor: none;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  float: left;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+  vertical-align: top;
+  z-index: 99;
+}

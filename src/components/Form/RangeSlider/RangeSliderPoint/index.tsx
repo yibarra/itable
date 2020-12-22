@@ -6,7 +6,6 @@ import { IRangeSliderPoint } from './interfaces';
 
 // range slider pointer
 const RangeSliderPointer: any = styled.div`
-  background: red;
   cursor: pointer;
   border-radius: 100%;
   position: absolute;
@@ -15,7 +14,7 @@ const RangeSliderPointer: any = styled.div`
 `;
 
 // range slider point
-const RangeSliderPoint: FC<IRangeSliderPoint> = ({ pointWidth, width, setValue, value, }) => {  
+const RangeSliderPoint: FC<IRangeSliderPoint> = ({ fill, size, setValue, value, width }) => {  
   // on movement
   const onMovement = useCallback(({ down, offset: [x] }: any) => {
     if (down)
@@ -35,7 +34,12 @@ const RangeSliderPoint: FC<IRangeSliderPoint> = ({ pointWidth, width, setValue, 
 
   // render
   return (
-    <RangeSliderPointer {...drag()} style={{ left: value, width: pointWidth, height: pointWidth }} />
+    <RangeSliderPointer {...drag()}
+      style={{
+        backgroundColor: fill,
+        left: value,
+        width: size,
+        height: size }} />
   );
 };
 

@@ -7,7 +7,7 @@ import { IRangeSliderLabel } from './interfaces';
 const Label = styled.p`
   float: left;
   margin: 0;
-  padding: 30px 10px 0;
+  padding: 20px 10px 0;
   position: relative;
   text-align: center;
   width: 100%;
@@ -17,10 +17,11 @@ const Label = styled.p`
     font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     font-weight: 400;
+    line-height: 1em;
   }
 
   .label {
-    margin: 0 0 0 5px;
+    margin: 3px 0 0 5px;
   }
 
   .value {
@@ -29,7 +30,7 @@ const Label = styled.p`
 `;
 
 // range
-const RangeSliderLabel: FC<IRangeSliderLabel> = ({ min, max, label, value, width }) => {
+const RangeSliderLabel: FC<IRangeSliderLabel> = ({ color, min, max, label, size, value, width }) => {
   // get value
   const getValue = useCallback((): number => {
     const percent = ((value / width) * 100);
@@ -43,9 +44,9 @@ const RangeSliderLabel: FC<IRangeSliderLabel> = ({ min, max, label, value, width
 
   // render
   return (
-    <Label>
-      <span className="value">{getValue().toString()}</span>
-      <span className="label">{label}</span>
+    <Label style={{ marginTop: size }}>
+      <span className="value" style={{ color }}>{getValue().toString()}</span>
+      <span className="label" style={{ color }}>{label}</span>
     </Label>
   );
 };

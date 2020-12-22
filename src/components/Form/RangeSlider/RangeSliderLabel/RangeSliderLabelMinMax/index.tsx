@@ -35,13 +35,13 @@ const LabelMinMax = styled.p`
   }
 `;
 
-const RangeSliderLabelMinMax: FC<IRangeSliderLabelMinMax> = ({ max, min }) => {
+const RangeSliderLabelMinMax: FC<IRangeSliderLabelMinMax> = ({ color, max, min }) => {
   // render
   return (
     <LabelMinMax>
       {(min > 0 && max) && <>
-        <span className="min">{min}</span>
-        <span className="max">{max}</span>
+        <span className="min" style={{ color }}>{min}</span>
+        <span className="max" style={{ color }}>{max}</span>
       </>}
     </LabelMinMax>
   );

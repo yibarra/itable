@@ -12,25 +12,25 @@ const Line = styled.svg`
 `;
 
 // range slider line
-const RangeSliderLine: FC<IRangeSliderLine> = ({ pointWidth, width, value }) => {
+const RangeSliderLine: FC<IRangeSliderLine> = ({ fill, stroke, size, width, value }) => {
   // padding
-  const leftMin = (value - (pointWidth + (pointWidth / 1.2)));
-  const rightMax = (value + (pointWidth + (pointWidth / 1.2)));
+  const leftMin = (value - (size + (size / 1.2)));
+  const rightMax = (value + (size + (size / 1.2)));
 
-  const letTop = (value - (pointWidth / 1.2));
-  const rightTop = (value + (pointWidth / 1.2));
+  const letTop = (value - (size / 1.2));
+  const rightTop = (value + (size / 1.2));
 
   // render
   return (
-    <Line width={width} height={pointWidth + 5}>
+    <Line width={width} height={size + 5}>
       <g transform="translate(0 2)">
         <path
           d={`M0 1 H ${leftMin} V 1 H 0 L 0 2 Z
-            M${leftMin} 1C${letTop} 1 ${letTop} ${pointWidth} ${value} ${pointWidth} C${rightTop} ${pointWidth} ${rightTop} 1 ${rightMax} 1 
+            M${leftMin} 1C${letTop} 1 ${letTop} ${size} ${value} ${size} C${rightTop} ${size} ${rightTop} 1 ${rightMax} 1 
             M${rightMax} 1 H ${width} V 1 H ${rightMax} L ${rightMax} 0 Z`}
-          strokeWidth="3"
+          strokeWidth={stroke}
           strokeLinecap="round"
-          stroke="red"
+          stroke={fill}
           fill= "none" />
       </g>
     </Line>

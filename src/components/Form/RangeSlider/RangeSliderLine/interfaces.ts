@@ -1,5 +1,7 @@
 export interface IRangeSliderLine {
-  pointWidth: number;
+  fill: string;
+  stroke: number;
+  size: number;
   value: number;
   width: number;
 }

@@ -7,6 +7,8 @@ import TableProvider from './providers/TableProvider';
 
 import Main from './layouts/Main';
 
+import './index.css';
+
 ReactDOM.render(
   <React.StrictMode>
     <TableProvider>
