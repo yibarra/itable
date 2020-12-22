@@ -15,7 +15,7 @@ const Range = styled.div`
 `;
 
 // range slider
-const RangeSlider: FC<any> = ({ min, max, label }) => {
+const RangeSlider: FC<any> = ({ min, max, label, pointWidth }) => {
   // value
   const [ value, setValue ] = useState<number>(0);
 
@@ -26,8 +26,8 @@ const RangeSlider: FC<any> = ({ min, max, label }) => {
   // render
   return (
     <Range ref={element}>
-      <RangeSliderPoint width={width} value={value} setValue={setValue} />
-      <RangeSliderLine width={width} value={value} />
+      <RangeSliderPoint width={width} value={value} setValue={setValue} pointWidth={pointWidth} />
+      <RangeSliderLine width={width} value={value} pointWidth={pointWidth} />
       <RangeSliderLabel value={value} width={width} min={min} max={max} label={label} />
     </Range>
   );

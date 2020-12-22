@@ -18,10 +18,11 @@ const Content: FC<any> = ({ isLoading, value }) => {
 
   // render
   return (
-    <div className="">
-      <RangeSlider min={1500} max={2007} label="years" />
-      <RangeSlider min={0} max={100} label="grams/mole" />
-      <RangeSlider min={10} max={40} label="grams/mole" />
+    <div className="" style={{ width: 450 }}>
+      <RangeSlider min={1500} max={2007} label="years" pointWidth={18} />
+      <RangeSlider min={0} max={100} label="grams/mole" pointWidth={30} />
+      <RangeSlider min={0} max={100} label="grams/guacamole" pointWidth={20} />
+      <RangeSlider min={10} max={40} label="grams/mole" pointWidth={40} />
     </div>
   );
 };
