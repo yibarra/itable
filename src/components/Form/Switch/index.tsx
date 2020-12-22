@@ -2,9 +2,10 @@ import React, { FC, useCallback } from 'react';
 import { useSpring, animated as a } from 'react-spring';
 import styled from 'styled-components';
 
+import { ISwitch } from './interfaces';
+
 // button switch
 const ButtonSwitch = styled.div`
-  border-radius: 20px;
   height: auto;
   padding: 0 7px;
   position: relative;
@@ -19,7 +20,7 @@ const ButtonSwitch = styled.div`
 `;
 
 // switch
-const Switch: FC<any> = ({
+const Switch: FC<ISwitch> = ({
   border,
   size,
   setValue,
@@ -42,6 +43,7 @@ const Switch: FC<any> = ({
       onClick={() => onSwitch(!value)}
       style={{
         backgroundColor: text_color,
+        borderRadius: size,
         width: size * 2
       }}>
       <a.div

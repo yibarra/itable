@@ -5,6 +5,7 @@ import 'firebase/database';
 import { FirebaseDatabaseProvider, FirebaseDatabaseNode } from '@react-firebase/database';
 
 import Content from '../Content';
+
 import { ThemeProvider } from '../../providers/ThemeProvider';
 
 import { config } from './config';
