@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
+import { IRangeSliderLabelMinMax } from './interfaces';
+
 // label min
 const LabelMinMax = styled.p`
   bottom: 20px;
@@ -33,7 +35,7 @@ const LabelMinMax = styled.p`
   }
 `;
 
-const RangeSliderLabelMinMax: FC<any> = ({ max, min }) => {
+const RangeSliderLabelMinMax: FC<IRangeSliderLabelMinMax> = ({ max, min }) => {
   // render
   return (
     <LabelMinMax>

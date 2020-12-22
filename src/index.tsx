@@ -4,17 +4,14 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 import TableProvider from './providers/TableProvider';
-import ThemeProvider from './providers/ThemeProvider';
 
 import Main from './layouts/Main';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider>
-      <TableProvider>
-        <Main />
-      </TableProvider>
-    </ThemeProvider>
+    <TableProvider>
+      <Main />
+    </TableProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

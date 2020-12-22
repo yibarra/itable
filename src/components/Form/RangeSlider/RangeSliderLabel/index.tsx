@@ -1,6 +1,8 @@
 import React, { FC, useCallback } from 'react';
 import styled from 'styled-components';
 
+import { IRangeSliderLabel } from './interfaces';
+
 // label
 const Label = styled.p`
   float: left;
@@ -27,7 +29,7 @@ const Label = styled.p`
 `;
 
 // range
-const RangeSliderLabel: FC<any> = ({ min, max, label, value, width }) => {
+const RangeSliderLabel: FC<IRangeSliderLabel> = ({ min, max, label, value, width }) => {
   // get value
   const getValue = useCallback((): number => {
     const percent = ((value / width) * 100);

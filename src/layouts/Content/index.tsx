@@ -6,7 +6,7 @@ import { TableContext } from '../../providers/TableProvider';
 // content
 const Content: FC<any> = ({ isLoading, value }) => {  
   // context
-  const tableContext = useContext<any>(TableContext);
+  const tableContext: any = useContext<any>(TableContext);
   const { table, setTable } = tableContext;
 
   // use effect

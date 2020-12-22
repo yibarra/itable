@@ -5,6 +5,7 @@ import 'firebase/database';
 import { FirebaseDatabaseProvider, FirebaseDatabaseNode } from '@react-firebase/database';
 
 import Content from '../Content';
+import { ThemeProvider } from '../../providers/ThemeProvider';
 
 import { config } from './config';
 
@@ -14,7 +15,10 @@ const Main: FC<any> = () => {
   return (
     <FirebaseDatabaseProvider firebase={firebase} {...config}>
       <FirebaseDatabaseNode path="/">
-        {(value: any) => <Content {...value} />}
+        {(value: any) => 
+        <ThemeProvider table={value?.value}>
+          <Content {...value} />
+        </ThemeProvider>}
       </FirebaseDatabaseNode>
     </FirebaseDatabaseProvider>
   );

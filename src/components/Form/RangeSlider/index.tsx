@@ -8,6 +8,8 @@ import RangeSliderLabelMinMax from './RangeSliderLabel/RangeSliderLabelMinMax';
 
 import UseDimension from '../../../uses/UseDimension';
 
+import { IRangeSlider } from './interfaces';
+
 // range
 const Range = styled.div`
   float: left;
@@ -17,7 +19,7 @@ const Range = styled.div`
 `;
 
 // range slider
-const RangeSlider: FC<any> = ({ min, max, label, pointWidth }) => {
+const RangeSlider: FC<IRangeSlider> = ({ min, max, label, pointWidth }) => {
   // value
   const [ value, setValue ] = useState<number>(0);
 
@@ -28,8 +30,8 @@ const RangeSlider: FC<any> = ({ min, max, label, pointWidth }) => {
   // render
   return (
     <Range ref={element}>
-      <RangeSliderPoint width={width} value={value} setValue={setValue} pointWidth={pointWidth} />
-      <RangeSliderLine width={width} value={value} pointWidth={pointWidth} />
+      <RangeSliderPoint value={value} width={width} setValue={setValue} pointWidth={pointWidth} />
+      <RangeSliderLine value={value} width={width} pointWidth={pointWidth} />
       <RangeSliderLabel value={value} width={width} min={min} max={max} label={label} />
       <RangeSliderLabelMinMax min={min} max={max} />
     </Range>

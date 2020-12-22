@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
+import { IRangeSliderLine } from './interfaces';
+
 // style
 const Line = styled.svg`
   left: 0;
@@ -10,7 +12,7 @@ const Line = styled.svg`
 `;
 
 // range slider line
-const RangeSliderLine: FC<any> = ({ pointWidth, width, value }) => {
+const RangeSliderLine: FC<IRangeSliderLine> = ({ pointWidth, width, value }) => {
   // padding
   const leftMin = (value - (pointWidth + (pointWidth / 1.2)));
   const rightMax = (value + (pointWidth + (pointWidth / 1.2)));

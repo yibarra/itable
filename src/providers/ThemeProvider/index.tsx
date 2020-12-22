@@ -1,5 +1,4 @@
 import React, { createContext, FC } from 'react';
-
 import useLocalStorage from '@rehooks/local-storage';
 
 import { IThemeProvider, IThemeContext } from './interfaces';
@@ -8,14 +7,15 @@ import { IThemeProvider, IThemeContext } from './interfaces';
 const ThemeContext: any = createContext({} as IThemeContext);
 
 // theme provider
-const ThemeProvider: FC<IThemeProvider> = ({ children }) => {
+const ThemeProvider: FC<IThemeProvider> = ({ children, table }) => {
   // theme
-  const [ theme, setTheme ] = useLocalStorage('theme', null);
+  const [ theme, setTheme ] = useLocalStorage('theme_index', 0);
 
   // render
   return (
     <ThemeContext.Provider value={{
-      theme,
+      theme: table?.themes[theme],
+      themes: table?.themes,
       setTheme
     }}>
       {children}
