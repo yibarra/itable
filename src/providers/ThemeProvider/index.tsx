@@ -14,8 +14,9 @@ const ThemeProvider: FC<IThemeProvider> = ({ children, table }) => {
   // render
   return (
     <ThemeContext.Provider value={{
-      theme: table?.themes[theme],
       themes: table?.themes,
+      theme: table?.themes[theme],
+      index: theme,
       setTheme
     }}>
       {children}

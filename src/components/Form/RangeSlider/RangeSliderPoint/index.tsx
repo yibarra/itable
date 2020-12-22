@@ -28,7 +28,8 @@ const RangeSliderPoint: FC<IRangeSliderPoint> = ({ fill, size, setValue, value, 
   }, {
     drag: {
       bounds: { left: 0, right: width },
-      delay: 400
+      delay: 400,
+      threshold: 10,
     }
   });
 

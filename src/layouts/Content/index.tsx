@@ -1,10 +1,12 @@
 import React, { FC, useContext, useEffect } from 'react';
+import styled from 'styled-components';
 
 import RangeSlider from '../../components/Form/RangeSlider';
+import Switch from '../../components/Form/Switch';
 
 import { ThemeContext } from '../../providers/ThemeProvider';
 import { TableContext } from '../../providers/TableProvider';
-import styled from 'styled-components';
+import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
 
 // div content
 const DivContent = styled.div`
@@ -23,8 +25,7 @@ const DivContent = styled.div`
     position: absolute;
     top: 0;
     width: 100%;
-  }
-`;
+  }`;
 
 // content
 const Content: FC<any> = ({ isLoading, value }) => {  
@@ -33,7 +34,7 @@ const Content: FC<any> = ({ isLoading, value }) => {
   const themeContext: any = useContext<any>(ThemeContext);
 
   const { table, setTable } = tableContext;
-  const { theme } = themeContext;
+  const { theme, index, setTheme }: IThemeContext = themeContext;
 
   // use effect
   useEffect(() => {
@@ -45,9 +46,31 @@ const Content: FC<any> = ({ isLoading, value }) => {
   // render
   return (
     <>
-      {theme &&
+      {theme instanceof Object && isLoading === false &&
         <DivContent
           style={{ backgroundColor: theme?.background_color }}>
+
+          <div >
+            <Switch
+              border={3}
+              label="Themes"
+              name={theme?.name}
+              size={20}
+              styles={theme}
+              setValue={(value: number) => setTheme(value)}
+              value={index} />
+
+            <Switch
+              border={3}
+              label="Themes"
+              name={theme?.name}
+              size={24}
+              styles={theme}
+              setValue={(value: number) => setTheme(value)}
+              value={index} />
+          </div>
+
+
           <RangeSlider min={1500} max={2007} label="years" size={18} styles={theme} />
           <RangeSlider min={0} max={100} label="grams/mole" size={30} styles={theme} />
           <RangeSlider min={0} max={100} label="grams/guacamole" size={20} styles={theme} />

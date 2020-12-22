@@ -7,6 +7,7 @@ export interface ITheme {
 }
 
 export interface IThemeContext {
+  index: number;
   theme: ITheme;
   themes: ITheme[];
   setTheme: (value: any) => void;

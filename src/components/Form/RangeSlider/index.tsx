@@ -9,7 +9,6 @@ import RangeSliderLabelMinMax from './RangeSliderLabel/RangeSliderLabelMinMax';
 import UseDimension from '../../../uses/UseDimension';
 
 import { IRangeSlider } from './interfaces';
-import { ITheme } from '../../../providers/ThemeProvider/interfaces';
 
 // range
 const Range = styled.div`
@@ -21,8 +20,6 @@ const Range = styled.div`
 
 // range slider
 const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, styles }) => {
-  const { text_color }: ITheme = styles;
-
   // value
   const [ value, setValue ] = useState<number>(0);
 
@@ -34,21 +31,21 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, styles }) => {
   return (
     <Range ref={element}>
       <RangeSliderPoint
-        fill={text_color}
+        fill={styles?.text_color}
         value={value}
         width={width}
         setValue={setValue}
         size={size} />
 
       <RangeSliderLine
-        fill={text_color}
+        fill={styles?.text_color}
         value={value}
         width={width}
         stroke={3}
         size={size} />
 
       <RangeSliderLabel
-        color={text_color}
+        color={styles?.text_color}
         label={label}
         min={min}
         max={max}
@@ -57,7 +54,7 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, styles }) => {
         value={value} />
 
       <RangeSliderLabelMinMax
-        color={text_color}
+        color={styles?.text_color}
         min={min}
         max={max} />
     </Range>
