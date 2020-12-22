@@ -1,10 +1,9 @@
-import React, { FC } from 'react';
-import { animated as a, useSpring } from 'react-spring';
-import { useDrag } from 'react-use-gesture';
+import React, { FC, useCallback } from 'react';
+import { useGesture } from 'react-use-gesture';
 import styled from 'styled-components';
 
 // range slider pointer
-const RangeSliderPointer: any = styled(a.div)`
+const RangeSliderPointer: any = styled.div`
   background: red;
   cursor: pointer;
   border-radius: 100%;
@@ -16,26 +15,36 @@ const RangeSliderPointer: any = styled(a.div)`
 `;
 
 // range slider point
-const RangeSliderPoint: FC<any> = ({ value, width, setValue }) => {
-  // props
-  const [{ x }, set] = useSpring(() => ({ x: value }));
+const RangeSliderPoint: FC<any> = ({ width, setValue, value }) => {
+  // on movement
+  const onMovement = useCallback(({ down, offset: [x], cancel }: any) => {
+    if (down === true) {
+      return setValue(x);
+    }
+
+    cancel();
+  }, [ setValue ]);
+
+  // on movement end
+  const onMovementEnd = useCallback(({ offset: [x] }: any) => {
+    if (x < 0) {
+      setValue(0)
+    } else if (x > width) {
+      setValue(width - 9);
+    } else {
+      setValue(x);
+    }
+  }, [ setValue, width ]);
 
   // drag
-  const drag = useDrag(({ down, offset: [x], cancel }) => {
-    if (down === true) {
-      setValue(x);
-      set({ x });
-    } else {
-      return cancel();
-    }
-  }, {
-    bounds: { left: 0, right: width },
-    delay: 0
+  const drag = useGesture({ 
+    onDrag: onMovement,
+    onDragEnd: onMovementEnd
   });
 
   // render
   return (
-    <RangeSliderPointer {...drag()} style={{ left: x }} />
+    <RangeSliderPointer {...drag()} style={{ left: value }} />
   );
 };
 
