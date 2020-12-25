@@ -10,6 +10,7 @@ import { TableContext } from '../../providers/TableProvider';
 
 import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
 import Select from '../../components/Form/Select';
+import Grid from '../../components/Grid';
 
 // div content
 const DivContent = styled.div`
@@ -57,6 +58,8 @@ const Content: FC<any> = ({ isLoading, value }) => {
             index={index}
             setTheme={setTheme}
             theme={theme} />
+
+          <Grid {...table} />
 
           <Select
             optionDefault={{ value: '1', name: 'Testing' }}
