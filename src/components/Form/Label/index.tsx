@@ -17,8 +17,8 @@ const LabelText = styled.label`
 `;
 
 // label
-const Label: FC<ILabel> = ({ text, styles }) => {
-  const { text_color } = styles;
+const Label: FC<ILabel> = ({ text, theme }) => {
+  const { text_color } = theme;
 
   // render
   return (<LabelText style={{ color: text_color }}>{text}</LabelText>);

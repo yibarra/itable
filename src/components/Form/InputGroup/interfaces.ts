@@ -4,5 +4,5 @@ import { ITheme } from "../../../providers/ThemeProvider/interfaces";
 export interface IInputGroup {
   children: ReactNode;
   text: string;
-  styles: ITheme;
+  theme: ITheme;
 }

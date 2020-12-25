@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import ThemeSwitch from '../../components/ThemeSwitch';
 
 // header
-const Header: FC<any> = ({ index, styles, setTheme }) => {
+const Header: FC<any> = ({ index, theme, setTheme }) => {
   // render
   return (
     <header>
@@ -17,11 +17,10 @@ const Header: FC<any> = ({ index, styles, setTheme }) => {
 
       </div>
 
-
-      <ThemeSwitch
+      {theme.name && <ThemeSwitch
         index={index}
         setTheme={setTheme}
-        styles={styles} />
+        theme={theme} />}
     </header>
   );
 };

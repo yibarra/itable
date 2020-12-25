@@ -15,9 +15,9 @@ const ButtonArrowButton = styled.button`
   width: 30px;
 
   .triangle {
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 11px solid transparent;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-top: 10px solid transparent;
     height: 0;
     left: 50%;
     position: absolute;

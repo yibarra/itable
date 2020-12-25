@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { ISwitch } from './interfaces';
 
 // button switch
-const ButtonSwitch = styled.div`
+const ButtonSwitch = styled(a.div)`
   height: auto;
   padding: 0 7px;
   position: relative;
@@ -24,9 +24,9 @@ const Switch: FC<ISwitch> = ({
   border,
   size,
   setValue,
-  styles = { background_color: '', text_color: '' },
+  theme,
   value }) => {
-  const { background_color, text_color } = styles;
+  const { background_color, text_color } = theme;
   const [ props, set ] = useSpring(() => ({ left: `0%` }));
 
   // on switch

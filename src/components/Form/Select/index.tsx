@@ -9,12 +9,13 @@ const SelectDiv = styled.div`
   margin: 17px 0 0;
   position: relative;
   width: 250px;
+  z-index: 999;
 `;
 
 // select
 const Select: FC<any> = ({ items, optionDefault, theme }) => {
   // value
-  const [ value, setValue ] = useState<any>();
+  const [ value, setValue ] = useState<any>(null);
   const [ open, setOpen ] = useState<boolean>(false);
 
   // use state
@@ -26,9 +27,7 @@ const Select: FC<any> = ({ items, optionDefault, theme }) => {
 
   // render
   return (
-    <SelectDiv style={{
-      backgroundColor: theme.text_color
-    }}>
+    <SelectDiv>
       <SelectTitle
         open={open}
         setOpen={setOpen}
@@ -39,7 +38,8 @@ const Select: FC<any> = ({ items, optionDefault, theme }) => {
         open={open}
         items={items}
         onChange={setValue}
-        theme={theme} />
+        theme={theme}
+        value={value} />
     </SelectDiv>
   );
 };

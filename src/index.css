@@ -5,6 +5,7 @@ body,
 body * {
   box-sizing: border-box;
   display: inline-block;
+  font-family: 'Roboto Mono', monospace;
   vertical-align: top;
 }
 
@@ -38,4 +39,9 @@ body {
   width: 100%;
   vertical-align: top;
   z-index: 99;
+}
+
+:root {
+  --animation-time: 400ms;
+  --animation: cubic-bezier(0.45, 0.25, 0.60, 0.95);
 }

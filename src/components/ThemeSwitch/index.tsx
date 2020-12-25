@@ -11,17 +11,17 @@ const ThemeSwitchDiv = styled.div`
 `;
 
 // theme switch
-const ThemeSwitch: FC<any> = ({ index, styles, setTheme }) => {
+const ThemeSwitch: FC<any> = ({ index, theme, setTheme }) => {
   // render
   return (
     <ThemeSwitchDiv>
       <InputGroup
-        styles={styles}
-        text={styles?.name}>
+        theme={theme}
+        text={theme?.name}>
         <Switch
           border={3}
           size={20}
-          styles={styles}
+          theme={theme}
           setValue={(value: number) => setTheme(value)}
           value={index} />
       </InputGroup>

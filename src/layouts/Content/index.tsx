@@ -56,7 +56,7 @@ const Content: FC<any> = ({ isLoading, value }) => {
           <Header
             index={index}
             setTheme={setTheme}
-            styles={theme} />
+            theme={theme} />
 
           <Select
             optionDefault={{ value: '1', name: 'Testing' }}

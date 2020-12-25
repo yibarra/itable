@@ -13,11 +13,11 @@ const InputGroupDiv = styled.div`
 `;
 
 // input group
-const InputGroup: FC<IInputGroup> = ({ children, text, styles }) => {
+const InputGroup: FC<IInputGroup> = ({ children, text, theme }) => {
   // render
   return (
     <InputGroupDiv>
-      {<Label text={text} styles={styles} />}
+      {<Label text={text} theme={theme} />}
       {children}
     </InputGroupDiv>
   );
