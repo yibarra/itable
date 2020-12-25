@@ -15,7 +15,6 @@ const LabelMinMax = styled.p`
 
   .min,
   .max {
-    font-family: 'Roboto Mono', monospace;
     font-size: 14px;
     font-weight: 400;
   }

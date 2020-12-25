@@ -25,9 +25,10 @@ html {
 
 body {
   height: auto;
-  overflow-anchor: none;
+  font-family: 'Roboto Mono', monospace;
   min-height: 100vh;
   overflow: hidden;
+  overflow-anchor: none;
 }
 
 #root {

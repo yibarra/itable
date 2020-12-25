@@ -2,13 +2,14 @@ import React, { FC, useContext, useEffect } from 'react';
 import styled from 'styled-components';
 
 import RangeSlider from '../../components/Form/RangeSlider';
-import Switch from '../../components/Form/Switch';
+
+import Header from '../Header';
 
 import { ThemeContext } from '../../providers/ThemeProvider';
 import { TableContext } from '../../providers/TableProvider';
 
 import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
-import Header from '../Header';
+import Select from '../../components/Form/Select';
 
 // div content
 const DivContent = styled.div`
@@ -57,21 +58,14 @@ const Content: FC<any> = ({ isLoading, value }) => {
             setTheme={setTheme}
             styles={theme} />
 
-          <div >
-            <Switch
-              border={3}
-              size={20}
-              styles={theme}
-              setValue={(value: number) => setTheme(value)}
-              value={index} />
-
-            <Switch
-              border={3}
-              size={24}
-              styles={theme}
-              setValue={(value: number) => setTheme(value)}
-              value={index} />
-          </div>
+          <Select
+            optionDefault={{ value: '1', name: 'Testing' }}
+            items={[
+              { value: '1', name: 'Testing' },
+              { value: '2', name: 'Testing' },
+              { value: '3', name: 'Testing' }
+            ]}
+            theme={theme} />
 
           <RangeSlider min={1500} max={2007} label="years" size={18} styles={theme} />
           <RangeSlider min={0} max={100} label="grams/mole" size={30} styles={theme} />

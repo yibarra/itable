@@ -14,7 +14,6 @@ const Label = styled.p`
 
   .label,
   .value {
-    font-family: 'Roboto Mono', monospace;
     font-size: 12px;
     font-weight: 400;
     line-height: 1em;

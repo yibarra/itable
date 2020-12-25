@@ -25,7 +25,6 @@ const ThemeSwitch: FC<any> = ({ index, styles, setTheme }) => {
           setValue={(value: number) => setTheme(value)}
           value={index} />
       </InputGroup>
-
     </ThemeSwitchDiv>
   );
 };
