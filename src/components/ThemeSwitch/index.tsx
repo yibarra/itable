@@ -1,7 +1,9 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback, useContext, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import InputGroup from '../Form/InputGroup';
+
+import { ThemeContext } from '../../providers/ThemeProvider';
 
 import Switch from '../Form/Switch';
 
@@ -11,7 +13,23 @@ const ThemeSwitchDiv = styled.div`
 `;
 
 // theme switch
-const ThemeSwitch: FC<any> = ({ index, theme, setTheme }) => {
+const ThemeSwitch: FC<any> = () => {
+  const themeContext = useContext(ThemeContext);
+  const { theme, themes, setTheme }: any = themeContext;
+
+  const [ value, setValue ] = useState<number>(0);
+
+  // on change
+  const onChange = useCallback((value: number) =>
+    setTheme(themes[value]), [ themes, setTheme ]);
+
+  // use effect
+  useEffect(() => {
+    if (theme instanceof Object && Array.isArray(themes)) {
+      setValue(themes.indexOf(theme));
+    }
+  }, [ theme, themes ]);
+
   // render
   return (
     <ThemeSwitchDiv>
@@ -22,8 +40,8 @@ const ThemeSwitch: FC<any> = ({ index, theme, setTheme }) => {
           border={3}
           size={20}
           theme={theme}
-          setValue={(value: number) => setTheme(value)}
-          value={index} />
+          setValue={(value: number) => onChange(value)}
+          value={value} />
       </InputGroup>
     </ThemeSwitchDiv>
   );

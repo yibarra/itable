@@ -1,14 +1,19 @@
 import React, { FC } from 'react';
 import styled from 'styled-components';
 
+import ElementMinInfo from './ElementMinInfo';
+
+import { IElementMin } from './interfaces';
+
 // element min div
-const ElementMinDiv = styled.div`
+const ElementMinDiv: any = styled.div<IElementMin>`
   align-content: flex-end;
   align-items: center;
   border: 1px solid transparent;
   cursor: pointer;
   display: inline-flex;
   flex-flow: row wrap;
+  height: ${({ index }) => index >= 126 && index < 144 ? `${40}px` : `${65}px` };
   float: left;
   margin: 1px;
   overflow: hidden;
@@ -19,39 +24,46 @@ const ElementMinDiv = styled.div`
   width: calc((100% / 18) - 2px);
   vertical-align: top;
 
-  .name,
-  .symbol {
-    float: left;
-    line-height: 1em;
-    text-align: center;
-    width: 100%;
+  &:hover {
+    background-color: ${(props) => { console.log(props); return 'red'; } };
   }
 
-  .name {
-    font-size: 9px;
-    margin: 0 0 2px;
-    line-height: 1.4em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  @media(max-width: 768px) {
+    height: 50px;
   }
 
-  .symbol {
-    font-size: 20px;
-    margin: 0 0 8px;
+  @media(max-width: 480px) {
+    height: 60px;
+    width: calc(25% - 2px);
+    
+    &[data-empty="true"] {
+      display: none;
+    }
   }
 `;
 
 // element min
-const ElementMin: FC<any> = ({ cpkHexColor, index, name, symbol }) => {
+const ElementMin: FC<IElementMin> = ({
+  atomicNumber,
+  cpkHexColor,
+  name,
+  symbol,
+  empty,
+  theme
+}) => {
   // render
   return (
-    <ElementMinDiv style={{
-      borderColor: cpkHexColor,
-      height: index >= 126 && index < 144 ? 40 : 65 
-    }}>
-      <span className="symbol" style={{ color: cpkHexColor }}>{symbol}</span>
-      <span className="name" style={{ color: cpkHexColor }}>{name}</span>
+    <ElementMinDiv
+      data-empty={empty}
+      style={{
+        borderColor: cpkHexColor,
+        color: cpkHexColor
+      }}>
+      {!empty && <ElementMinInfo
+        atomicNumber={atomicNumber}
+        name={name}
+        symbol={symbol}
+        theme={theme} />}
     </ElementMinDiv>
   );
 };

@@ -17,9 +17,9 @@ const Main: FC<any> = () => {
     <FirebaseDatabaseProvider firebase={firebase} {...config}>
       <FirebaseDatabaseNode path="/">
         {(value: any) => 
-        <ThemeProvider table={value?.value}>
-          <Content {...value} />
-        </ThemeProvider>}
+          <ThemeProvider table={value?.value}>
+            <Content {...value} />
+          </ThemeProvider>}
       </FirebaseDatabaseNode>
     </FirebaseDatabaseProvider>
   );
