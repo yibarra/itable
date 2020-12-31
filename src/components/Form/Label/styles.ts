@@ -10,5 +10,5 @@ export const LabelTextContainer = styled.label`
   letter-spacing: 0.04em;
   line-height: 1em;
   position: relative;
-  width: 100%;
+  width: auto;
 `;

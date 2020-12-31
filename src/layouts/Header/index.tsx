@@ -2,23 +2,25 @@ import React, { FC } from 'react';
 
 import ThemeSwitch from '../../components/ThemeSwitch';
 
+import { ReactComponent as Logo } from '../../assets/svg/logo.svg';
+
+import { HeaderContainer } from './styles';
+
 // header
 const Header: FC<any> = ({ onToggle }) => {
   // render
   return (
-    <header>
-      <div className="header-top">
-        <p>logo</p>
+    <HeaderContainer>
+      <div className="header--content">
+        <div className="header--logo">
+          <Logo />
+        </div>
 
-        <p>search</p>
+        <div className="header--theme">
+          <ThemeSwitch onToggle={onToggle} />
+        </div>
       </div>
-
-      <div className="header-options">
-
-      </div>
-
-      <ThemeSwitch onToggle={onToggle} />
-    </header>
+    </HeaderContainer>
   );
 };
 

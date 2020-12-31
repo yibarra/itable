@@ -50,8 +50,6 @@ export const ElementMinInfoContainer = styled.div`
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
-      transition: all var(--animation-time) var(--animation-bezier);
-      transition-delay: 1.1s;
       width: calc(100% + 10px);
       z-index: -1;
     }

@@ -46,5 +46,6 @@ export default createGlobalStyle`
   :root {
     --animation-time: 400ms;
     --animation-bezier: cubic-bezier(0.45, 0.25, 0.60, 0.95);
+    --max-width: 1120px;
   }
 `;

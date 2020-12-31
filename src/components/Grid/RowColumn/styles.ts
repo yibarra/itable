@@ -4,7 +4,7 @@ export const RowColumnContainer = styled.div`
   height: auto;
   float: left;
   position: relative;
-  width: calc((100% / 18) - 2px);
+  width: calc((100% / 18));
 
   .label {
     color: ${({ theme }) => theme.text_color};

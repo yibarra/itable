@@ -5,6 +5,7 @@ import styled from 'styled-components';
 export const SwitchContainer = styled(a.div)`
   background-color: ${({ theme }: any) => theme.text_color};
   height: auto;
+  float: left;
   padding: 0 7px;
   position: relative;
 

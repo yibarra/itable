@@ -1,24 +1,15 @@
 import React, { FC, useContext, useEffect } from 'react';
-import styled from 'styled-components';
 
 import Header from '../Header';
 import Grid from '../../components/Grid';
+import Loader from '../../components/Loader';
 
 import { ThemeContext } from '../../providers/ThemeProvider';
 import { TableContext } from '../../providers/TableProvider';
 
 import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
-import RangeSlider from '../../components/Form/RangeSlider';
-import Loader from '../../components/Loader';
 
-// div content
-const DivContent = styled.div`
-  float: left;
-  height: auto;
-  padding: 20px 20px 60px;
-  position: relative;
-  width: 100vw;
-`;
+import { ContentContainer } from './styles';
 
 // content
 const Content: FC<any> = ({ isLoading, value }) => {  
@@ -31,22 +22,18 @@ const Content: FC<any> = ({ isLoading, value }) => {
 
   // use effect
   useEffect(() => {
-    if (!table && isLoading === false) {
-      setTable(value);
-    }
+    if (!table && isLoading === false) setTable(value);
   }, [ isLoading, setTable, table, value ]);
 
   // render
   return (
     <>
-      <DivContent>
-        <Header onToggle={onToggle} />
+      <Header onToggle={onToggle} />
 
-        <RangeSlider min={1500} max={2007} label="years" size={18} />
-
+      <ContentContainer>
         {isLoading === false && <Grid {...table} />}
+      </ContentContainer>
 
-      </DivContent>
       <Loader isLoading={isLoading} />
     </>
   );

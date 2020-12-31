@@ -1,20 +1,17 @@
 import React, { FC, useCallback, useContext, useState } from 'react';
-import styled from 'styled-components';
 
 import InputGroup from '../Form/InputGroup';
+import Switch from '../Form/Switch';
 
 import { ThemeContext } from '../../providers/ThemeProvider';
 
-import Switch from '../Form/Switch';
+import { IThemeSwitch } from './interfaces';
 
-// theme switch div
-const ThemeSwitchDiv = styled.div`
-
-`;
+import { ThemeSwitchContainer } from './styles';
 
 // theme switch
-const ThemeSwitch: FC<any> = ({ onToggle }) => {
-  const { name } = useContext(ThemeContext);
+const ThemeSwitch: FC<IThemeSwitch> = ({ onToggle }) => {
+  const { theme } = useContext(ThemeContext);
   const [ value, setValue ] = useState<boolean>(true);
 
   // on change
@@ -25,16 +22,16 @@ const ThemeSwitch: FC<any> = ({ onToggle }) => {
 
   // render
   return (
-    <ThemeSwitchDiv>
+    <ThemeSwitchContainer>
       <InputGroup
-        text={name}>
+        text={theme.name}>
         <Switch
           border={3}
           size={20}
           setValue={(value: boolean) => onChange(value)}
           value={value} />
       </InputGroup>
-    </ThemeSwitchDiv>
+    </ThemeSwitchContainer>
   );
 };
 
