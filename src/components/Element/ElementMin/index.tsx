@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useCallback, useContext, useState } from 'react';
+import { FiltersContext } from '../../../providers/FiltersProvider';
 
 import ElementMinInfo from './ElementMinInfo';
 
@@ -11,13 +12,20 @@ const ElementMin: FC<IElementMin> = ({
   active,
   atomicNumber,
   cpkHexColor,
+  groupBlock,
   name,
   index,
   symbol,
   empty
 }) => {
+  const { filters }: any = useContext(FiltersContext);
+
   // hover
   const [ hover, setHover ] = useState<boolean>(false);
+
+  // on group
+  const onGroup = useCallback(() =>
+    filters.groupBlock === groupBlock, [ filters, groupBlock ]);
 
   // render
   return (
@@ -25,9 +33,10 @@ const ElementMin: FC<IElementMin> = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       data-active={active}
+      data-group={onGroup()}
       data-empty={empty}
       style={{
-        backgroundColor: hover || active ? cpkHexColor : 'transparent',
+        backgroundColor: hover || active || onGroup() ? cpkHexColor : 'transparent',
         borderColor: cpkHexColor,
         height: (index >= 126 && index < 144) ? `${40}px` : `${70}px`,
         color: cpkHexColor

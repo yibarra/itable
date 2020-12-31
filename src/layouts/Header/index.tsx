@@ -5,6 +5,7 @@ import ThemeSwitch from '../../components/ThemeSwitch';
 import { ReactComponent as Logo } from '../../assets/svg/logo.svg';
 
 import { HeaderContainer } from './styles';
+import Filters from '../../components/Filters';
 
 // header
 const Header: FC<any> = ({ onToggle }) => {
@@ -19,6 +20,8 @@ const Header: FC<any> = ({ onToggle }) => {
         <div className="header--theme">
           <ThemeSwitch onToggle={onToggle} />
         </div>
+
+        <Filters />
       </div>
     </HeaderContainer>
   );

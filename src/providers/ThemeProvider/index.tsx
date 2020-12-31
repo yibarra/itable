@@ -3,8 +3,8 @@ import { ThemeProvider as ThemeProviderStyled, DefaultTheme } from 'styled-compo
 import useLocalStorage from '@rehooks/local-storage';
 
 import GlobalStyle from './styles/global';
-import Dark from './themes/Dark';
-import Light from './themes/Light';
+import { Dark } from './themes/Dark';
+import { Light } from './themes/Light';
 
 import { IThemeProvider, IThemeContext } from './interfaces';
 

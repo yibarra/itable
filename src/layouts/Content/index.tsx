@@ -4,8 +4,9 @@ import Header from '../Header';
 import Grid from '../../components/Grid';
 import Loader from '../../components/Loader';
 
-import { ThemeContext } from '../../providers/ThemeProvider';
+import { FiltersProvider } from '../../providers/FiltersProvider';
 import { TableContext } from '../../providers/TableProvider';
+import { ThemeContext } from '../../providers/ThemeProvider';
 
 import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
 import { IContent } from './interfaces';
@@ -29,11 +30,13 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
   // render
   return (
     <>
-      <Header onToggle={onToggle} />
+      <FiltersProvider>
+        <Header onToggle={onToggle} />
 
-      <ContentContainer>
-        {isLoading === false && <Grid {...table} />}
-      </ContentContainer>
+        <ContentContainer>
+          {isLoading === false && <Grid {...table} />}
+        </ContentContainer>
+      </FiltersProvider>
 
       <Loader isLoading={isLoading} />
     </>

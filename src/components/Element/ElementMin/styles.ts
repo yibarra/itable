@@ -29,6 +29,23 @@ export const ElementMinContainer: any = styled.div`
     pointer-events: none;
   }
 
+  &[data-group="true"] {
+    .atomic-number,
+    .symbol {
+      color: ${({ theme }: any) => theme.background_color};
+    }
+
+    .name {
+      color: ${({ theme }: any) => theme.background_color};
+      transition-duration: 0s;
+      transition-delay: 0s;
+
+      &:before {
+        display: none;
+      }
+    }
+  }
+
   @media(max-width: 768px) {
     height: 65px !important;
   }
