@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// element min container
 export const ElementMinContainer: any = styled.div`
   align-content: flex-end;
   align-items: center;

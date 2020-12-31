@@ -9,6 +9,7 @@ import { TableContext } from '../../providers/TableProvider';
 
 import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
 import RangeSlider from '../../components/Form/RangeSlider';
+import Loader from '../../components/Loader';
 
 // div content
 const DivContent = styled.div`
@@ -38,15 +39,15 @@ const Content: FC<any> = ({ isLoading, value }) => {
   // render
   return (
     <>
-      {isLoading === false &&
-        <DivContent>
-          <Header onToggle={onToggle} />
+      <DivContent>
+        <Header onToggle={onToggle} />
 
-          <RangeSlider min={1500} max={2007} label="years" size={18} />
+        <RangeSlider min={1500} max={2007} label="years" size={18} />
 
-          <Grid {...table} />
+        {isLoading === false && <Grid {...table} />}
 
-        </DivContent>}
+      </DivContent>
+      <Loader isLoading={isLoading} />
     </>
   );
 };

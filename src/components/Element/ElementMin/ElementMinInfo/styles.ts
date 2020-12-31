@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// element min info div
 export const ElementMinInfoContainer = styled.div`
   float: left;
   width: 100%;

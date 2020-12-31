@@ -1,9 +1,11 @@
 import React, { FC, useCallback } from 'react';
 
+import { IRowColumn } from './interfaces';
+
 import { RowColumnContainer } from './styles';
 
 // row column
-const RowColumn: FC<any> = ({ info, children }) => {
+const RowColumn: FC<IRowColumn> = ({ info, children }) => {
   // type position
   const typePosition = useCallback(() => {
     if (info instanceof Object) {

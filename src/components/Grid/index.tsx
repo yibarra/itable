@@ -51,8 +51,7 @@ const Grid: FC<IGrid> = ({ elements, grid }) => {
   // render
   return (
     <GridContainer>
-      {elements instanceof Object && elements.length > 0
-        && getElementTable(elements)}
+      {elements instanceof Object && elements.length > 0 && getElementTable(elements)}
     </GridContainer>
   );
 };
