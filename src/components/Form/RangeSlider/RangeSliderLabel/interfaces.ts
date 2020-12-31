@@ -1,5 +1,4 @@
 export interface IRangeSliderLabel {
-  color: string;
   min: number;
   max: number;
   label: string;

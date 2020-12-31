@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { DefaultTheme } from "styled-components";
 
 export interface ITheme {
   background_color: string;
@@ -7,12 +8,10 @@ export interface ITheme {
 }
 
 export interface IThemeContext {
-  theme: ITheme;
-  themes: ITheme[];
-  setTheme(theme: ITheme): void;
+  theme: DefaultTheme;
+  onToggle(): void;
 }
 
 export interface IThemeProvider {
-  table: any;
   children: ReactNode;
 }

@@ -1,35 +1,11 @@
 import React, { FC, useCallback } from 'react';
-import styled from 'styled-components';
 
 import { IRangeSliderLabel } from './interfaces';
 
-// label
-const Label = styled.p`
-  float: left;
-  margin: 0;
-  padding: 20px 10px 0;
-  position: relative;
-  text-align: center;
-  width: 100%;
-
-  .label,
-  .value {
-    font-size: 12px;
-    font-weight: 400;
-    line-height: 1em;
-  }
-
-  .label {
-    margin: 3px 0 0 5px;
-  }
-
-  .value {
-    font-size: 16px;
-  }
-`;
+import { RangeSliderLabelContainer } from './styles';
 
 // range
-const RangeSliderLabel: FC<IRangeSliderLabel> = ({ color, min, max, label, size, value, width }) => {
+const RangeSliderLabel: FC<IRangeSliderLabel> = ({ min, max, label, size, value, width }) => {
   // get value
   const getValue = useCallback((): number => {
     const percent = ((value / width) * 100);
@@ -43,10 +19,10 @@ const RangeSliderLabel: FC<IRangeSliderLabel> = ({ color, min, max, label, size,
 
   // render
   return (
-    <Label style={{ marginTop: size }}>
-      <span className="value" style={{ color }}>{getValue().toString()}</span>
-      <span className="label" style={{ color }}>{label}</span>
-    </Label>
+    <RangeSliderLabelContainer style={{ marginTop: size }}>
+      <span className="value">{getValue().toString()}</span>
+      <span className="label">{label}</span>
+    </RangeSliderLabelContainer>
   );
 };
 

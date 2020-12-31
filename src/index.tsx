@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 
 import TableProvider from './providers/TableProvider';
+import { ThemeProvider } from './providers/ThemeProvider';
 
 import Main from './layouts/Main';
 
@@ -11,9 +12,11 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <TableProvider>
-      <Main />
-    </TableProvider>
+    <ThemeProvider>
+      <TableProvider>
+        <Main />
+      </TableProvider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

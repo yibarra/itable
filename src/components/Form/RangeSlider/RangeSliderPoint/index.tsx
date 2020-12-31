@@ -1,20 +1,12 @@
 import React, { FC, useCallback } from 'react';
 import { useGesture } from 'react-use-gesture';
-import styled from 'styled-components';
 
 import { IRangeSliderPoint } from './interfaces';
 
-// range slider pointer
-const RangeSliderPointer: any = styled.div`
-  cursor: pointer;
-  border-radius: 100%;
-  position: absolute;
-  transform: translate(-50%, 0);
-  z-index: 9;
-`;
+import { RangeSliderPointerContainer } from './styles';
 
 // range slider point
-const RangeSliderPoint: FC<IRangeSliderPoint> = ({ fill, size, setValue, value, width }) => {  
+const RangeSliderPoint: FC<IRangeSliderPoint> = ({ size, setValue, value, width }) => {  
   // on movement
   const onMovement = useCallback(({ down, offset: [x] }: any) => {
     if (down)
@@ -35,9 +27,8 @@ const RangeSliderPoint: FC<IRangeSliderPoint> = ({ fill, size, setValue, value, 
 
   // render
   return (
-    <RangeSliderPointer {...drag()}
+    <RangeSliderPointerContainer {...drag()}
       style={{
-        backgroundColor: fill,
         left: value,
         width: size,
         height: size }} />

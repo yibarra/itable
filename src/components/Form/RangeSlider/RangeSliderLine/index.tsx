@@ -9,10 +9,16 @@ const Line = styled.svg`
   position: absolute;
   top: 5px;
   width: 100%;
+
+  g {
+    path {
+      stroke: ${({ theme }) => theme.text_color}
+    }
+  }
 `;
 
 // range slider line
-const RangeSliderLine: FC<IRangeSliderLine> = ({ fill, stroke, size, width, value }) => {
+const RangeSliderLine: FC<IRangeSliderLine> = ({ stroke, size, width, value }) => {
   // padding
   const leftMin = (value - (size + (size / 1.2)));
   const rightMax = (value + (size + (size / 1.2)));
@@ -30,7 +36,6 @@ const RangeSliderLine: FC<IRangeSliderLine> = ({ fill, stroke, size, width, valu
             M${rightMax} 1 H ${width} V 1 H ${rightMax} L ${rightMax} 0 Z`}
           strokeWidth={stroke}
           strokeLinecap="round"
-          stroke={fill}
           fill= "none" />
       </g>
     </Line>

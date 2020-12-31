@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import ThemeSwitch from '../../components/ThemeSwitch';
 
 // header
-const Header: FC<any> = ({}) => {
+const Header: FC<any> = ({ onToggle }) => {
   // render
   return (
     <header>
@@ -17,7 +17,7 @@ const Header: FC<any> = ({}) => {
 
       </div>
 
-      <ThemeSwitch />
+      <ThemeSwitch onToggle={onToggle} />
     </header>
   );
 };

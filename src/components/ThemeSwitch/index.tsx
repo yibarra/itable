@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext, useEffect, useState } from 'react';
+import React, { FC, useCallback, useContext, useState } from 'react';
 import styled from 'styled-components';
 
 import InputGroup from '../Form/InputGroup';
@@ -13,34 +13,25 @@ const ThemeSwitchDiv = styled.div`
 `;
 
 // theme switch
-const ThemeSwitch: FC<any> = () => {
-  const themeContext = useContext(ThemeContext);
-  const { theme, themes, setTheme }: any = themeContext;
-
-  const [ value, setValue ] = useState<number>(0);
+const ThemeSwitch: FC<any> = ({ onToggle }) => {
+  const { name } = useContext(ThemeContext);
+  const [ value, setValue ] = useState<boolean>(true);
 
   // on change
-  const onChange = useCallback((value: number) =>
-    setTheme(themes[value]), [ themes, setTheme ]);
-
-  // use effect
-  useEffect(() => {
-    if (theme instanceof Object && Array.isArray(themes)) {
-      setValue(themes.indexOf(theme));
-    }
-  }, [ theme, themes ]);
+  const onChange = useCallback((value: boolean) => {
+    setValue(value);
+    onToggle();
+  }, [ onToggle ]);
 
   // render
   return (
     <ThemeSwitchDiv>
       <InputGroup
-        theme={theme}
-        text={theme?.name}>
+        text={name}>
         <Switch
           border={3}
           size={20}
-          theme={theme}
-          setValue={(value: number) => onChange(value)}
+          setValue={(value: boolean) => onChange(value)}
           value={value} />
       </InputGroup>
     </ThemeSwitchDiv>

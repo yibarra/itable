@@ -36,7 +36,7 @@ const Content: FC<any> = ({ isLoading, value }) => {
   const themeContext: any = useContext<any>(ThemeContext);
 
   const { table, setTable } = tableContext;
-  const { theme, setTheme }: IThemeContext = themeContext;
+  const { onToggle }: IThemeContext = themeContext;
 
   // use effect
   useEffect(() => {
@@ -48,17 +48,13 @@ const Content: FC<any> = ({ isLoading, value }) => {
   // render
   return (
     <>
-      {theme instanceof Object && isLoading === false &&
-        <DivContent
-          style={{ backgroundColor: theme?.background_color }}>
+      {isLoading === false &&
+        <DivContent>
+          <Header onToggle={onToggle} />
 
-          <Header
-            setTheme={setTheme} />
+          <RangeSlider min={1500} max={2007} label="years" size={18} />
 
-          <RangeSlider min={1500} max={2007} label="years" size={18} styles={theme} />
-
-          <Grid
-            {...table} />
+          <Grid {...table} />
 
         </DivContent>}
     </>
