@@ -4,7 +4,7 @@ import Label from '../Label';
 
 import { IInputGroup } from './interfaces';
 
-import { InputGroupContainer } from './style';
+import { InputGroupContainer } from './styles';
 
 // input group
 const InputGroup: FC<IInputGroup> = ({ children, text }) => {

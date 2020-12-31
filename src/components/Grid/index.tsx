@@ -1,19 +1,14 @@
 import React, { FC, useCallback } from 'react';
-import styled from 'styled-components';
 
 import ElementMin from '../Element/ElementMin';
+import RowColumn from './RowColumn';
 
-// Grid Div
-const GridDiv = styled.div`
-  margin: 0;
-  max-width: 1120px;
-  padding: 0;
-  position: relative;
-  width: 100%;
-`;
+import { IGrid } from './interfaces';
+
+import { GridContainer } from './styles';
 
 // Grid
-const Grid: FC<any> = ({ elements, theme }) => {
+const Grid: FC<IGrid> = ({ elements, grid }) => {
   // get element
   const getElement = useCallback((x: number, y: number) => {
     if (elements instanceof Object === false) return false;
@@ -32,19 +27,18 @@ const Grid: FC<any> = ({ elements, theme }) => {
     for (let indexRow = 1; indexRow <= 10; indexRow++) {
       for (let indexColumn = 1; indexColumn <= 18; indexColumn++) {
         const item = getElement(indexRow, indexColumn);
+        const info = grid.filter(({ xy }) => xy[0] === indexRow && xy[1] === indexColumn)[0];
         
         if (item instanceof Object) {
-          items.push(<ElementMin
-            {...item}
-            theme={theme}
-            index={indexes}
-            key={indexes} />);
+          items.push(
+            <RowColumn info={info} key={indexes}>
+              <ElementMin {...item} index={indexes} />
+            </RowColumn>);
         } else {
-          items.push(<ElementMin
-            theme={theme}
-            empty={true}
-            index={indexes}
-            key={indexes} />);
+          items.push(
+            <RowColumn info={info} key={indexes}>
+              <ElementMin empty={true} index={indexes} />
+            </RowColumn>);
         }
 
         indexes = indexes + 1;
@@ -52,14 +46,14 @@ const Grid: FC<any> = ({ elements, theme }) => {
     }
 
     return items;
-  }, [ getElement, theme ]);
+  }, [ getElement, grid ]);
 
   // render
   return (
-    <GridDiv>
+    <GridContainer>
       {elements instanceof Object && elements.length > 0
         && getElementTable(elements)}
-    </GridDiv>
+    </GridContainer>
   );
 };
 

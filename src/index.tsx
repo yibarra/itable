@@ -8,8 +8,6 @@ import { ThemeProvider } from './providers/ThemeProvider';
 
 import Main from './layouts/Main';
 
-import './index.css';
-
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider>
