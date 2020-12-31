@@ -31,12 +31,12 @@ const Grid: FC<IGrid> = ({ elements, grid }) => {
         
         if (item instanceof Object) {
           items.push(
-            <RowColumn info={info} key={indexes}>
+            <RowColumn info={info} key={indexes} empty={!item}>
               <ElementMin {...item} index={indexes} />
             </RowColumn>);
         } else {
           items.push(
-            <RowColumn info={info} key={indexes}>
+            <RowColumn info={info} key={indexes} empty={true}>
               <ElementMin empty={true} index={indexes} />
             </RowColumn>);
         }

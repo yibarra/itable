@@ -61,12 +61,6 @@ export const ElementMinInfoContainer = styled.div`
     transition-duration: 0s;
   }
 
-  @media(max-width: 768px) {
-    .name {
-      display: none;
-    }
-  }
-
   @media(max-width: 480px) {
     .name {
       display: inline-block;

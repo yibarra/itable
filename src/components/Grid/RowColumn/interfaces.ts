@@ -6,6 +6,7 @@ export interface IRowColumnInfo {
 }
 
 export interface IRowColumn {
-  info: IRowColumnInfo;
   children: ReactNode;
+  info: IRowColumnInfo;
+  empty: boolean;
 }

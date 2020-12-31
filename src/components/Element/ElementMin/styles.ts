@@ -30,12 +30,11 @@ export const ElementMinContainer: any = styled.div`
   }
 
   @media(max-width: 768px) {
-    height: 50px !important;
+    height: 65px !important;
   }
 
   @media(max-width: 480px) {
-    height: 60px !important;
-    width: calc(20% - 2px);
+    height: 70px !important;
     
     &[data-empty="true"] {
       display: none;

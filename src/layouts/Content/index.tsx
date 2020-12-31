@@ -8,11 +8,12 @@ import { ThemeContext } from '../../providers/ThemeProvider';
 import { TableContext } from '../../providers/TableProvider';
 
 import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
+import { IContent } from './interfaces';
 
 import { ContentContainer } from './styles';
 
 // content
-const Content: FC<any> = ({ isLoading, value }) => {  
+const Content: FC<IContent> = ({ isLoading, value }) => {  
   // context
   const tableContext: any = useContext<any>(TableContext);
   const themeContext: any = useContext<any>(ThemeContext);

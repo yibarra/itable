@@ -5,7 +5,7 @@ import { IRowColumn } from './interfaces';
 import { RowColumnContainer } from './styles';
 
 // row column
-const RowColumn: FC<IRowColumn> = ({ info, children }) => {
+const RowColumn: FC<IRowColumn> = ({ info, children, empty }) => {
   // type position
   const typePosition = useCallback(() => {
     if (info instanceof Object) {
@@ -32,7 +32,7 @@ const RowColumn: FC<IRowColumn> = ({ info, children }) => {
 
   // render
   return (
-    <RowColumnContainer>
+    <RowColumnContainer data-empty={empty}>
       <>
         {typePosition()}
         {children}
