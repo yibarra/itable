@@ -1,9 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  html,
-  body,
-  body * {
+  * {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
