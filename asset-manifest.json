@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/itable/static/js/main.0e547ccf.chunk.js",
-    "main.js.map": "/itable/static/js/main.0e547ccf.chunk.js.map",
+    "main.js": "/itable/static/js/main.b829db46.chunk.js",
+    "main.js.map": "/itable/static/js/main.b829db46.chunk.js.map",
     "runtime-main.js": "/itable/static/js/runtime-main.b06e7f02.js",
     "runtime-main.js.map": "/itable/static/js/runtime-main.b06e7f02.js.map",
-    "static/js/2.7399754b.chunk.js": "/itable/static/js/2.7399754b.chunk.js",
-    "static/js/2.7399754b.chunk.js.map": "/itable/static/js/2.7399754b.chunk.js.map",
+    "static/js/2.5ab51f95.chunk.js": "/itable/static/js/2.5ab51f95.chunk.js",
+    "static/js/2.5ab51f95.chunk.js.map": "/itable/static/js/2.5ab51f95.chunk.js.map",
     "static/js/3.b5344367.chunk.js": "/itable/static/js/3.b5344367.chunk.js",
     "static/js/3.b5344367.chunk.js.map": "/itable/static/js/3.b5344367.chunk.js.map",
     "index.html": "/itable/index.html",
-    "static/js/2.7399754b.chunk.js.LICENSE.txt": "/itable/static/js/2.7399754b.chunk.js.LICENSE.txt",
+    "static/js/2.5ab51f95.chunk.js.LICENSE.txt": "/itable/static/js/2.5ab51f95.chunk.js.LICENSE.txt",
     "static/media/logo.b9b9759d.svg": "/itable/static/media/logo.b9b9759d.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b06e7f02.js",
-    "static/js/2.7399754b.chunk.js",
-    "static/js/main.0e547ccf.chunk.js"
+    "static/js/2.5ab51f95.chunk.js",
+    "static/js/main.b829db46.chunk.js"
   ]
 }
