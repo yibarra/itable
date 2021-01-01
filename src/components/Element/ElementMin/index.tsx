@@ -33,12 +33,13 @@ const ElementMin: FC<IElementMin> = ({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       data-active={active}
-      data-group={onGroup()}
+      data-group={Object.keys(filters).length > 0 && filters.groupBlock !== ''}
+      data-group-item={onGroup()}
       data-empty={empty}
       style={{
         backgroundColor: hover || active || onGroup() ? cpkHexColor : 'transparent',
         borderColor: cpkHexColor,
-        height: (index >= 126 && index < 144) ? `${40}px` : `${70}px`,
+        height: (index >= 126 && index < 144) ? `${40}px` : `${65}px`,
         color: cpkHexColor
       }}>
       {!empty && <ElementMinInfo

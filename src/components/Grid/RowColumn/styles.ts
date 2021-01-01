@@ -4,6 +4,7 @@ export const RowColumnContainer = styled.div`
   height: auto;
   float: left;
   margin: 0 1px;
+  padding: 0;
   position: relative;
   width: calc((100% / 18) - 2px);
 

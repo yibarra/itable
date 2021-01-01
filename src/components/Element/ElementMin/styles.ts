@@ -17,19 +17,17 @@ export const ElementMinContainer: any = styled.div`
   width: 100%;
   vertical-align: top;
 
-  &[data-active="true"],
-  &:hover {
-    .atomic-number,
-    .symbol {
-      color: ${({ theme }: any) => theme.background_color};
-    }
-  }
-
   &[data-empty="true"] {
     pointer-events: none;
   }
 
   &[data-group="true"] {
+    opacity: 0.3;
+  }
+
+  &[data-group-item="true"] {
+    opacity: 1;
+
     .atomic-number,
     .symbol {
       color: ${({ theme }: any) => theme.background_color};
@@ -43,6 +41,14 @@ export const ElementMinContainer: any = styled.div`
       &:before {
         display: none;
       }
+    }
+  }
+
+  &[data-active="true"],
+  &:hover {
+    .atomic-number,
+    .symbol {
+      color: ${({ theme }: any) => theme.background_color};
     }
   }
 

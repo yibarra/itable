@@ -11,7 +11,13 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
 
   // set filters
   const onSetFilters = useCallback((value: any) => {
-    setFilters({ ...filters, ...value });
+    const key = Object.keys(value)[0].toString();
+
+    if (filters[key] !== value[key]) {
+      setFilters({ ...filters, ...value });
+    } else {
+      setFilters({ ...filters, [key]: '' });
+    }
   }, [ setFilters, filters ]);
 
   // render
