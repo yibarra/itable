@@ -16,7 +16,7 @@ export const LoaderContainer = styled.div`
     transform: translate(-50%, -50%);
     transition: all var(--animation-time) var(--animation-bezier);
     top: 50%;
-    width: 75px;
+    width: 70px;
     z-index: 1;
 
     > path {

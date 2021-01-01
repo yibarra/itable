@@ -13,7 +13,7 @@ export const ElementMinContainer: any = styled.div`
   padding: 0;
   position: relative;
   text-align: center;
-  transition: all var(--animation-time) var(---animation-bezier);
+  transition: all var(--animation-time) var(--animation-bezier);
   width: 100%;
   vertical-align: top;
 
@@ -49,6 +49,20 @@ export const ElementMinContainer: any = styled.div`
     .atomic-number,
     .symbol {
       color: ${({ theme }: any) => theme.background_color};
+    }
+
+    .name {
+      &:before {
+        display: inline-block;
+      }
+    }
+
+    &[data-group-item="true"] {
+      .name {
+        &:before {
+          display: none;
+        }
+      }
     }
   }
 

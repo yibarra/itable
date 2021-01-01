@@ -18,7 +18,7 @@ export const HeaderContainer = styled.header`
       width: 20px;
 
       svg {
-        width: 65px;
+        width: 50px;
 
         > path {
           fill: ${({ theme }: any) => theme.text_color};

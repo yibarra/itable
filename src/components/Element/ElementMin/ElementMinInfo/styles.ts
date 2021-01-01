@@ -45,6 +45,7 @@ export const ElementMinInfoContainer = styled.div`
     &:before {
       background-color: ${({ theme }: any) => theme.background_color};
       content: '';
+      display: none;
       height: 100%;
       left: 50%;
       position: absolute;
