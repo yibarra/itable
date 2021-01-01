@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-  * {
+  html,
+  body,
+  body * {
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top;
@@ -30,6 +32,11 @@ export default createGlobalStyle`
     min-height: 100vh;
     overflow: hidden;
     overflow-anchor: none;
+
+    script,
+    link {
+      display: none;
+    }
   }
 
   #root {

@@ -43,7 +43,7 @@ export const ElementMinInfoContainer = styled.div`
     z-index: 1;
 
     &:before {
-      background-color: ${({ theme }: any) => theme.background_color};
+      background-color: ${({ theme }: any) => theme.second_color};
       content: '';
       display: none;
       height: 100%;
@@ -58,7 +58,7 @@ export const ElementMinInfoContainer = styled.div`
 
   .symbol {
     font-size: 20px;
-    margin: 0 0 5px;
+    margin: 0 0 6px;
     transition-duration: 0s;
   }
 

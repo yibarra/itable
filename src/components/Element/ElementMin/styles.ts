@@ -9,32 +9,52 @@ export const ElementMinContainer: any = styled.div`
   flex-flow: row wrap;
   float: left;
   margin: 1px;
-  overflow: hidden;
   padding: 0;
   position: relative;
   text-align: center;
-  transition: all var(--animation-time) var(--animation-bezier);
   width: 100%;
   vertical-align: top;
 
+  &:before {
+    background-color: ${({ theme }) => theme.second_color};
+    border: 2px solid ${({ theme }) => theme.second_color};
+    content: '';
+    height: calc(100% + 2px);
+    left: -3px;
+    position: absolute;
+    top: -3px;
+    width: calc(100% + 2px);
+    z-index: -1;
+  }
+
   &[data-empty="true"] {
     pointer-events: none;
+
+    &:before {
+      display: none;
+    }
   }
 
   &[data-group="true"] {
-    opacity: 0.3;
+    .atomic-number,
+    .name,
+    .symbol {
+      opacity: 0.3;
+      transition-delay: 0s;
+    }
   }
 
   &[data-group-item="true"] {
-    opacity: 1;
-
     .atomic-number,
     .symbol {
       color: ${({ theme }: any) => theme.background_color};
+      opacity: 1;
+      transition-duration: 0s;
     }
 
     .name {
       color: ${({ theme }: any) => theme.background_color};
+      opacity: 1;
       transition-duration: 0s;
       transition-delay: 0s;
 
@@ -46,6 +66,12 @@ export const ElementMinContainer: any = styled.div`
 
   &[data-active="true"],
   &:hover {
+    .atomic-number,
+    .name,
+    .symbol {
+      opacity: 1;
+    }
+    
     .atomic-number,
     .symbol {
       color: ${({ theme }: any) => theme.background_color};
