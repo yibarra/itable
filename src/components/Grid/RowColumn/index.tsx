@@ -5,10 +5,10 @@ import { IRowColumn } from './interfaces';
 import { RowColumnContainer } from './styles';
 
 // row column
-const RowColumn: FC<IRowColumn> = ({ info, children, empty }) => {
+const RowColumn: FC<IRowColumn> = ({ blocks, info, children, empty }) => {
   // type position
   const typePosition = useCallback(() => {
-    if (info instanceof Object) {
+    if (info instanceof Object && blocks === true) {
       const { position, xy } = info;
 
       switch (position) {
@@ -28,7 +28,7 @@ const RowColumn: FC<IRowColumn> = ({ info, children, empty }) => {
     }
 
     return false;
-  }, [ info ]);
+  }, [ info, blocks ]);
 
   // render
   return (

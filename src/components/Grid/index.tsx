@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useContext } from 'react';
 
 import ElementMin from '../Element/ElementMin';
 import RowColumn from './RowColumn';
@@ -6,9 +6,12 @@ import RowColumn from './RowColumn';
 import { IGrid } from './interfaces';
 
 import { GridContainer } from './styles';
+import { FiltersContext } from '../../providers/FiltersProvider';
 
 // Grid
 const Grid: FC<IGrid> = ({ elements, grid }) => {
+  const { filters } = useContext(FiltersContext);
+
   // get element
   const getElement = useCallback((x: number, y: number) => {
     if (elements instanceof Object === false) return false;
@@ -32,6 +35,7 @@ const Grid: FC<IGrid> = ({ elements, grid }) => {
         if (item instanceof Object) {
           items.push(
             <RowColumn
+              blocks={filters?.blocks}
               info={info}
               empty={!item}
               key={indexes}>
@@ -52,7 +56,7 @@ const Grid: FC<IGrid> = ({ elements, grid }) => {
     }
 
     return items;
-  }, [ getElement, grid ]);
+  }, [ getElement, grid, filters ]);
 
   // render
   return (

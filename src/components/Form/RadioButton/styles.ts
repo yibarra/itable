@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const RadioButtonContainer = styled.label`
+  cursor: pointer;
   float: left;
   margin: 0 20px 0 0;
   padding: 0 0 0 25px;
@@ -40,12 +41,21 @@ export const RadioButtonContainer = styled.label`
 
     &:after {
       background-color: ${({ theme }: any) => theme.background_color};
-      height: 10px;
+      height: 0;
       border-radius: 100%;
       left: -22px;
       top: 50%;
       transform: translate(0, -50%);
-      width: 10px;
+      width: 0;
+    }
+  }
+
+  &[data-active="true"] {
+    .text {
+      &:after {
+        height: 10px;
+        width: 10px;
+      }
     }
   }
 `;

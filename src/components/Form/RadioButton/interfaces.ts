@@ -1,5 +1,6 @@
 export interface IRadioButton {
+  active: boolean;
   name: string;
   text: string;
-  onChange(value: string): void;
+  onChange(name: string, value: string): void;
 }
