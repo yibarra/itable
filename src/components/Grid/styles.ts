@@ -6,4 +6,5 @@ export const GridContainer = styled.div`
   padding: 0;
   position: relative;
   width: 100%;
+  z-index: 3;
 `;

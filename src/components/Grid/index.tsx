@@ -9,7 +9,7 @@ import { GridContainer } from './styles';
 import { FiltersContext } from '../../providers/FiltersProvider';
 
 // Grid
-const Grid: FC<IGrid> = ({ elements, grid }) => {
+const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
   const { filters } = useContext(FiltersContext);
 
   // get element
@@ -39,7 +39,10 @@ const Grid: FC<IGrid> = ({ elements, grid }) => {
               info={info}
               empty={!item}
               key={indexes}>
-              <ElementMin {...item} index={indexes} />
+              <ElementMin
+                element={item}
+                index={indexes}
+                setElement={setElement} />
             </RowColumn>);
         } else {
           items.push(
@@ -47,7 +50,10 @@ const Grid: FC<IGrid> = ({ elements, grid }) => {
               info={info}
               empty={true}
               key={indexes}>
-              <ElementMin empty={true} index={indexes} />
+              <ElementMin
+                empty={true}
+                index={indexes}
+                setElement={setElement} />
             </RowColumn>);
         }
 
@@ -56,7 +62,7 @@ const Grid: FC<IGrid> = ({ elements, grid }) => {
     }
 
     return items;
-  }, [ getElement, grid, filters ]);
+  }, [ getElement, grid, filters, setElement ]);
 
   // render
   return (

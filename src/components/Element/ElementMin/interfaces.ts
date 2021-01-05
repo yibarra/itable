@@ -1,11 +1,7 @@
 export interface IElementMin {
   active?: boolean;
-  atomicNumber?: number;
-  cpkHexColor?: string;
-  bondingType?: string;
-  groupBlock?: string;
+  element?: any;
   index: number;
-  name?: string;
-  symbol?: string;
   empty?: boolean;
+  setElement(atomicNumber: number): void;
 }

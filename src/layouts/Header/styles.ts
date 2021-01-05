@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   float: left;
+  padding: 0 0 60px;
+  position: relative;
   text-align: center;
   width: 100%;
+  z-index: 7;
 
   .header {
     &--content {
@@ -29,6 +32,13 @@ export const HeaderContainer = styled.header`
     &--theme,
     &--search {
       float: right;
+    }
+
+    &--filters,
+    &--top {
+      float: left;
+      margin: 0;
+      width: 100%;
     }
   }
 

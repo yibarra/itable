@@ -1,6 +1,7 @@
 import React, { FC, useContext, useEffect } from 'react';
 
 import Header from '../Header';
+import Element from '../../components/Element';
 import Grid from '../../components/Grid';
 import Loader from '../../components/Loader';
 
@@ -19,7 +20,7 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
   const tableContext: any = useContext<any>(TableContext);
   const themeContext: any = useContext<any>(ThemeContext);
 
-  const { table, setTable } = tableContext;
+  const { table, element, setElement, setTable } = tableContext;
   const { onToggle }: IThemeContext = themeContext;
 
   // use effect
@@ -31,10 +32,16 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
   return (
     <>
       <FiltersProvider>
-        <Header onToggle={onToggle} />
+        <Header
+          element={element}
+          setElement={setElement}
+          onToggle={onToggle} />
 
         <ContentContainer>
-          {isLoading === false && <Grid {...table} />}
+          {isLoading === false && !element &&
+            <Grid {...table} setElement={setElement} />}
+
+          {element && <Element element={element} />}
         </ContentContainer>
       </FiltersProvider>
 

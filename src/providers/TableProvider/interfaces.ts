@@ -27,8 +27,10 @@ export interface ITableItem {
 }
 
 export interface ITableContext {
+  element: any;
+  setElement(atomicNumber: any): void;
   table: ITableItem;
-  setTable(): (table: ITableItem) => void;
+  setTable(table: ITableItem): void;
 }
 
 export interface ITableProvider {

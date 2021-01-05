@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-const Element = () => {
+import { transparentize } from 'polished'
+
+import { ElementContainer } from './styles';
+import ElementInfo from './ElementInfo';
+
+const Element: FC<any> = ({ element }) => {
   return (
-    <div>
-      
-    </div>
+    <ElementContainer style={{
+      backgroundColor: transparentize(0.3, element.cpkHexColor)
+    }}>
+      <div className="element--container">
+        {element && <ElementInfo element={element} />}
+      </div>
+    </ElementContainer>
   );
 };
 
