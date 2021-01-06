@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
+import { transparentize } from 'polished';
 
-import { transparentize } from 'polished'
-
-import { ElementContainer } from './styles';
 import ElementInfo from './ElementInfo';
 
+import { ElementContainer } from './styles';
+
+// element
 const Element: FC<any> = ({ element }) => {
+  // render
   return (
     <ElementContainer style={{
       backgroundColor: transparentize(0.3, element.cpkHexColor)
