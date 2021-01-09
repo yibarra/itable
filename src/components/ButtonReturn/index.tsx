@@ -4,14 +4,12 @@ import { ButtonReturnContainer } from './styles';
 
 // button return
 const ButtonReturn: FC<any> = ({ callback, text }) => {
+  // render
   return (
     <ButtonReturnContainer
-      onClick={() => {
-        console.log('sipp');
-        callback(false);
-      }}>
+      onClick={() => callback(false)}>
       <span className="material-icons">keyboard_return</span>
-      <span>{text}</span>
+      <span className="text">{text}</span>
     </ButtonReturnContainer>
   );
 };
