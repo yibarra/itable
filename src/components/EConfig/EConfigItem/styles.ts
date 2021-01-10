@@ -6,11 +6,12 @@ export const EConfigItemDiv = styled.div`
   justify-content: center;
   flex-flow: row wrap;
   height: 50px;
-  opacity: 0.2;
+  opacity: 1;
   position: absolute;
   width: 50px;
 
   .level,
+  .quote,
   .name {
     color: ${({ theme }: any) => theme.text_color};
     font-size: 12px;
@@ -19,6 +20,14 @@ export const EConfigItemDiv = styled.div`
 
   .level {
     font-size: 16px;
+  }
+
+  .quote {
+    font-size: 9px;
+    font-weight: 500;
+    left: calc(50% + 10px);
+    position: absolute;
+    top: 10px;
   }
 
   &:after,
@@ -49,7 +58,7 @@ export const EConfigItemDiv = styled.div`
   }
 
   &[data-active="true"] {
-    opacity: 1;
+    opacity: 0;
   }
 
   &[data-arrow="true"] {

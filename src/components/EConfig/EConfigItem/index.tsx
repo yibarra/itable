@@ -5,8 +5,22 @@ import { IEConfigItem } from './interfaces';
 import { EConfigItemDiv } from './styles';
 
 // e config item
-const EConfigItem: FC<IEConfigItem> = ({ active, item: { level, name, pos } }) => {
+const EConfigItem: FC<IEConfigItem> = ({ active, last, diff, item: { level, name, pos, value } }) => {
   const padding = 50;
+
+  // get last number
+  const quote = useCallback(() => {
+    if (last) {
+      const val = (diff - value);
+      console.log(diff, value);
+
+      if (val < 0) {
+        return Math.abs(val);
+      }
+    }
+
+    return value;
+  }, [ diff, value, last ]);
 
   // get position
   const getPosition = useCallback(() => {
@@ -19,9 +33,11 @@ const EConfigItem: FC<IEConfigItem> = ({ active, item: { level, name, pos } }) =
   // render
   return (
     <EConfigItemDiv
+      data-last={last}
       data-active={active}
       data-arrow={pos.x === 1}
       style={{ transform: getPosition() }}>
+      <span className="quote">{quote()}</span>
       <span className="level">{level}</span>
       <span className="name">{name}</span>
     </EConfigItemDiv>

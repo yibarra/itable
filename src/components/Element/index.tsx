@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { transparentize } from 'polished';
 
 import ElementInfo from './ElementInfo';
+import ElementGraph from './ElementGraph';
 
 import { ElementContainer } from './styles';
 
@@ -13,7 +14,11 @@ const Element: FC<any> = ({ element }) => {
       backgroundColor: transparentize(0.3, element.cpkHexColor)
     }}>
       <div className="element--container">
-        {element && <ElementInfo element={element} />}
+        {element && 
+          <>
+            <ElementInfo element={element} />
+            <ElementGraph element={element} />
+          </>}
       </div>
     </ElementContainer>
   );

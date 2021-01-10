@@ -20,8 +20,6 @@ const ElementInfo: FC<any> = ({ element }) => {
       <ElementSummary text={summary} />
       <ElementTable element={element} />
 
-      <EConfig atomicNumber={atomicNumber} />
-
       {source && <ElementLink text="Source" link={source} />}
       {spectral_img && <ElementLink text="Spectra Image" link={spectral_img} />}
     </ElementInfoContainer>
