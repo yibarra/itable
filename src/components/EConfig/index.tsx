@@ -1,4 +1,5 @@
 import React, { FC, useCallback } from 'react';
+import EOrbital from '../EOrbital';
 
 import EConfigGrid from './EConfigGrid';
 
@@ -82,7 +83,14 @@ const EConfig: FC<any> = ({ atomicNumber, eConfiguration }) => {
         <span className="label">Electronic Configuration</span>
         <span className="text">{eConfiguration}</span>
       </p>
-      <EConfigGrid config={config} {...getConfig(config)} />
+
+      <EConfigGrid
+        config={config}
+        {...getConfig(config)} />
+
+      <EOrbital
+        atomicNumber={atomicNumber}
+        {...getConfig(config)} />
     </EConfigDiv>
   );
 };

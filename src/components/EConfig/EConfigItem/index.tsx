@@ -12,7 +12,6 @@ const EConfigItem: FC<IEConfigItem> = ({ active, last, diff, item: { level, name
   const quote = useCallback(() => {
     if (last) {
       const val = (diff - value);
-      console.log(diff, value);
 
       if (val < 0) {
         return Math.abs(val);

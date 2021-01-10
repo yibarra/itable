@@ -61,6 +61,7 @@ export const EConfigItemDiv = styled.div`
     opacity: 0;
   }
 
+  &[data-last="true"],
   &[data-arrow="true"] {
     &:after {
       display: inline-block;

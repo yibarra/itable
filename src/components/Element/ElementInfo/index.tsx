@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import EConfig from '../../EConfig';
 
 import ElementDate from '../ElementDate';
 import ElementLink from '../ElementLink';
@@ -10,7 +9,7 @@ import { ElementInfoContainer } from './styles';
 
 // element info
 const ElementInfo: FC<any> = ({ element }) => {
-  const { atomicNumber, name, summary, spectral_img, source, yearDiscovered } = element;
+  const { name, summary, spectral_img, source, yearDiscovered } = element;
 
   // render
   return (

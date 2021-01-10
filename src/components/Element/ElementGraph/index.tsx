@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+
 import EConfig from '../../EConfig';
 
 import { IElementGraph } from './interfaces';
@@ -12,7 +13,9 @@ const ElementGraph: FC<IElementGraph> = ({ element }) => {
   // render
   return (
     <ElementGraphDiv>
-      <EConfig atomicNumber={atomicNumber} eConfiguration={electronicConfiguration} />
+      <EConfig
+        atomicNumber={atomicNumber}
+        eConfiguration={electronicConfiguration} />
     </ElementGraphDiv>
   );
 };
