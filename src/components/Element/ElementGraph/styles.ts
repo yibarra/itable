@@ -5,5 +5,5 @@ export const ElementGraphDiv = styled.div`
   float: left;
   padding: 20px;
   position: relative;
-  width: 50%;
+  width: 360px;
 `;

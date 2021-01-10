@@ -4,5 +4,6 @@ export interface IEOrbital {
   any?: any;
   atomicNumber: number;
   level: IEConfigLevel;
+  index: number;
   difference: number;
 }
