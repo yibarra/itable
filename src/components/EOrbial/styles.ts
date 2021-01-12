@@ -2,27 +2,27 @@ import styled from "styled-components";
 
 export const EOrbitalDiv = styled.div`
   float: left;
-  height: 220px;
+  margin: 0 0 40px;
   padding: 0;
   position: relative;
-  width: 220px;
 
   .orbit {
-    border: 1px solid ${({ theme }: any) => theme.text_color};
+    border: 2px solid ${({ theme }: any) => theme.background_color};
     border-radius: 100%;
     left: 50%;
     position: absolute;
-    transform: translate(-50%, -50%) rotate(88deg);
+    transform: translate(-50%, -50%) rotate(-90deg);
     top: 50%;
 
     .atom {
-      background-color: ${({ theme }: any) => theme.text_color};
-      height: 8px;
+      background-color: ${({ theme }: any) => theme.background_color};
+      height: 9px;
       border-radius: 100%;
-      left: calc(50% - 4px);
+      left: calc(50% - 5px);
       position: absolute;
-      top: calc(50% - 4px);
-      width: 8px;
+      top: calc(50% - 5px);
+	    transform-origin:50% 50%;
+      width: 9px;
     }
 
     &[data-active="true"] {

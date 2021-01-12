@@ -9,12 +9,21 @@ export const ElementTableContainer = styled.ul`
   vertical-align: top;
 
   .row {
+    align-items: center;
+    display: inline-flex;
+    flex-flow: row wrap;
     float: left;
+    justify-content: center;
     margin: 0 0 1px;
     position: relative;
     width: 100%;
 
     &:nth-child(odd) {
+      .label,
+      .text {
+        color: inherit;
+      }
+
       &:after {
         background-color: ${({ theme }: any) => theme.background_color};
         border-radius: 0;

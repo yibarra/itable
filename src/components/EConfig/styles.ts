@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const EConfigDiv = styled.div`
   float: left;
-  padding: 0 0 60px;
+  padding: 0;
   position: relative;
   width: 100%;
 
@@ -13,9 +13,12 @@ export const EConfigDiv = styled.div`
 
     .label,
     .text {
+      color: ${({ theme }: any) => theme.background_color};
       float: left;
+      font-weight: 600;
       letter-spacing: -0.02em;
       position: relative;
+      text-transform: uppercase;
       width: 100%;
     }
 
@@ -26,6 +29,7 @@ export const EConfigDiv = styled.div`
     
     .text {
       font-size: 16px;
+      font-weight: 600;
       text-indent: -3px;
     }
   }

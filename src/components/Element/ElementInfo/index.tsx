@@ -4,6 +4,7 @@ import ElementDate from '../ElementDate';
 import ElementLink from '../ElementLink';
 import ElementSummary from '../ElementSummary';
 import ElementTable from '../ElementTable';
+import ElementTitle from '../ElementTitle';
 
 import { ElementInfoContainer } from './styles';
 
@@ -14,7 +15,7 @@ const ElementInfo: FC<any> = ({ element }) => {
   // render
   return (
     <ElementInfoContainer>
-      <h1>{name}</h1>
+      <ElementTitle text={name} />
       <ElementDate text="Data discovery" year={yearDiscovered} />
       <ElementSummary text={summary} />
       <ElementTable element={element} />

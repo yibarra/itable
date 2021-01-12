@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ElementDateContainer = styled.p`
   align-items: flex-end;
-  color: ${({ theme }: any) => theme.text_color};
+  color: ${({ theme }: any) => theme.background_color};
   display: inline-flex;
   flex-flow: row nowrap;
   float: left;

@@ -13,7 +13,7 @@ export const EConfigItemDiv = styled.div`
   .level,
   .quote,
   .name {
-    color: ${({ theme }: any) => theme.text_color};
+    color: ${({ theme }: any) => theme.background_color};
     font-size: 12px;
     line-height: 1em;
   }
@@ -37,7 +37,7 @@ export const EConfigItemDiv = styled.div`
   }
 
   &:before {
-    background-color: ${({ theme }: any) => theme.text_color};
+    background-color: ${({ theme }: any) => theme.background_color};
     bottom: 0;
     height: 2px;
     left: -10px;
@@ -48,7 +48,7 @@ export const EConfigItemDiv = styled.div`
   &:after {
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    border-right: 4px solid ${({ theme }: any) => theme.text_color};
+    border-right: 4px solid ${({ theme }: any) => theme.background_color};
     height: 0;
     display: none;
     bottom: -29px;
@@ -58,7 +58,7 @@ export const EConfigItemDiv = styled.div`
   }
 
   &[data-active="true"] {
-    opacity: 0;
+    display: none;
   }
 
   &[data-last="true"],

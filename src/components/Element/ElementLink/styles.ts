@@ -13,12 +13,24 @@ export const ElementLinkContainer = styled.div`
   }
 
   .link {
+    color: ${({ theme }: any) => theme.background_color};
     padding: 10px 20px 0;
     width: 100%;
+
+    .material-icons,
+    .text {
+      color: ${({ theme }: any) => theme.background_color};
+    }
+
+    .text {
+      &:before {
+        background-color: ${({ theme }: any) => theme.background_color};
+      }
+    }
   }
 
   .title {
-    color: ${({ theme }: any) => theme.text_color};
+    color: ${({ theme }: any) => theme.background_color};
     font-size: 12px;
     margin: 0;
     letter-spacing: -0.02em;

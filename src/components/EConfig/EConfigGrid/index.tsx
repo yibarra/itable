@@ -11,13 +11,14 @@ const EConfigGrid: FC<IEConfigGrid> = ({ config, difference, level, index }) => 
 
   // render
   return (
-    <EConfigGridDiv>
+    <EConfigGridDiv style={{ height: level.level * 70 }}>
       {config && config.map((item: any, key: number) =>
         <EConfigItem
           active={index < key}
           last={level === item}
           diff={difference}
-          item={item} key={key} />)}
+          item={item}
+          key={key} />)}
     </EConfigGridDiv>
   );
 };

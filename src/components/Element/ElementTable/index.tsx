@@ -5,6 +5,8 @@ import { ElementTableContainer } from './styles';
 
 // element table
 const ElementTable: FC<any> = ({ element }) => {
+  const { cpkHexColor } = element;
+
   // get label
   const getLabel = useCallback((label: any) => {
     switch (label) {
@@ -54,14 +56,22 @@ const ElementTable: FC<any> = ({ element }) => {
       const twoColumn = items[i+1];
 
       rows.push(<li className="row" key={i}>
-        <ElementTableItem label={oneColumn.label} text={oneColumn.text} key={oneColumn.key} />
+        <ElementTableItem
+          color={cpkHexColor}
+          label={oneColumn.label}
+          text={oneColumn.text}
+          key={oneColumn.key} />
         {twoColumn instanceof Object &&
-          <ElementTableItem label={twoColumn.label} text={twoColumn.text} key={twoColumn.key} />}
+          <ElementTableItem
+            color={cpkHexColor}
+            label={twoColumn.label}
+            text={twoColumn.text}
+            key={twoColumn.key} />}
       </li>);
     }
 
     return rows;
-  }, []);
+  }, [ cpkHexColor ]);
 
   // post table
   const table = useCallback(() => {
