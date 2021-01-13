@@ -2,9 +2,14 @@ import styled from "styled-components";
 
 export const EConfigDiv = styled.div`
   float: left;
-  padding: 0;
+  padding: 40px 0 0;
   position: relative;
   width: 100%;
+
+  .ec--item {
+    float: left;
+    width: 50%;
+  }
 
   .ec--title {
     float: left;

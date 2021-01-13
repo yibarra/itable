@@ -81,22 +81,25 @@ const EConfig: FC<IEConfig> = ({ atomicNumber, shells, eConfiguration }) => {
   // render
   return (
     <EConfigDiv>
-      <p className="ec--title">
-        <span className="label">Moeller Diagram</span>
-        <span className="text">{eConfiguration}</span>
-      </p>
+      <div className="ec--item">
+        <p className="ec--title">
+          <span className="label">Moeller Diagram</span>
+        </p>
 
-      <EConfigGrid
-        config={config}
-        {...getConfig(config)} />
+        <EConfigGrid
+          config={config}
+          {...getConfig(config)} />
+      </div>
         
-      <p className="ec--title">
-        <span className="label">Electronic Configuration</span>
-      </p>
+      <div className="ec--item">
+        <p className="ec--title">
+          <span className="label">Electronic Configuration</span>
+        </p>
 
-      <EOrbital
-        shells={shells}
-        radius={42} />
+        <EOrbital
+          shells={shells}
+          radius={42} />
+      </div>
     </EConfigDiv>
   );
 };
