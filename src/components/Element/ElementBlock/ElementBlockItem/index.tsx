@@ -32,7 +32,10 @@ const ElementBlockItem: FC<IElementBlockItem> = ({ color, label, value = '' }) =
   return (
     <ElementBlockItemDiv
       data-type={label.replace(' ', '-').toString().toLowerCase()}>
-      <label className="label">{label}</label>
+      <label className="label">
+        <span className="arrow" style={{ backgroundColor: color, borderColor: color }}></span>
+        {label}
+      </label>
       <label className="value" style={{ color }}>{format()}</label>
     </ElementBlockItemDiv>
   );

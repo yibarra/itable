@@ -38,4 +38,53 @@ export const ElementTableContainer = styled.ul`
       }
     }
   }
+
+  /* Extra Small Devices, Phones */ 
+  @media only screen and (max-width : 480px) {
+    .row {
+      width: 100%;
+
+      &:after {
+        display: none;
+      }
+
+      &:nth-child(odd) {
+        p {
+          &:first-child {
+            background-color: ${({ theme }: any) => theme.background_color};
+            
+            .label,
+            .text {
+              color: inherit;
+            }
+          }
+
+        }
+
+        .label,
+        .text {
+          color: ${({ theme }: any) => theme.background_color};
+        }
+      }
+
+      &:nth-child(even) {
+        p {
+          &:first-child {
+            background-color: ${({ theme }: any) => theme.background_color};
+            
+            .label,
+            .text {
+              color: inherit;
+            }
+          }
+
+        }
+
+        .label,
+        .text {
+          color: ${({ theme }: any) => theme.background_color};
+        }
+      }
+    }
+  }
 `;

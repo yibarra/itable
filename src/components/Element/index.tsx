@@ -11,7 +11,7 @@ const Element: FC<any> = ({ element }) => {
   // render
   return (
     <ElementContainer style={{
-      backgroundColor: transparentize(0.3, element.cpkHexColor)
+      backgroundColor: element.cpkHexColor
     }}>
       <div className="element--container">
         {element && 

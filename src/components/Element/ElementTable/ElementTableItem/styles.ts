@@ -15,7 +15,7 @@ export const ElementTableItemContainer = styled.p`
     color: ${({ theme }: any) => theme.background_color};
     float: left;
     line-height: 1em;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
     position: relative;
     text-transform: capitalize;
     width: auto;
@@ -30,5 +30,10 @@ export const ElementTableItemContainer = styled.p`
   .text {
     font-size: 15px;
     font-weight: 600;
+  }
+
+  /* Extra Small Devices, Phones */ 
+  @media only screen and (max-width : 480px) {
+    width: 100%;
   }
 `;

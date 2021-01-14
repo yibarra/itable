@@ -4,13 +4,37 @@ export const ElementBlockItemDiv = styled.div`
   position: absolute;
   z-index: 2;
 
+  .arrow,
   .label,
   .value {
     font-size: 14px;
     float: left;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
     line-height: 1em;
     position: relative;
+  }
+
+  .arrow {
+    border-radius: 100%;
+    height: 6px;
+    left: calc(100% + 5px);
+    position: absolute;
+    top: calc(50% + 1px);
+    transform: translate(0, -50%);
+    width: 6px;
+
+    &:after {
+      background-color: inherit;
+      content: '';
+      height: 1px;
+      right: 100%;
+      line-height: 1em;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      width: 5px;
+    }
   }
 
   .label {
@@ -18,9 +42,15 @@ export const ElementBlockItemDiv = styled.div`
     font-size: 12px;
     padding: 0 10px;
     white-space: nowrap;
+
+    .bg-i {
+      left: 0;
+      position: absolute;
+    }
   }
   
   .value {
+    font-weight: 300;
     overflow: hidden;
     padding: 0;
     position: absolute;
@@ -33,6 +63,22 @@ export const ElementBlockItemDiv = styled.div`
     top: 10px;
   }
 
+  &[data-type="atomic-number"],
+  &[data-type="electro-negativity"],
+  &[data-type="oxidation-states"] {
+    .label {
+      .arrow {
+        left: initial;
+        right: calc(100% + 5px);
+
+        &:after {
+          left: 100%;
+          right: initial;
+        }
+      }
+    }
+  }
+
   &[data-type="e-config"],
   &[data-type="name"],
   &[data-type="ionization-energy"],
@@ -42,7 +88,7 @@ export const ElementBlockItemDiv = styled.div`
 
     .value {
       left: 100%;
-      padding-left: 10px;
+      padding-left: 15px;
     }
   }
 
@@ -56,7 +102,7 @@ export const ElementBlockItemDiv = styled.div`
 
     .value {
       left: initial;
-      padding: 0 10px;
+      padding: 0 15px 0 0;
       right: 100%;
     }
   }
@@ -72,6 +118,12 @@ export const ElementBlockItemDiv = styled.div`
       padding: 0 0 0 20px;
       position: absolute;
       top: 0;
+
+      .arrow {
+        &:after {
+          width: 15px;
+        }
+      }
     }
 
     .value {
@@ -79,7 +131,7 @@ export const ElementBlockItemDiv = styled.div`
       font-size: 12px;
       left: 0;
       line-height: 1.4em;
-      padding: 0 5px;
+      padding: 15px 0 0;
       position: relative;
 
       .state {
@@ -99,7 +151,7 @@ export const ElementBlockItemDiv = styled.div`
     top: 190px;
 
     .value {
-      padding: 0 20px;
+      padding: 0 20px 5px;
       text-align: center;
       width: 220px;
       white-space: nowrap;

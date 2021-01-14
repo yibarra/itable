@@ -5,7 +5,7 @@ export const ElementSummaryContainer = styled.p`
   font-size: 12px;
   margin: 20px 0 0;
   line-height: 1.7em;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   position: relative;
   width: 100%;
 `;

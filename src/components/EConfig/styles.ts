@@ -38,4 +38,11 @@ export const EConfigDiv = styled.div`
       text-indent: -3px;
     }
   }
+
+  /* Extra Small Devices, Phones */ 
+  @media only screen and (max-width : 480px) {
+    .ec--item {
+      width: 100%;
+    }
+  }
 `;

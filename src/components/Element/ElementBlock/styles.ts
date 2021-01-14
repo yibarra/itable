@@ -21,5 +21,17 @@ export const ElementBlockDiv = styled.div`
     transform: translate(-50%, -50%);
     text-transform: uppercase;
     width: 220px;
+
+    &:before {
+      background: transparent;
+      border: 2px solid ${({ theme }: any) => theme.background_color};
+      content: '';
+      left: 50%;
+      height: calc(100% + 2px);
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: calc(100% + 2px);
+    }
   }
 `;
