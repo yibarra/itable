@@ -11,6 +11,19 @@ const TableProvider: FC<ITableProvider> = ({ children }) => {
   const [ table, setTable ] = useState<ITableItem | null>(null);
   const [ element, setElement ] = useState<any>(null);
 
+  // get element
+  const getColorGroup = useCallback((element: any) => {
+    const { groupBlock }: any = table;
+
+    if(Array.isArray(groupBlock)) {
+      const group = groupBlock.filter(({ id }: any) => id === element.groupBlock)[0];
+      
+      return group instanceof Object ? group.color : '';
+    }
+
+    return '';
+  }, [ table ]);
+
   // on set element
   const onSetElement = useCallback((atomicNumberSearch: any) => {
     if (!Number.isInteger(atomicNumberSearch)) {
@@ -23,11 +36,11 @@ const TableProvider: FC<ITableProvider> = ({ children }) => {
           atomicNumber === atomicNumberSearch);
         
         if (filterElement.length > 0) {
-          setElement(filterElement[0]);
+          setElement({ ...filterElement[0], color: getColorGroup(filterElement[0]) });
         }
       }
     }
-  }, [ table ]);
+  }, [ table, getColorGroup ]);
 
   // render
   return (

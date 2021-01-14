@@ -32,8 +32,7 @@ const RowColumn: FC<IRowColumn> = ({ blocks, info, children, empty }) => {
 
   // render
   return (
-    <RowColumnContainer
-      data-empty={empty}>
+    <RowColumnContainer data-empty={empty}>
       <>
         {typePosition()}
         {children}

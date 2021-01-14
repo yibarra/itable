@@ -16,13 +16,13 @@ export const EOrbitalDiv = styled.div`
 
     .atom {
       background-color: ${({ theme }: any) => theme.background_color};
-      height: 9px;
+      height: 8px;
       border-radius: 100%;
-      left: calc(50% - 5px);
+      left: calc(50% - 4px);
       position: absolute;
-      top: calc(50% - 5px);
+      top: calc(50% - 4px);
 	    transform-origin:50% 50%;
-      width: 9px;
+      width: 8px;
     }
 
     &[data-active="true"] {

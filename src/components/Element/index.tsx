@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { transparentize } from 'polished';
 
 import ElementInfo from './ElementInfo';
 import ElementGraph from './ElementGraph';
@@ -11,7 +10,7 @@ const Element: FC<any> = ({ element }) => {
   // render
   return (
     <ElementContainer style={{
-      backgroundColor: element.cpkHexColor
+      backgroundColor: element.color
     }}>
       <div className="element--container">
         {element && 

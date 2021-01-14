@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ElementDateContainer = styled.p`
+export const ElementDateP = styled.p`
   align-items: flex-end;
   color: ${({ theme }: any) => theme.background_color};
   display: inline-flex;
@@ -14,13 +14,15 @@ export const ElementDateContainer = styled.p`
   .text {
     display: inline-block;
     line-height: 1em;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.04em;
+    position: relative;
     vertical-align: top;
   }
 
   .date {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 600;
+    top: 2px;
   }
 
   .text {

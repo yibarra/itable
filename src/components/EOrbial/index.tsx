@@ -37,7 +37,7 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
         data-level={i}
         key={i}
         style={{ width: size, height: size }}>
-          {atoms(shells[i], i, size / 2)}
+          {atoms(shells[i], i, Math.round(size / 2))}
         </div>);
     }
 
