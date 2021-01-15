@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FiltersContainer = styled.div`
-  display: none;
+  //display: none;
   float: left;
   padding: 0;
   position: relative;

@@ -6,12 +6,13 @@ export const RowColumnDiv = styled(a.div)`
   margin: 0;
   padding: 0;
   position: absolute;
-  width: auto;
+  width: calc(100% / 18);
 
   .label {
     color: ${({ theme }) => theme.text_color};
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
+    letter-spacing: -0.04em;
     margin: 0;
     line-height: 1em;
     position: absolute;
@@ -48,15 +49,16 @@ export const RowColumnDiv = styled(a.div)`
   }
 
   @media only screen and (max-width : 1024px) {
-    width: calc((100% / 18) - 2px);
-
     .label {
       display: none;
     }
   }
 
   @media only screen and (max-width : 768px) {
-    width: calc((100% / 14) - 2px);
+    left: initial !important;
+    top: initial !important;
+    position: relative;
+    width: calc((100% / 12) - 2px) !important;
 
     &[data-empty="true"] {
       display: none;
@@ -64,6 +66,6 @@ export const RowColumnDiv = styled(a.div)`
   }
 
   @media only screen and (max-width : 480px) {
-    width: calc((100% / 6) - 2px);
+    width: calc((100% / 6) - 2px) !important;
   }
 `;

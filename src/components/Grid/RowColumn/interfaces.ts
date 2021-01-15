@@ -4,7 +4,6 @@ export interface IRowColumnInfo {
   xy: number[];
 }
 export interface IRowColumn {
-  blocks?: any;
   children: ReactNode;
   info: IRowColumnInfo;
   xpos: number;

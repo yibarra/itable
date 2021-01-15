@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 
 export const GridDiv = styled.div`
-  margin: 0;
-  max-width: var(--max-width);
-  padding: 120px 0 0;
+  margin: 120px 0;
+  max-width: 1024px;
+  padding: 0;
   position: relative;
   text-align: center;
   width: 100%;
   z-index: 3;
 
-  > div {
-    width: calc(100% / 18);
+  @media only screen and (max-width : 768px) {
+    height: auto !important;
+    padding: 0 20px;
   }
 `;

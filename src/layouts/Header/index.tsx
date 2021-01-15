@@ -26,7 +26,7 @@ const Header: FC<any> = ({ element, onToggle, setElement }) => {
 
         <div className="header--filters">
           {!element && <Filters />}
-          {element && <ButtonReturn text="Return" callback={setElement} />}
+          {element && <ButtonReturn callback={setElement} text="Return" />}
         </div>
       </div>
     </HeaderContainer>

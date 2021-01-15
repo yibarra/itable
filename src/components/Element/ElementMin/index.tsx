@@ -50,6 +50,8 @@ const ElementMin: FC<IElementMin> = ({
           atomicNumber={element.atomicNumber}
           name={element.name}
           symbol={element.symbol} />
+
+        <span className="bg" style={{ backgroundColor: element.cpkHexColor }}></span>
     </ElementMinDiv>
   );
 };

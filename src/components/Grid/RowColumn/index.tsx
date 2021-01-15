@@ -7,9 +7,7 @@ import { IRowColumn } from './interfaces';
 import { RowColumnDiv } from './styles';
 
 // row column
-const RowColumn: FC<IRowColumn> = ({ blocks, info, children, xpos, ypos }) => {
-  console.log(xpos, ypos, ((xpos / 2) - 9), (ypos / 2));
-
+const RowColumn: FC<IRowColumn> = ({ info, children, xpos, ypos }) => {
   const { y, opacity }: any = useSpring({
     to: { y: 0, opacity: 1 },
     from: { y: 100, opacity: 0 },
@@ -25,7 +23,7 @@ const RowColumn: FC<IRowColumn> = ({ blocks, info, children, xpos, ypos }) => {
 
   // type position
   const typePosition = useCallback(() => {
-    if (info instanceof Object && blocks === true) {
+    if (info instanceof Object) {
       const { position, xy } = info;
 
       switch (position) {
@@ -45,7 +43,7 @@ const RowColumn: FC<IRowColumn> = ({ blocks, info, children, xpos, ypos }) => {
     }
 
     return false;
-  }, [ info, blocks ]);
+  }, [ info ]);
 
   // render
   return (

@@ -8,24 +8,36 @@ export const ElementMinDiv: any = styled.div`
   display: inline-flex;
   flex-flow: row wrap;
   float: left;
-  height: calc(100% - 1px);
+  left: 1px;
+  height: calc(100% - 2px);
   margin: 0;
-  padding: 1px;
+  padding: 0;
   position: relative;
   text-align: center;
-  width: 100%;
+  top: 1px;
+  width: calc(100% - 2px);
   vertical-align: top;
 
+  .bg,
   &:before {
     background-color: ${({ theme }) => theme.second_color};
-    border: 2px solid ${({ theme }) => theme.second_color};
+    border: none;
     content: '';
-    height: calc(100% - 2px);
+    height: 100%;
     left: 0;
     position: absolute;
-    top: 1px;
+    top: 0;
     width: 100%;
     z-index: -1;
+  }
+
+  .bg {
+    border: none;
+    left: 0;
+    height: 100%;
+    opacity: 0;
+    top: 0;
+    width: 100%;
   }
 
   &[data-empty="true"] {
@@ -78,6 +90,10 @@ export const ElementMinDiv: any = styled.div`
       color: ${({ theme }: any) => theme.background_color};
     }
 
+    .bg {
+      opacity: 1;
+    }
+
     .name {
       &:before {
         display: inline-block;
@@ -93,13 +109,7 @@ export const ElementMinDiv: any = styled.div`
     }
   }
 
-  @media(max-width: 768px) {
-    height: 65px !important;
-  }
-
   @media(max-width: 480px) {
-    height: 70px !important;
-    
     &[data-empty="true"] {
       display: none;
     }

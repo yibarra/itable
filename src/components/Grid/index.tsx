@@ -1,9 +1,7 @@
-import React, { FC, useCallback, useContext } from 'react';
+import React, { FC, memo, useCallback } from 'react';
 
 import ElementMin from '../Element/ElementMin';
 import RowColumn from './RowColumn';
-
-import { FiltersContext } from '../../providers/FiltersProvider';
 
 import { IGrid } from './interfaces';
 
@@ -11,13 +9,9 @@ import { GridDiv } from './styles';
 
 // Grid
 const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
-  const { filters } = useContext(FiltersContext);
-
   // get element
-  const getElement = useCallback((x: number, y: number) => {
-    return grid.filter(({ xy }: any) =>
-      xy[1] === y && xy[0] === x)[0];
-  }, [ grid ]);
+  const getElement = useCallback((x: number, y: number) =>
+    grid.filter(({ xy }: any) => xy[0] === y && xy[1] === x)[0], [ grid ]);
 
   // get element table
   const getElementTable = useCallback((elements: any) => {
@@ -29,11 +23,8 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
       const item = elements[key];
 
       if (item instanceof Object) {
-        const info = getElement(item.xpos, item.ypos);
-
         items.push(<RowColumn
-          blocks={filters?.blocks}
-          info={info}
+          info={getElement(item.xpos, item.ypos)}
           xpos={item.xpos}
           ypos={item.ypos}
           key={key}>
@@ -45,17 +36,17 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
     }
 
     return items;
-  }, [ getElement, filters, setElement ]);
+  }, [ getElement, setElement ]);
 
   // render
   return (
     <GridDiv
       style={{
-        height: 67 * 12
+        height: 67 * 9
       }}>
       {elements instanceof Object && getElementTable(elements)}
     </GridDiv>
   );
 };
 
-export default Grid;
+export default memo(Grid);
