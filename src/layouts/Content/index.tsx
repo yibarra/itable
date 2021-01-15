@@ -39,7 +39,10 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
 
         <ContentContainer>
           {isLoading === false && !element &&
-            <Grid {...table} setElement={setElement} />}
+            <Grid
+              {...table}
+              element={element instanceof Object}
+              setElement={setElement} />}
 
           {element && <Element element={element} />}
         </ContentContainer>

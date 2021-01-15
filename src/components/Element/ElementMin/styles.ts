@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ElementMinContainer: any = styled.div`
+export const ElementMinDiv: any = styled.div`
   align-content: flex-end;
   align-items: center;
   border: 1px solid transparent;
@@ -8,8 +8,9 @@ export const ElementMinContainer: any = styled.div`
   display: inline-flex;
   flex-flow: row wrap;
   float: left;
-  margin: 1px;
-  padding: 0;
+  height: calc(100% - 1px);
+  margin: 0;
+  padding: 1px;
   position: relative;
   text-align: center;
   width: 100%;
@@ -19,11 +20,11 @@ export const ElementMinContainer: any = styled.div`
     background-color: ${({ theme }) => theme.second_color};
     border: 2px solid ${({ theme }) => theme.second_color};
     content: '';
-    height: calc(100% + 2px);
-    left: -3px;
+    height: calc(100% - 2px);
+    left: 0;
     position: absolute;
-    top: -3px;
-    width: calc(100% + 2px);
+    top: 1px;
+    width: 100%;
     z-index: -1;
   }
 

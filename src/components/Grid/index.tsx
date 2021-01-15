@@ -3,10 +3,11 @@ import React, { FC, useCallback, useContext } from 'react';
 import ElementMin from '../Element/ElementMin';
 import RowColumn from './RowColumn';
 
+import { FiltersContext } from '../../providers/FiltersProvider';
+
 import { IGrid } from './interfaces';
 
 import { GridContainer } from './styles';
-import { FiltersContext } from '../../providers/FiltersProvider';
 
 // Grid
 const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
@@ -14,61 +15,42 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
 
   // get element
   const getElement = useCallback((x: number, y: number) => {
-    if (elements instanceof Object === false) return false;
-
-    return elements.filter((item: any) =>
-      item.xpos === parseInt(y.toString(), 10) && item.ypos === parseInt(x.toString(), 10))[0];
-  }, [ elements ]);
+    return grid.filter(({ xy }: any) =>
+      xy[1] === y && xy[0] === x)[0];
+  }, [ grid ]);
 
   // get element table
   const getElementTable = useCallback((elements: any) => {
     if (elements instanceof Object === false) return false;
 
-    let indexes = 0;
     const items = [];
 
-    for (let indexRow = 1; indexRow <= 10; indexRow++) {
-      for (let indexColumn = 1; indexColumn <= 18; indexColumn++) {
-        const item = getElement(indexRow, indexColumn);
-        const info = grid.filter(({ xy }) => xy[0] === indexRow && xy[1] === indexColumn)[0];
-        
-        if (item instanceof Object) {
-          items.push(
-            <RowColumn
-              blocks={filters?.blocks}
-              info={info}
-              empty={!item}
-              key={indexes}>
-              <ElementMin
-                element={item}
-                index={indexes}
-                setElement={setElement} />
-            </RowColumn>);
-        } else {
-          items.push(
-            <RowColumn
-              info={info}
-              empty={true}
-              key={indexes}>
-              <ElementMin
-                empty={true}
-                index={indexes}
-                setElement={setElement} />
-            </RowColumn>);
-        }
+    for (let key in elements) {
+      const item = elements[key];
 
-        indexes = indexes + 1;
+      if (item instanceof Object) {
+        const info = getElement(item.xpos, item.ypos);
+
+        items.push(<RowColumn
+          blocks={filters?.blocks}
+          info={info}
+          xpos={item.xpos}
+          ypos={item.ypos}
+          key={key}>
+          <ElementMin
+            element={item}
+            setElement={setElement} />
+        </RowColumn>)
       }
     }
 
     return items;
-  }, [ getElement, grid, filters, setElement ]);
+  }, [ getElement, filters, setElement ]);
 
   // render
   return (
     <GridContainer>
-      {elements instanceof Object &&
-        elements.length > 0 && getElementTable(elements)}
+      {elements instanceof Object && getElementTable(elements)}
     </GridContainer>
   );
 };

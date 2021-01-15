@@ -1,11 +1,22 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useRef } from 'react';
+import { useSpring } from 'react-spring';
+import UseDimension from '../../../uses/UseDimension';
 
 import { IRowColumn } from './interfaces';
 
-import { RowColumnContainer } from './styles';
+import { RowColumnDiv } from './styles';
 
 // row column
-const RowColumn: FC<IRowColumn> = ({ blocks, info, children, empty }) => {
+const RowColumn: FC<IRowColumn> = ({ blocks, info, children, xpos, ypos }) => {
+  const { y, opacity }: any = useSpring({
+    to: { y: 0, opacity: 1 },
+    from: { y: 100, opacity: 0 },
+    delay: xpos * 120
+  });
+
+  const element = useRef<any>(null);
+  const { height, width } = UseDimension(element);
+
   // type position
   const typePosition = useCallback(() => {
     if (info instanceof Object && blocks === true) {
@@ -32,12 +43,19 @@ const RowColumn: FC<IRowColumn> = ({ blocks, info, children, empty }) => {
 
   // render
   return (
-    <RowColumnContainer data-empty={empty}>
+    <RowColumnDiv
+      ref={element}
+      style={{
+        left: `${Math.floor(width * (xpos - 1))}px`,
+        top: `${Math.floor(height * (ypos - 1))}px`,
+        opacity: opacity.interpolate((value: any) => value),
+        transform: y.interpolate((value: any) => `translate(0px, ${value}%)`)
+      }}>
       <>
         {typePosition()}
         {children}
       </>
-    </RowColumnContainer>
+    </RowColumnDiv>
   );
 };
 

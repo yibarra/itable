@@ -1,22 +1,20 @@
-import React, { FC, useCallback, useContext, useState } from 'react';
-import { FiltersContext } from '../../../providers/FiltersProvider';
+import React, { FC, useCallback, useContext } from 'react';
 
 import ElementMinInfo from './ElementMinInfo';
 
+import { FiltersContext } from '../../../providers/FiltersProvider';
+
 import { IElementMin } from './interfaces';
 
-import { ElementMinContainer } from './styles';
+import { ElementMinDiv } from './styles';
 
 // element min
 const ElementMin: FC<IElementMin> = ({
   active,
   element,
-  index,
-  empty,
   setElement
 }) => {
   const { filters }: any = useContext(FiltersContext);
-  const [ hover, setHover ] = useState<boolean>(false);
 
   // on group
   const onGroup = useCallback(() => {
@@ -37,31 +35,22 @@ const ElementMin: FC<IElementMin> = ({
 
   // render
   return (
-    <>
-      {(element instanceof Object && !empty) ? <ElementMinContainer
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        data-active={active}
-        data-group={Object.keys(filters).length > 0 && filters.groupBlock !== ''}
-        data-group-item={onGroup()}
-        onClick={() => onSelect(element.atomicNumber)}
-        style={{
-          backgroundColor: hover || active || onGroup() ? element.cpkHexColor : 'transparent',
-          borderColor: element.cpkHexColor,
-          height: (index >= 126 && index < 144) ? `${40}px` : `${65}px`,
-          color: element.cpkHexColor
-        }}>
-          <ElementMinInfo
-            color={element.cpkHexColor}
-            atomicNumber={element.atomicNumber}
-            name={element.name}
-            symbol={element.symbol} />
-      </ElementMinContainer> : <ElementMinContainer
-        data-empty={empty}
-        style={{
-          height: (index >= 126 && index < 144) ? `${40}px` : `${65}px`,
-        }}></ElementMinContainer>}
-    </>
+    <ElementMinDiv
+      data-active={active}
+      data-group={Object.keys(filters).length > 0 && filters.groupBlock !== ''}
+      data-group-item={onGroup()}
+      onClick={() => onSelect(element.atomicNumber)}
+      style={{
+        backgroundColor: onGroup() ? element.cpkHexColor : 'transparent',
+        borderColor: element.cpkHexColor,
+        color: element.cpkHexColor,
+      }}>
+        <ElementMinInfo
+          color={element.cpkHexColor}
+          atomicNumber={element.atomicNumber}
+          name={element.name}
+          symbol={element.symbol} />
+    </ElementMinDiv>
   );
 };
 

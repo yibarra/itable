@@ -10,6 +10,7 @@ export const ElementMinInfoContainer = styled.div`
     color: inherit;
     float: left;
     line-height: 1em;
+    letter-spacing: -0.04em;
     padding: 0 5px;
     pointer-events: none;
     text-align: center;

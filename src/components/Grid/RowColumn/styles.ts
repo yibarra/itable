@@ -1,12 +1,12 @@
 import styled from "styled-components";
+import { animated as a } from 'react-spring';
 
-export const RowColumnContainer = styled.div`
-  height: auto;
-  float: left;
-  margin: 0 1px;
+export const RowColumnDiv = styled(a.div)`
+  height: 67px;
+  margin: 0;
   padding: 0;
-  position: relative;
-  width: calc((100% / 18) - 2px);
+  position: absolute;
+  width: auto;
 
   .label {
     color: ${({ theme }) => theme.text_color};

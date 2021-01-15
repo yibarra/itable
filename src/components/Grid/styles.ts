@@ -5,6 +5,11 @@ export const GridContainer = styled.div`
   max-width: var(--max-width);
   padding: 120px 0 0;
   position: relative;
+  text-align: center;
   width: 100%;
   z-index: 3;
+
+  > div {
+    width: calc(100% / 18);
+  }
 `;

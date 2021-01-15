@@ -7,5 +7,6 @@ export interface IRowColumn {
   blocks?: any;
   children: ReactNode;
   info: IRowColumnInfo;
-  empty: boolean;
+  xpos: number;
+  ypos: number;
 }
