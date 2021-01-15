@@ -7,7 +7,7 @@ import { FiltersContext } from '../../providers/FiltersProvider';
 
 import { IGrid } from './interfaces';
 
-import { GridContainer } from './styles';
+import { GridDiv } from './styles';
 
 // Grid
 const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
@@ -49,9 +49,12 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
 
   // render
   return (
-    <GridContainer>
+    <GridDiv
+      style={{
+        height: 67 * 12
+      }}>
       {elements instanceof Object && getElementTable(elements)}
-    </GridContainer>
+    </GridDiv>
   );
 };
 
