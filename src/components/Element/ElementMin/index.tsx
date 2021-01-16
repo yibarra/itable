@@ -10,20 +10,20 @@ import { ElementMinDiv } from './styles';
 
 // element min
 const ElementMin: FC<IElementMin> = ({
-  active,
   element,
   setElement
 }) => {
   const { filters }: any = useContext(FiltersContext);
 
   // on group
-  const onGroup = useCallback(() => {
-    if (element instanceof Object) {
-      return filters.groupBlock === element.groupBlock;
-    }
+  const onGroup = useCallback(() =>
+    (element instanceof Object) ? filters.groupBlock === element.groupBlock : false,
+    [ filters, element ]);
 
-    return false;
-  }, [ filters, element ]);
+  // on date
+  const onYearDiscovered = useCallback(() =>
+    (element instanceof Object) ? filters.yearDiscovered >= element.yearDiscovered : false,
+    [ filters, element ]);
 
   // on select
   const onSelect = useCallback((atomicNumber: any) => {
@@ -36,9 +36,9 @@ const ElementMin: FC<IElementMin> = ({
   // render
   return (
     <ElementMinDiv
-      data-active={active}
-      data-group={Object.keys(filters).length > 0 && filters.groupBlock !== ''}
-      data-group-item={onGroup()}
+      data-filter={Object.keys(filters).length > 0}
+      data-date={onYearDiscovered()}
+      data-group-item={`-${onGroup()}`}
       onClick={() => onSelect(element.atomicNumber)}
       style={{
         backgroundColor: onGroup() ? element.cpkHexColor : 'transparent',

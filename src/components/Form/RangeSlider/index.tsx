@@ -1,4 +1,4 @@
-import React, { FC, useState, useRef } from 'react';
+import React, { FC, useState, useRef, useCallback, memo } from 'react';
 
 import RangeSliderLabel from './RangeSliderLabel';
 import RangeSliderPoint from './RangeSliderPoint';
@@ -12,7 +12,7 @@ import { IRangeSlider } from './interfaces';
 import { RangeSliderContainer } from './styles';
 
 // range slider
-const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size }) => {
+const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, callback }) => {
   // value
   const [ value, setValue ] = useState<number>(0);
 
@@ -20,13 +20,32 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size }) => {
   const element = useRef<HTMLDivElement | null>(null);
   const { width } = UseDimension(element);
 
+  // get value
+  const getValue = useCallback((value: number): number => {
+    if (!width) return 0;
+
+    const percent = ((value / width) * 100);
+
+    if (min > 0) {
+      return Math.round((((max - min) * percent) / 100) + (min));
+    }
+    
+    return Math.round((max / 100) * percent);
+  }, [ width, max, min ]);
+
+  // on change
+  const onChange = useCallback((value: any) => {
+    setTimeout(() => callback(getValue(value)), 400);
+    setValue(value);
+  }, [ setValue, callback, getValue ]);
+
   // render
   return (
     <RangeSliderContainer ref={element}>
       <RangeSliderPoint
         value={value}
         width={width}
-        setValue={setValue}
+        setValue={onChange}
         size={size} />
 
       <RangeSliderLine
@@ -37,11 +56,8 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size }) => {
 
       <RangeSliderLabel
         label={label}
-        min={min}
-        max={max}
         size={size}
-        width={width}
-        value={value} />
+        value={getValue(value)} />
 
       <RangeSliderLabelMinMax
         min={min}
@@ -50,4 +66,4 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size }) => {
   );
 };
 
-export default RangeSlider;
+export default memo(RangeSlider);

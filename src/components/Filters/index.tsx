@@ -9,6 +9,7 @@ import { FiltersContext } from '../../providers/FiltersProvider';
 import { IFilters } from './interfaces';
 
 import { FiltersContainer } from './styles';
+import RangeSlider from '../Form/RangeSlider';
 
 // filters
 const Filters: FC<IFilters> = () => {
@@ -28,6 +29,10 @@ const Filters: FC<IFilters> = () => {
     onChange(name, value);
   }, [ onChange, setFilters ]);
 
+  // on date
+  const onDate = useCallback((value: number) =>
+    setFilters({ yearDiscovered: value }), [ setFilters ]);
+
   // render
   return (
     <FiltersContainer>
@@ -46,6 +51,13 @@ const Filters: FC<IFilters> = () => {
             name="blocks"
             text="Blocks"
             onChange={onChange}/>
+
+          <RangeSlider
+            min={1780}
+            max={2007}
+            label="years"
+            size={18}
+            callback={(value: number) => onDate(value)} />
         </div>
       </div>
 

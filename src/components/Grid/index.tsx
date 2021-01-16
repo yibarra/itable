@@ -1,4 +1,4 @@
-import React, { FC, memo, useCallback } from 'react';
+import React, { FC, useCallback } from 'react';
 
 import ElementMin from '../Element/ElementMin';
 import RowColumn from './RowColumn';
@@ -31,7 +31,7 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
           <ElementMin
             element={item}
             setElement={setElement} />
-        </RowColumn>)
+        </RowColumn>);
       }
     }
 
@@ -49,4 +49,4 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
   );
 };
 
-export default memo(Grid);
+export default Grid;

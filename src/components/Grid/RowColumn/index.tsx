@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useRef } from 'react';
+import React, { FC, memo, useCallback, useRef } from 'react';
 import { useSpring } from 'react-spring';
 import UseDimension from '../../../uses/UseDimension';
 
@@ -63,4 +63,4 @@ const RowColumn: FC<IRowColumn> = ({ info, children, xpos, ypos }) => {
   );
 };
 
-export default RowColumn;
+export default memo(RowColumn);

@@ -3,4 +3,5 @@ export interface IRangeSlider {
   max: number;
   label: string;
   size: number;
+  callback(value: any): any;
 }

@@ -13,6 +13,7 @@ export const ElementMinDiv: any = styled.div`
   margin: 0;
   padding: 0;
   position: relative;
+  transition: all var(--animation-time) var(--animation-bezier);
   text-align: center;
   top: 1px;
   width: calc(100% - 2px);
@@ -38,6 +39,14 @@ export const ElementMinDiv: any = styled.div`
     opacity: 0;
     top: 0;
     width: 100%;
+  }
+
+  &[data-filter="true"] {
+    opacity: 0.1;
+
+    &[data-date="true"] {
+      opacity: 1;
+    }
   }
 
   &[data-empty="true"] {
