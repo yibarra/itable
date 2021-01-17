@@ -1,36 +1,20 @@
 import React, { FC } from 'react';
-import { useSpring, animated as a } from 'react-spring';
-import styled from 'styled-components';
+import { useSpring } from 'react-spring';
 
 import SelectOption from '../SelectOption';
 
-import { ITheme } from '../../../../providers/ThemeProvider/interfaces';
+import { ISelectContent } from './interfaces';
 
-// select content div
-const SelectContentDiv = styled(a.div)`
-  border: none;
-  border-radius: 0 0 6px 6px;
-  float: left;
-  height: 0;
-  left: 0;
-  overflow: hidden;
-  overflow-y: auto;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  width: 100%;
-`;
+import { SelectContentDiv } from './styles';
 
 // select content
-const SelectContent: FC<any> = ({ items, onChange, open, theme, value }) => {
-  const { text_color }: ITheme = theme;
-  const props = useSpring({ height: open ? 200 : 0 });
+const SelectContent: FC<ISelectContent> = ({ items, onChange, open, value }) => {
+  const props = useSpring({ height: open ? 'auto' : 0 });
 
   // render
   return (
     <SelectContentDiv
-      style={{ 
-        backgroundColor: text_color,
+      style={{
         ...props 
       }}>
       {items && items.map((item: any, index: number) =>
@@ -38,7 +22,6 @@ const SelectContent: FC<any> = ({ items, onChange, open, theme, value }) => {
           active={item === value}
           item={item}
           onChange={onChange}
-          theme={theme}
           key={index} />)}
     </SelectContentDiv>
   );

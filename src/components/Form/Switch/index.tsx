@@ -22,16 +22,10 @@ const Switch: FC<ISwitch> = ({
   // render
   return (
     <SwitchContainer
-      onClick={() => onSwitch(!value)}
-      style={{
-        borderRadius: size,
-        width: size * 2
-      }}>
+      onClick={() => onSwitch(!value)}>
       <a.div
         className="point"
         style={{
-          height: size,
-          width: size,
           ...props 
         }}></a.div>
     </SwitchContainer>

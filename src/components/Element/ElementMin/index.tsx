@@ -15,6 +15,11 @@ const ElementMin: FC<IElementMin> = ({
 }) => {
   const { filters }: any = useContext(FiltersContext);
 
+  // on atomic mass
+  const onAtomicMass = useCallback(() =>
+    (element instanceof Object) ? filters.atomicMass >= element.atomicMass : false,
+    [ filters, element ]);
+
   // on group
   const onGroup = useCallback(() =>
     (element instanceof Object) ? filters.groupBlock === element.groupBlock : false,
@@ -37,6 +42,7 @@ const ElementMin: FC<IElementMin> = ({
   return (
     <ElementMinDiv
       data-filter={Object.keys(filters).length > 0}
+      data-atomic-mass={onAtomicMass()}
       data-date={onYearDiscovered()}
       data-group-item={`-${onGroup()}`}
       onClick={() => onSelect(element.atomicNumber)}

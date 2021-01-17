@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useContext, useState } from 'react';
 
-import FiltersBlock from './FiltersBlock';
+import FiltersSwitch from './FiltersSwitch';
 import RadioButton from '../Form/RadioButton';
 
 import { TableContext } from '../../providers/TableProvider';
@@ -9,7 +9,8 @@ import { FiltersContext } from '../../providers/FiltersProvider';
 import { IFilters } from './interfaces';
 
 import { FiltersContainer } from './styles';
-import RangeSlider from '../Form/RangeSlider';
+// import RangeSlider from '../Form/RangeSlider';
+import Select from '../Form/Select';
 
 // filters
 const Filters: FC<IFilters> = () => {
@@ -29,10 +30,6 @@ const Filters: FC<IFilters> = () => {
     onChange(name, value);
   }, [ onChange, setFilters ]);
 
-  // on date
-  const onDate = useCallback((value: number) =>
-    setFilters({ yearDiscovered: value }), [ setFilters ]);
-
   // render
   return (
     <FiltersContainer>
@@ -46,27 +43,33 @@ const Filters: FC<IFilters> = () => {
             text="Groups"
             onChange={onBlock} />
             
-          <RadioButton
-            active={open === 'blocks'}
-            name="blocks"
-            text="Blocks"
-            onChange={onChange}/>
-
-          <RangeSlider
-            min={1780}
-            max={2007}
-            label="years"
-            size={18}
-            callback={(value: number) => onDate(value)} />
+          <Select
+            callback={(value) => setOpen(value.value)}
+            optionDefault={{ value: '', name: 'Selected an option' }}
+            items={[
+              { value: 'atomicMass', name: 'Atomic Mass' },
+              { value: 'yearDiscovered', name: 'Year Discovered' }
+            ]} />
         </div>
       </div>
 
-      {open === 'blocks' &&
-        <FiltersBlock
-          items={table?.groupBlock}
-          setFilters={setFilters} />}
+      <FiltersSwitch
+        groupBlock={table?.groupBlock}
+        setFilters={setFilters}
+        value={open} />
     </FiltersContainer>
   );
 };
 
 export default Filters;
+
+/*
+
+
+<RadioButton
+            active={open === 'blocks'}
+            name="blocks"
+            text="Blocks"
+            onChange={onChange}/>
+
+            */

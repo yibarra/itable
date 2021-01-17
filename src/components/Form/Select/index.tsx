@@ -1,22 +1,32 @@
-import React, { FC, useEffect, useState } from 'react';
-import styled from 'styled-components';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 
 import SelectContent from './SelectContent';
 import SelectTitle from './SelectTitle';
 
-// select div
-const SelectDiv = styled.div`
-  margin: 17px 0 0;
-  position: relative;
-  width: 250px;
-  z-index: 999;
-`;
+import UseClickOutSide from '../../../uses/UseClickOutSide';
+
+import { ISelect } from './interfaces';
+
+import { SelectDiv } from './styles';
 
 // select
-const Select: FC<any> = ({ items, optionDefault, theme }) => {
+const Select: FC<ISelect> = ({ items, optionDefault, callback }) => {
+  // element
+  const element: any = useRef<any>(null);
+
   // value
   const [ value, setValue ] = useState<any>(null);
   const [ open, setOpen ] = useState<boolean>(false);
+
+  // const
+  const onChange = useCallback((value: any) => {
+    callback(value);
+    setValue(value);
+    setOpen(false);
+  }, [ callback ]);
+
+  // click out
+  UseClickOutSide(element, () => setOpen(false));
 
   // use state
   useEffect(() => {
@@ -27,18 +37,16 @@ const Select: FC<any> = ({ items, optionDefault, theme }) => {
 
   // render
   return (
-    <SelectDiv>
+    <SelectDiv ref={element}>
       <SelectTitle
         open={open}
         setOpen={setOpen}
-        theme={theme}
         value={value || optionDefault} />
 
       <SelectContent
         open={open}
         items={items}
-        onChange={setValue}
-        theme={theme}
+        onChange={onChange}
         value={value} />
     </SelectDiv>
   );

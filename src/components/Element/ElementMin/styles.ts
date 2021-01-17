@@ -47,6 +47,10 @@ export const ElementMinDiv: any = styled.div`
     &[data-date="true"] {
       opacity: 1;
     }
+
+    &[data-atomic-mass="true"] {
+      opacity: 1;
+    }
   }
 
   &[data-empty="true"] {

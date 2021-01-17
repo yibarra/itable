@@ -4,7 +4,7 @@ export const RadioButtonContainer = styled.label`
   cursor: pointer;
   float: left;
   margin: 0 20px 0 0;
-  padding: 0 0 0 25px;
+  padding: 5px 0 5px 25px;
   position: relative;
 
   input {

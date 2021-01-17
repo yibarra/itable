@@ -14,6 +14,7 @@ export const RangeSliderLabelContainer = styled.p`
     color: ${({ theme }) => theme.text_color};
     font-size: 12px;
     font-weight: 400;
+    letter-spacing: -0.04em;
     line-height: 1em;
   }
 

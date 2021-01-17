@@ -12,7 +12,8 @@ export const RangeSliderLabelMinMaxContainer = styled.p`
 
   .min,
   .max {
-    font-size: 14px;
+    font-size: 12px;
+    letter-spacing: -0.04em;
     font-weight: 400;
   }
 
