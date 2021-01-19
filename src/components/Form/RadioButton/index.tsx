@@ -24,7 +24,8 @@ const RadioButton: FC<IRadioButton> = ({ active, name, text, onChange }) => {
         type="radio"
         name={name}
         checked={active}
-        onChange={() => onHandler()} />
+        onChange={() => onHandler()}
+        value={active === true ? 'on' : 'off'} />
       <p className="text">{text}</p>
     </RadioButtonContainer>
   );

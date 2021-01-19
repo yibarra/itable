@@ -1,5 +1,5 @@
 export interface IFiltersSwitch {
   groupBlock: any[];
-  setFilters(value: any): void;
-  value: string;
+  onSetFilterValue(key: string, value: any): void;
+  value: any;
 }

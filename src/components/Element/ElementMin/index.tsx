@@ -13,7 +13,7 @@ const ElementMin: FC<IElementMin> = ({
   element,
   setElement
 }) => {
-  const { atomicMass, groupBlock, yearDiscovered } = element;
+  const { atomicMass, atomicRadius, groupBlock, yearDiscovered } = element;
   const { filters, onSetFilterByKey }: any = useContext(FiltersContext);
 
   // on select
@@ -30,6 +30,7 @@ const ElementMin: FC<IElementMin> = ({
       data-filter={Object.keys(filters).length > 0}
       data-atomic-mass={onSetFilterByKey('atomicMass', atomicMass)}
       data-date={onSetFilterByKey('groupBlock', groupBlock)}
+      data-atomic-radius={onSetFilterByKey('atomicRadius', atomicRadius)}
       data-group-item={onSetFilterByKey('yearDiscovered', yearDiscovered)}
       onClick={() => onSelect(element.atomicNumber)}
       style={{

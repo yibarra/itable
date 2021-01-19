@@ -9,11 +9,21 @@ const FiltersContext = createContext({} as IFiltersContext);
 const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
   const [ filters, setFilters ] = useState<any>({});
 
+  // set filter
+  const onSetFilterValue = useCallback((key: string, value: any) => {
+    const filter: any = {};
+    filter[key] = value;
+
+    setFilters({ ...filter });
+  }, [ setFilters ]);
+
   // set filter by key
   const onSetFilterByKey = useCallback((type: string, value: any) => {
     switch (type) {
       case 'atomicMass':
         return Math.round(filters.atomicMass) >= parseInt(value, 10);
+      case 'atomicRadius':
+        return filters.atomicRadius >= parseInt(value, 10);
       case 'groupBlock':
         return filters.groupBlock === value;
       case 'yearDiscovered':
@@ -37,6 +47,7 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
     <FiltersContext.Provider value={{
       filters,
       onSetFilterByKey,
+      onSetFilterValue,
       setFilters: onSetFilters,
     }}>
       {children}

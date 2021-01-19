@@ -44,10 +44,8 @@ export const ElementMinDiv: any = styled.div`
   &[data-filter="true"] {
     opacity: 0.1;
 
-    &[data-date="true"] {
-      opacity: 1;
-    }
-
+    &[data-date="true"],
+    &[data-atomic-radius="true"],
     &[data-atomic-mass="true"] {
       opacity: 1;
     }

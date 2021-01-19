@@ -1,4 +1,4 @@
 export interface IFiltersBlock {
   items: any;
-  setFilters(value: any): void;
+  onSetFilterValue(key: string, value: any): void;
 }

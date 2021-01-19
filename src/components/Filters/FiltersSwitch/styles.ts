@@ -12,13 +12,25 @@ export const FiltersSwitchDiv = styled.div`
       width: 100%;
 
       &[data-filter="atomicMass"],
+      &[data-filter="atomicRadius"],
+      &[data-filter="electronAffinity"],
       &[data-filter="yearDiscovered"] {
         max-width: 768px;
         text-align: center;
         width: 100%;
+      }
 
-        > div {
-        }
+      &[data-filter="atomicRadius"] {
+        max-width: 480px;
+      }
+      
+      &[data-filter="atomicMass"],
+      &[data-filter="electronAffinity"] {
+        max-width: 640px;
+      }
+
+      &[data-filter="yearDiscovered"] {
+        max-width: 740px;
       }
     }
   }

@@ -9,7 +9,7 @@ import { IFiltersBlock } from './interfaces';
 import { FiltersBlockContainer } from './styles';
 
 // filters block
-const FiltersBlock: FC<IFiltersBlock> = ({ items, setFilters }) => {
+const FiltersBlock: FC<IFiltersBlock> = ({ items, onSetFilterValue }) => {
   // select
   const [ select, setSelect ] = useState<any>(null);
 
@@ -28,9 +28,9 @@ const FiltersBlock: FC<IFiltersBlock> = ({ items, setFilters }) => {
         setSelect(null);
       }
 
-      setFilters(item);
+      onSetFilterValue('groups', item);
     }
-  }, [ setFilters, setSelect, select ]);
+  }, [ onSetFilterValue, setSelect, select ]);
 
   // render
   return (
