@@ -31,8 +31,8 @@ const FiltersSwitch: FC<IFiltersSwitch> = ({ groupBlock, setFilters, value }) =>
           data-filter="atomicMass">
           <RangeSlider
             min={1}
-            max={277}
-            label="Atomic Mass"
+            max={294}
+            label="grams/mole"
             size={18}
             callback={(value: number) => onAtomicMass(value)} />
         </div>}

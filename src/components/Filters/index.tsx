@@ -42,12 +42,20 @@ const Filters: FC<IFilters> = () => {
             name="view"
             text="Groups"
             onChange={onBlock} />
+
+          <RadioButton
+            active={open === 'states'}
+            name="view"
+            text="States"
+            onChange={onBlock} />
             
           <Select
             callback={(value) => setOpen(value.value)}
             optionDefault={{ value: '', name: 'Selected an option' }}
             items={[
               { value: 'atomicMass', name: 'Atomic Mass' },
+              { value: 'atomicRadius', name: 'Atomic Radius '},
+              { value: 'electronAffinity', name: 'Electron Affinity' },
               { value: 'yearDiscovered', name: 'Year Discovered' }
             ]} />
         </div>

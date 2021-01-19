@@ -3,8 +3,10 @@ import styled from "styled-components";
 
 export const SelectContentDiv = styled(a.div)`
   background-color: ${({ theme }: any) => theme.text_color};
-  border: none;
-  border-radius: 0 0 6px 6px;
+  border: 2px solid ${({ theme }: any) => theme.text_color};
+  border-bottom: none;
+  border-top: none;
+  border-radius: 0;
   float: left;
   height: 0;
   left: 0;

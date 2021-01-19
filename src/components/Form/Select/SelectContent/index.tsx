@@ -19,7 +19,7 @@ const SelectContent: FC<ISelectContent> = ({ items, onChange, open, value }) => 
       }}>
       {items && items.map((item: any, index: number) =>
         <SelectOption
-          active={item === value}
+          active={value instanceof Object && item.value === value.value}
           item={item}
           onChange={onChange}
           key={index} />)}

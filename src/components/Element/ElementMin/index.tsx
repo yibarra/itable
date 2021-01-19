@@ -13,22 +13,8 @@ const ElementMin: FC<IElementMin> = ({
   element,
   setElement
 }) => {
-  const { filters }: any = useContext(FiltersContext);
-
-  // on atomic mass
-  const onAtomicMass = useCallback(() =>
-    (element instanceof Object) ? filters.atomicMass >= element.atomicMass : false,
-    [ filters, element ]);
-
-  // on group
-  const onGroup = useCallback(() =>
-    (element instanceof Object) ? filters.groupBlock === element.groupBlock : false,
-    [ filters, element ]);
-
-  // on date
-  const onYearDiscovered = useCallback(() =>
-    (element instanceof Object) ? filters.yearDiscovered >= element.yearDiscovered : false,
-    [ filters, element ]);
+  const { atomicMass, groupBlock, yearDiscovered } = element;
+  const { filters, onSetFilterByKey }: any = useContext(FiltersContext);
 
   // on select
   const onSelect = useCallback((atomicNumber: any) => {
@@ -42,12 +28,12 @@ const ElementMin: FC<IElementMin> = ({
   return (
     <ElementMinDiv
       data-filter={Object.keys(filters).length > 0}
-      data-atomic-mass={onAtomicMass()}
-      data-date={onYearDiscovered()}
-      data-group-item={`-${onGroup()}`}
+      data-atomic-mass={onSetFilterByKey('atomicMass', atomicMass)}
+      data-date={onSetFilterByKey('groupBlock', groupBlock)}
+      data-group-item={onSetFilterByKey('yearDiscovered', yearDiscovered)}
       onClick={() => onSelect(element.atomicNumber)}
       style={{
-        backgroundColor: onGroup() ? element.cpkHexColor : 'transparent',
+        backgroundColor: onSetFilterByKey('groupBlock', groupBlock) ? element.cpkHexColor : 'transparent',
         borderColor: element.cpkHexColor,
         color: element.cpkHexColor,
       }}>

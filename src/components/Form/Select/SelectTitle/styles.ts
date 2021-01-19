@@ -5,7 +5,7 @@ export const SelectTitleDiv = styled.div`
   cursor: pointer;
   border-radius: 0;
   float: left;
-  padding: 5px 5px 7px;
+  padding: 5px 20px 7px;
   width: 100%;
   vertical-align: top;
 
@@ -19,10 +19,47 @@ export const SelectTitleDiv = styled.div`
   }
 
   button {
-    right: 0;
+    left: 0;
     position: absolute;
     pointer-events: none;
     top: 50%;
     transform: translate(0, -50%);
+
+    &:before,
+    &:after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+
+    &:before {
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 10px solid ${({ theme }: any) => theme.background_color};
+      height: 0;
+      left: 6px;
+      width: 0;
+    }
+
+    &:after {
+      background-color: ${({ theme }: any) => theme.background_color};
+      border-radius: 0%;
+      display: inline-block;
+      height: 10px;
+      left: 7px;
+      width: 10px;
+    }
+
+    &[data-active="true"] {
+      &:after {
+        display: none;
+      }
+
+      &:before {
+        display: inline-block;
+      }
+    }
   }
 `;

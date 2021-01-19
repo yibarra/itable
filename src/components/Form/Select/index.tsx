@@ -37,7 +37,8 @@ const Select: FC<ISelect> = ({ items, optionDefault, callback }) => {
 
   // render
   return (
-    <SelectDiv ref={element}>
+    <SelectDiv
+      ref={element}>
       <SelectTitle
         open={open}
         setOpen={setOpen}
