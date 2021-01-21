@@ -27,7 +27,7 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
       case 'groupBlock':
         return filters.groupBlock === value;
       case 'yearDiscovered':
-        return filters.yearDiscovered <= parseInt(value, 10);
+        return parseInt(value, 10) <= filters.yearDiscovered;
     }
   }, [ filters ]);
 

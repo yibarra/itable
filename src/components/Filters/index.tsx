@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 
 import FiltersSwitch from './FiltersSwitch';
-import RadioButton from '../Form/RadioButton';
+//import RadioButton from '../Form/RadioButton';
 import Select from '../Form/Select';
 
 import { TableContext } from '../../providers/TableProvider';
@@ -23,24 +23,6 @@ const Filters: FC<IFilters> = () => {
         <p className="filters-container--title">View</p>
 
         <div className="filters-container--list">
-          <RadioButton
-            active={filters.groups === true}
-            name="view"
-            text="Groups"
-            onChange={(value: any) => onSetFilterValue('groups', value)} />
-
-          <RadioButton
-            active={filters.blocks && filters.blocks !== ''}
-            name="view"
-            text="Blocks"
-            onChange={(value: any) => onSetFilterValue('blocks', value)} />
-
-          <RadioButton
-            active={filters.states && filters.states !== ''}
-            name="view"
-            text="States"
-            onChange={(value: any) => onSetFilterValue('states', value)} />
-            
           <Select
             callback={(value: any) => onSetFilterValue(value.value, '')}
             optionDefault={{ value: '', name: 'Selected an option' }}
@@ -61,3 +43,23 @@ const Filters: FC<IFilters> = () => {
 };
 
 export default Filters;
+
+/*
+<RadioButton
+            active={filters.groups === true}
+            name="view"
+            text="Groups"
+            onChange={(value: any) => onSetFilterValue('groups', value)} />
+
+          <RadioButton
+            active={filters.blocks && filters.blocks !== ''}
+            name="view"
+            text="Blocks"
+            onChange={(value: any) => onSetFilterValue('blocks', value)} />
+
+          <RadioButton
+            active={filters.states && filters.states !== ''}
+            name="view"
+            text="States"
+            onChange={(value: any) => onSetFilterValue('states', value)} />
+            */

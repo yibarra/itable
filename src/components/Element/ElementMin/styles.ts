@@ -20,6 +20,7 @@ export const ElementMinDiv: any = styled.div`
   vertical-align: top;
 
   .bg,
+  .radius,
   &:before {
     background-color: ${({ theme }) => theme.second_color};
     border: none;
@@ -39,6 +40,18 @@ export const ElementMinDiv: any = styled.div`
     opacity: 0;
     top: 0;
     width: 100%;
+  }
+
+  .radius {
+    border-radius: 100%;
+    display: none;
+    height: 0px;
+    left: 50%;
+    mix-blend-mode: screen;
+    top: calc(50% - 2px);
+    transition: all var(--animation-time) var(--animation-bezier);
+    transform: translate(-50%, -50%);
+    width: 0px;
   }
 
   &[data-filter="true"] {
@@ -84,6 +97,31 @@ export const ElementMinDiv: any = styled.div`
 
       &:before {
         display: none;
+      }
+    }
+  }
+
+  &[data-atomic-radius="true"] {
+    .atomic-number,
+    .name,
+    .symbol {
+      color: ${({ theme }: any) => theme.background_color};
+      opacity: 1;
+      transition-delay: 0s;
+    }
+
+    .bg {
+      mix-blend-mode: screen;
+      opacity: 1;
+    }
+
+    .radius {
+      display: inline-block;
+    }
+
+    &:hover {
+      .name {
+        color: inherit;
       }
     }
   }

@@ -29,9 +29,9 @@ const ElementMin: FC<IElementMin> = ({
     <ElementMinDiv
       data-filter={Object.keys(filters).length > 0}
       data-atomic-mass={onSetFilterByKey('atomicMass', atomicMass)}
-      data-date={onSetFilterByKey('groupBlock', groupBlock)}
+      data-date={onSetFilterByKey('yearDiscovered', yearDiscovered)}
       data-atomic-radius={onSetFilterByKey('atomicRadius', atomicRadius)}
-      data-group-item={onSetFilterByKey('yearDiscovered', yearDiscovered)}
+      data-group-item={onSetFilterByKey('groupBlock', yearDiscovered)}
       onClick={() => onSelect(element.atomicNumber)}
       style={{
         backgroundColor: onSetFilterByKey('groupBlock', groupBlock) ? element.cpkHexColor : 'transparent',
@@ -45,6 +45,11 @@ const ElementMin: FC<IElementMin> = ({
           symbol={element.symbol} />
 
         <span className="bg" style={{ backgroundColor: element.cpkHexColor }}></span>
+        <span className="radius" style={{
+          backgroundColor: element.cpkHexColor,
+          height: (element.atomicRadius * 18) / 100,
+          width: (element.atomicRadius * 18) / 100
+        }}></span>
     </ElementMinDiv>
   );
 };
