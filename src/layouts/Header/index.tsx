@@ -6,10 +6,12 @@ import ThemeSwitch from '../../components/ThemeSwitch';
 
 import { ReactComponent as Logo } from '../../assets/svg/logo.svg';
 
+import { IHeader } from './interfaces';
+
 import { HeaderContainer } from './styles';
 
 // header
-const Header: FC<any> = ({ element, onToggle, setElement }) => {
+const Header: FC<IHeader> = ({ element, onToggle, setElement }) => {
   // render
   return (
     <HeaderContainer>
@@ -20,13 +22,16 @@ const Header: FC<any> = ({ element, onToggle, setElement }) => {
           </div>
 
           <div className="header--theme">
-            <ThemeSwitch onToggle={onToggle} />
+            <ThemeSwitch
+              color={element instanceof Object ? element.cpkHexColor : ''}
+              onToggle={onToggle} />
           </div>
         </div>
 
         <div className="header--filters">
           {!element && <Filters />}
-          {element && <ButtonReturn callback={setElement} text="Return" />}
+          {element &&
+            <ButtonReturn callback={setElement} text="Return" />}
         </div>
       </div>
     </HeaderContainer>

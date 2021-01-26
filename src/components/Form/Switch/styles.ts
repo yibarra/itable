@@ -32,4 +32,8 @@ export const SwitchContainer = styled(a.div)`
     transform: translate(-50%, 0);
     width: 1px;
   }
+
+  &[data-switch="true"] {
+    background-color: ${({ theme }: any) => theme.background_color};
+  }
 `;

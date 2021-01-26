@@ -7,7 +7,7 @@ import { SwitchContainer } from './styles';
 
 // switch
 const Switch: FC<ISwitch> = ({
-  size,
+  color,
   setValue,
   value
 }) => {
@@ -22,10 +22,12 @@ const Switch: FC<ISwitch> = ({
   // render
   return (
     <SwitchContainer
+      data-switch={color ? true : false}
       onClick={() => onSwitch(!value)}>
       <a.div
         className="point"
         style={{
+          backgroundColor: color,
           ...props 
         }}></a.div>
     </SwitchContainer>

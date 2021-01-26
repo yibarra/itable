@@ -10,4 +10,10 @@ export const ThemeSwitchContainer = styled.div`
   label {
     text-transform: capitalize;
   }
+
+  &[data-switch="true"] {
+    label {
+      color: ${({ theme }: any) => theme.background_color};
+    }
+  }
 `;

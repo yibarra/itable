@@ -10,7 +10,7 @@ import { IThemeSwitch } from './interfaces';
 import { ThemeSwitchContainer } from './styles';
 
 // theme switch
-const ThemeSwitch: FC<IThemeSwitch> = ({ onToggle }) => {
+const ThemeSwitch: FC<IThemeSwitch> = ({ color, onToggle }) => {
   const { theme } = useContext(ThemeContext);
   const [ value, setValue ] = useState<boolean>(true);
 
@@ -22,11 +22,13 @@ const ThemeSwitch: FC<IThemeSwitch> = ({ onToggle }) => {
 
   // render
   return (
-    <ThemeSwitchContainer>
+    <ThemeSwitchContainer
+      data-switch={color ? true : false}>
       <InputGroup
         text={theme.name}>
         <Switch
           border={3}
+          color={color}
           size={20}
           setValue={(value: boolean) => onChange(value)}
           value={value} />

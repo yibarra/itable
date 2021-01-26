@@ -1,4 +1,5 @@
 export interface IHeader {
-  any?: any;
   element?: any;
+  onToggle(): void;
+  setElement(element: any): void;
 }
