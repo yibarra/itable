@@ -5,14 +5,14 @@ export const SelectTitleDiv = styled.div`
   cursor: pointer;
   border-radius: 0;
   float: left;
-  padding: 5px 20px 7px;
+  padding: 2px 20px 3px;
   width: 100%;
   vertical-align: top;
 
   .text {
     color: ${({ theme }: any) => theme.background_color};
     float: left;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: -0.04em;
     line-height: 1em;
     padding-left: 5px;

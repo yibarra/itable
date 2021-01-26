@@ -47,11 +47,11 @@ export const ElementMinDiv: any = styled.div`
     display: none;
     height: 0px;
     left: 50%;
-    mix-blend-mode: screen;
     top: calc(50% - 2px);
     transition: all var(--animation-time) var(--animation-bezier);
     transform: translate(-50%, -50%);
     width: 0px;
+    z-index: 3;
   }
 
   &[data-filter="true"] {
@@ -105,24 +105,36 @@ export const ElementMinDiv: any = styled.div`
     .atomic-number,
     .name,
     .symbol {
-      color: ${({ theme }: any) => theme.background_color};
+      color: inherit;
       opacity: 1;
       transition-delay: 0s;
     }
 
     .bg {
       mix-blend-mode: screen;
-      opacity: 1;
+      opacity: 0;
     }
-
+    
+    .symbol {
+      opacity: 0;
+    }
+    
     .radius {
       display: inline-block;
     }
 
     &:hover {
-      .name {
+      .bg {
+        opacity: 0;
+      }
+
+      .atomic-number {
         color: inherit;
       }
+    }
+
+    &:before {
+      display: none;
     }
   }
 

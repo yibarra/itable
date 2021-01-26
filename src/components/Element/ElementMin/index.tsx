@@ -47,8 +47,8 @@ const ElementMin: FC<IElementMin> = ({
         <span className="bg" style={{ backgroundColor: element.cpkHexColor }}></span>
         <span className="radius" style={{
           backgroundColor: element.cpkHexColor,
-          height: (element.atomicRadius * 18) / 100,
-          width: (element.atomicRadius * 18) / 100
+          height: Math.round((element.atomicRadius / 30) * Math.PI * 1.5),
+          width: Math.round((element.atomicRadius / 30) * Math.PI * 1.5)
         }}></span>
     </ElementMinDiv>
   );
