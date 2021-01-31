@@ -9,6 +9,7 @@ export const SelectContentDiv = styled(a.div)`
   border-radius: 0;
   float: left;
   height: 0;
+  max-height: 150px;
   left: 0;
   overflow: hidden;
   overflow-y: auto;
@@ -16,4 +17,14 @@ export const SelectContentDiv = styled(a.div)`
   position: absolute;
   top: 100%;
   width: 100%;
+
+  &[data-open="true"] {
+    padding: 0 0 5px;
+
+    > button {
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
 `;

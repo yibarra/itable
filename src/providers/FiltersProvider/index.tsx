@@ -11,15 +11,21 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
 
   // set filter
   const onSetFilterValue = useCallback((key: string, value: any) => {
-    const filter: any = {};
-    filter[key] = value;
-
-    setFilters({ ...filter });
+    if (key === 'none') {
+      setFilters({});
+    } else {
+      const filter: any = {};
+      filter[key] = value;
+  
+      setFilters({ ...filter });
+    }
   }, [ setFilters ]);
 
   // set filter by key
   const onSetFilterByKey = useCallback((type: string, value: any) => {
     switch (type) {
+      case 'blocks':
+        return 'blocks';
       case 'atomicMass':
         return Math.round(filters.atomicMass) >= parseInt(value, 10);
       case 'atomicRadius':

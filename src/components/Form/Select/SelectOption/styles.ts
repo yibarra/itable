@@ -3,9 +3,10 @@ import styled from "styled-components";
 export const SelectOptionButton = styled.button`
   background-color: ${({ theme }: any) => theme.text_color};
   border: none;
+  border-bottom: 2px solid ${({ theme }: any) => theme.background_color};
   cursor: pointer;
   outline: none;
-  padding: 10px 13px;
+  padding: 5px 0;
   position: relative;
   text-align: left;
   transition: background-color var(--animation-time) var(--animation);
@@ -25,22 +26,11 @@ export const SelectOptionButton = styled.button`
     white-space: nowrap;
   }
 
-  &:after {
-    background-color: ${({ theme }: any) => theme.background_color};
-    border-radius: 100%;
-    content: '';
-    display: none;
-    height: 10px;
-    left: 5px;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
-    width: 10px;
-  }
-
   &[data-active="true"] {
-    &:after {
-      display: inline-block;
+    background-color: ${({ theme }: any) => theme.background_color};
+    
+    .name {
+      color: ${({ theme }: any) => theme.text_color};
     }
   }
 `;

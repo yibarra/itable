@@ -24,13 +24,15 @@ const Filters: FC<IFilters> = () => {
 
         <div className="filters-container--list">
           <Select
-            callback={(value: any) => onSetFilterValue(value.value, '')}
-            optionDefault={{ value: '', name: 'Selected an option' }}
-            items={[
-              { value: 'atomicMass', name: 'Atomic Mass' },
-              { value: 'atomicRadius', name: 'Atomic Radius '},
-              { value: 'yearDiscovered', name: 'Year Discovered' }
-            ]} />
+              callback={(value: any) => onSetFilterValue(value.value, '')}
+              optionDefault={{ value: 'none', name: 'Default' }}
+              items={[
+                { value: 'none', name: 'Default' },
+                { value: 'blocks', name: 'Blocks' },
+                { value: 'atomicMass', name: 'Atomic Mass' },
+                { value: 'atomicRadius', name: 'Atomic Radius '},
+                { value: 'yearDiscovered', name: 'Year Discovered' }
+              ]} />
         </div>
       </div>
 

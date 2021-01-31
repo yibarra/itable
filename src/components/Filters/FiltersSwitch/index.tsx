@@ -12,7 +12,7 @@ const FiltersSwitch: FC<IFiltersSwitch> = ({ groupBlock, onSetFilterValue, value
   // render
   return (
     <FiltersSwitchDiv>
-      {value === 'blocks' &&
+      {(value.blocks || value.blocks === '') &&
         <FiltersBlock
           items={groupBlock}
           onSetFilterValue={onSetFilterValue} />}

@@ -14,6 +14,7 @@ const SelectContent: FC<ISelectContent> = ({ items, onChange, open, value }) => 
   // render
   return (
     <SelectContentDiv
+      data-open={open}
       style={{
         ...props 
       }}>

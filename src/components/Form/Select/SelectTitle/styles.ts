@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
 export const SelectTitleDiv = styled.div`
-  background-color: ${({ theme }: any) => theme.text_color};
+  background-color: ${({ theme }: any) => theme.background_color};
+  border: 2px solid ${({ theme }: any) => theme.text_color};
   cursor: pointer;
   border-radius: 0;
   float: left;
-  padding: 2px 20px 3px;
+  padding: 4px 5px 6px;
   width: 100%;
   vertical-align: top;
 
   .text {
-    color: ${({ theme }: any) => theme.background_color};
+    color: ${({ theme }: any) => theme.text_color};
     float: left;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: -0.04em;
     line-height: 1em;
     padding-left: 5px;
   }
 
   button {
-    left: 0;
+    right: 0;
     position: absolute;
     pointer-events: none;
     top: 50%;

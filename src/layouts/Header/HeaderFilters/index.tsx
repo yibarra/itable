@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
-import ButtonReturn from '../../../components/ButtonReturn';
+
 import Filters from '../../../components/Filters';
+import ButtonReturn from '../../../components/ButtonReturn';
+
 import { IHeaderFilters } from './interfaces';
 
 import { HeaderFiltersDiv } from './styles';
@@ -9,12 +11,17 @@ import { HeaderFiltersDiv } from './styles';
 const HeaderFilters: FC<IHeaderFilters> = ({ active, color, setElement }) => {
   return (
     <HeaderFiltersDiv
-      data-active={active}>
-      <Filters />
-      <ButtonReturn
-        callback={setElement}
-        color={color}
-        text="Return" />
+      data-switch={active}>
+      <div className="filters">
+        <Filters />
+      </div>
+
+      <div className="return">
+        <ButtonReturn
+          active={active}
+          callback={setElement}
+          text="Return" />
+      </div>
     </HeaderFiltersDiv>
   );
 };
