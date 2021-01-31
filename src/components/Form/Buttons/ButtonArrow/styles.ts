@@ -10,22 +10,11 @@ export const ButtonArrowButton = styled.button`
   position: relative;
   width: 30px;
 
-  .triangle {
-    border-top-color: ${({ theme }: any) => theme.background_color};
-    border-left: 9px solid transparent;
-    border-right: 9px solid transparent;
-    border-top: 10px solid transparent;
-    height: 0;
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 0;
+  .material-icons {
+    color: ${({ theme }: any) => theme.text_color};
+    font-size: 18px;
   }
 
   &[data-active="true"] {
-    .triangle {
-      transform: translate(-50%, -50%) rotate(180deg);
-    }
   }
 `;

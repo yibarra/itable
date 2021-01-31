@@ -21,12 +21,12 @@ export const FiltersBlockItemContainer = styled.button`
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
-    width: 14px;
+    width: 16px;
 
     &:before {
       background-color: ${({ theme }: any) => theme.background_color};
       border: 2px solid ${({ theme }: any) => theme.background_color};
-      border-radius: 0;
+      border-radius: 100%;
       content: '';
       height: calc(100% - 2px);
       left: 50%;
@@ -40,11 +40,12 @@ export const FiltersBlockItemContainer = styled.button`
 
   .name {
     color: ${({ theme }: any) => theme.text_color};
+    font-size: 12px;
     float: left;
     font-size: 10px;
     line-height: 1em;
     margin: 1px 0 0;
-    letter-spacing: 0em;
+    letter-spacing: 0.04em;
   }
 
   &:hover,

@@ -12,7 +12,7 @@ const ButtonArrow: FC<IButtonArrow> = ({ open, setOpen }) => {
       onClick={() => setOpen(!open)}
       data-active={open}>
       <span
-        className="triangle"></span>
+        className="material-icons">{!open ? 'keyboard_arrow_down' : 'keyboard_arrow_up'}</span>
     </ButtonArrowButton>
   );
 };

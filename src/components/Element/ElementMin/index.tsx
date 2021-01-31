@@ -31,10 +31,9 @@ const ElementMin: FC<IElementMin> = ({
       data-atomic-mass={onSetFilterByKey('atomicMass', atomicMass)}
       data-date={onSetFilterByKey('yearDiscovered', yearDiscovered)}
       data-atomic-radius={onSetFilterByKey('atomicRadius', atomicRadius)}
-      data-group-item={onSetFilterByKey('groupBlock', yearDiscovered)}
+      data-group={onSetFilterByKey('groupBlock', groupBlock)}
       onClick={() => onSelect(element.atomicNumber)}
       style={{
-        backgroundColor: onSetFilterByKey('groupBlock', groupBlock) ? element.cpkHexColor : 'transparent',
         borderColor: element.cpkHexColor,
         color: element.cpkHexColor,
       }}>

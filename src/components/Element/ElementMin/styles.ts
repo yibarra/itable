@@ -73,15 +73,8 @@ export const ElementMinDiv: any = styled.div`
   }
 
   &[data-group="true"] {
-    .atomic-number,
-    .name,
-    .symbol {
-      opacity: 0.3;
-      transition-delay: 0s;
-    }
-  }
-
-  &[data-group-item="true"] {
+    opacity: 1;
+    
     .atomic-number,
     .symbol {
       color: ${({ theme }: any) => theme.background_color};
@@ -98,6 +91,10 @@ export const ElementMinDiv: any = styled.div`
       &:before {
         display: none;
       }
+    }
+
+    .bg {
+      opacity: 1;
     }
   }
 
@@ -161,7 +158,7 @@ export const ElementMinDiv: any = styled.div`
       }
     }
 
-    &[data-group-item="true"] {
+    &[data-group="true"] {
       .name {
         &:before {
           display: none;

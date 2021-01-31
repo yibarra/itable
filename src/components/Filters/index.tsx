@@ -28,7 +28,7 @@ const Filters: FC<IFilters> = () => {
               optionDefault={{ value: 'none', name: 'Default' }}
               items={[
                 { value: 'none', name: 'Default' },
-                { value: 'blocks', name: 'Blocks' },
+                { value: 'groupBlock', name: 'Blocks' },
                 { value: 'atomicMass', name: 'Atomic Mass' },
                 { value: 'atomicRadius', name: 'Atomic Radius '},
                 { value: 'yearDiscovered', name: 'Year Discovered' }
@@ -45,23 +45,3 @@ const Filters: FC<IFilters> = () => {
 };
 
 export default Filters;
-
-/*
-<RadioButton
-            active={filters.groups === true}
-            name="view"
-            text="Groups"
-            onChange={(value: any) => onSetFilterValue('groups', value)} />
-
-          <RadioButton
-            active={filters.blocks && filters.blocks !== ''}
-            name="view"
-            text="Blocks"
-            onChange={(value: any) => onSetFilterValue('blocks', value)} />
-
-          <RadioButton
-            active={filters.states && filters.states !== ''}
-            name="view"
-            text="States"
-            onChange={(value: any) => onSetFilterValue('states', value)} />
-            */

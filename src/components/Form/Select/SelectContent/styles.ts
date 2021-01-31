@@ -15,7 +15,7 @@ export const SelectContentDiv = styled(a.div)`
   overflow-y: auto;
   padding: 0;
   position: absolute;
-  top: 100%;
+  top: calc(100% + 2px);
   width: 100%;
 
   &[data-open="true"] {

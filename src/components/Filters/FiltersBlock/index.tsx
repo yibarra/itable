@@ -1,7 +1,6 @@
 import React, { FC, useCallback, useState } from 'react';
 
 import FiltersBlockItem from './FiltersBlockItem';
-import FiltersBlockItemDescription from './FiltersBlockItemDescription';
 
 import { IFiltersBlockItemElement } from './FiltersBlockItem/interfaces';
 import { IFiltersBlock } from './interfaces';
@@ -16,10 +15,10 @@ const FiltersBlock: FC<IFiltersBlock> = ({ items, onSetFilterValue }) => {
   // on select
   const onSelect = useCallback((value: IFiltersBlockItemElement) => {
     if (value instanceof Object) {
-      let item = { groupBlock: '' };
+      let item = '';
 
-      if (value.name && value.name.toLowerCase() !== 'all') {
-        item = { groupBlock: value.id }; 
+      if (value.name) {
+        item = value.id; 
       }
       
       if (select !== value) {
@@ -28,7 +27,7 @@ const FiltersBlock: FC<IFiltersBlock> = ({ items, onSetFilterValue }) => {
         setSelect(null);
       }
 
-      onSetFilterValue('groups', item);
+      onSetFilterValue('groupBlock', item);
     }
   }, [ onSetFilterValue, setSelect, select ]);
 
@@ -41,10 +40,6 @@ const FiltersBlock: FC<IFiltersBlock> = ({ items, onSetFilterValue }) => {
           active={item === select}
           setItem={onSelect}
           key={index} />)}
-
-      <FiltersBlockItemDescription
-        active={select !== null}
-        item={select} />
     </FiltersBlockContainer>
   );
 };

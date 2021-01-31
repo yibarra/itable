@@ -25,42 +25,5 @@ export const SelectTitleDiv = styled.div`
     pointer-events: none;
     top: 50%;
     transform: translate(0, -50%);
-
-    &:before,
-    &:after {
-      content: '';
-      display: none;
-      position: absolute;
-      top: 50%;
-      transform: translate(0, -50%);
-    }
-
-    &:before {
-      border-left: 6px solid transparent;
-      border-right: 6px solid transparent;
-      border-top: 10px solid ${({ theme }: any) => theme.background_color};
-      height: 0;
-      left: 6px;
-      width: 0;
-    }
-
-    &:after {
-      background-color: ${({ theme }: any) => theme.background_color};
-      border-radius: 0%;
-      display: inline-block;
-      height: 10px;
-      left: 7px;
-      width: 10px;
-    }
-
-    &[data-active="true"] {
-      &:after {
-        display: none;
-      }
-
-      &:before {
-        display: inline-block;
-      }
-    }
   }
 `;

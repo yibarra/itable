@@ -15,6 +15,7 @@ const SelectTitle: FC<ISelectTitle> = ({ open, setOpen, value }) => {
       <ButtonArrow
         open={open}
         setOpen={setOpen} />
+        
       <span
         className="text">{value.name ? value.name : 'Select Option'}</span>
     </SelectTitleDiv>
