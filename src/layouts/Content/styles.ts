@@ -20,7 +20,10 @@ export const ContentContainerDiv = styled.div`
   &[data-switch="true"] {
     > div {
       &:first-child {
-        display: none;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, 0);
+        top: 0;
       }
 
       &:last-child {
