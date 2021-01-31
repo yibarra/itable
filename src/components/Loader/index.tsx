@@ -10,7 +10,7 @@ import { LoaderContainer } from './styles';
 const Loader: FC<ILoader> = ({ isLoading }) => {
   // render
   return (
-    <LoaderContainer data-active={isLoading}>
+    <LoaderContainer data-active={!isLoading}>
       <Logo />
     </LoaderContainer>
   );

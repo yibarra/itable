@@ -42,7 +42,7 @@ export const RowColumnDiv = styled(a.div)`
         left: 0;
         position: absolute;
         top: 50%;
-        transform: translate(0,- 50%);
+        transform: translate(0px, -50%);
         width: 6px;
       }
     }

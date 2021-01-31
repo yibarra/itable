@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const GridDiv = styled.div`
   margin: 190px 0;
-  max-width: 1024px;
+  max-width: 1008px;
   padding: 0;
   position: relative;
   text-align: center;

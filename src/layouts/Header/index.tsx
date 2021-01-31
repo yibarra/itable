@@ -1,10 +1,7 @@
 import React, { FC } from 'react';
 
-import ButtonReturn from '../../components/ButtonReturn';
-import Filters from '../../components/Filters';
-import ThemeSwitch from '../../components/ThemeSwitch';
-
-import { ReactComponent as Logo } from '../../assets/svg/logo.svg';
+import HeaderFilters from './HeaderFilters';
+import HeaderTop from './HeaderTop';
 
 import { IHeader } from './interfaces';
 
@@ -12,27 +9,22 @@ import { HeaderContainer } from './styles';
 
 // header
 const Header: FC<IHeader> = ({ element, onToggle, setElement }) => {
+  const color: string = element instanceof Object ? element.cpkHexColor : '';
+
   // render
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      data-switch={element instanceof Object}>
       <div className="header--content">
-        <div className="header--top">
-          <div className="header--logo">
-            <Logo />
-          </div>
+        <HeaderTop
+          active={element instanceof Object}
+          color={color}
+          onToggle={onToggle} />
 
-          <div className="header--theme">
-            <ThemeSwitch
-              color={element instanceof Object ? element.cpkHexColor : ''}
-              onToggle={onToggle} />
-          </div>
-        </div>
-
-        <div className="header--filters">
-          {!element && <Filters />}
-          {element &&
-            <ButtonReturn callback={setElement} text="Return" />}
-        </div>
+        <HeaderFilters
+          active={element instanceof Object}
+          color={color}
+          setElement={setElement} />
       </div>
     </HeaderContainer>
   );

@@ -45,6 +45,7 @@ const ElementMin: FC<IElementMin> = ({
           symbol={element.symbol} />
 
         <span className="bg" style={{ backgroundColor: element.cpkHexColor }}></span>
+        
         <span className="radius" style={{
           backgroundColor: element.cpkHexColor,
           height: Math.round((element.atomicRadius / 30) * Math.PI * 1.5),
