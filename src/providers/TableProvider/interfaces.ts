@@ -30,6 +30,7 @@ export interface ITableContext {
   element: any;
   setElement(atomicNumber: any): void;
   table: ITableItem;
+  getColorGroup(element: any): string;
   setTable(table: ITableItem): void;
 }
 

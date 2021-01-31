@@ -35,8 +35,10 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, callback }) => {
 
   // on change
   const onChange = useCallback((value: any) => {
-    setTimeout(() => callback(getValue(value)), 400);
-    setValue(value);
+    if (value !== undefined || isNaN(value) === false) {
+      setTimeout(() => callback(getValue(value)), 400);
+      setValue(value);
+    }
   }, [ setValue, callback, getValue ]);
 
   // render
@@ -51,7 +53,7 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, callback }) => {
       <RangeSliderLine
         value={value}
         width={width}
-        stroke={3}
+        stroke={2}
         size={size} />
 
       <RangeSliderLabel

@@ -12,7 +12,7 @@ import { ThemeContext } from '../../providers/ThemeProvider';
 import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
 import { IContent } from './interfaces';
 
-import { ContentContainer } from './styles';
+import { ContentContainerDiv } from './styles';
 
 // content
 const Content: FC<IContent> = ({ isLoading, value }) => {  
@@ -31,24 +31,24 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
   // render
   return (
     <>
+      <Loader isLoading={isLoading} />
       <FiltersProvider>
         <Header
           element={element}
           setElement={setElement}
           onToggle={onToggle} />
 
-        <ContentContainer>
-          {isLoading === false && !element &&
+        <ContentContainerDiv
+          data-switch={element instanceof Object}>
+          {isLoading === false &&
             <Grid
               {...table}
               element={element instanceof Object}
               setElement={setElement} />}
 
-          {element && <Element element={element} />}
-        </ContentContainer>
+          <Element element={element} />
+        </ContentContainerDiv>
       </FiltersProvider>
-
-      <Loader isLoading={isLoading} />
     </>
   );
 };

@@ -19,7 +19,7 @@ export const SelectContentDiv = styled(a.div)`
   width: 100%;
 
   &[data-open="true"] {
-    padding: 0 0 5px;
+    padding: 0 0 2px;
 
     > button {
       &:last-child {

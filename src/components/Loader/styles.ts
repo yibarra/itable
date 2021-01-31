@@ -11,7 +11,7 @@ export const LoaderContainer = styled.div`
   transition: all var(--animation-time) var(--animation-bezier);
   transition-delay: 1s;
   width: 100%;
-  z-index: 100;
+  z-index: 1;
 
   svg {
     left: 50%;

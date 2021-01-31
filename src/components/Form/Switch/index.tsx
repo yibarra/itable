@@ -27,7 +27,6 @@ const Switch: FC<ISwitch> = ({
       <a.div
         className="point"
         style={{
-          backgroundColor: color,
           ...props 
         }}></a.div>
     </SwitchContainer>

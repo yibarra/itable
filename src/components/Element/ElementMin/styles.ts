@@ -108,7 +108,6 @@ export const ElementMinDiv: any = styled.div`
     }
 
     .bg {
-      mix-blend-mode: screen;
       opacity: 0;
     }
     
@@ -122,11 +121,26 @@ export const ElementMinDiv: any = styled.div`
 
     &:hover {
       .bg {
+        opacity: 1;
+      }
+
+      .symbol {
         opacity: 0;
       }
 
-      .atomic-number {
-        color: inherit;
+      .atomic-number,
+      .name {
+        color: ${({ theme }: any) => theme.background_color};
+      }
+
+      .name {
+        &:before {
+          display: none;
+        }
+      }
+
+      .radius {
+        background-color: ${({ theme }: any) => theme.background_color} !important;
       }
     }
 

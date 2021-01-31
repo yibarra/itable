@@ -45,6 +45,7 @@ const TableProvider: FC<ITableProvider> = ({ children }) => {
   // render
   return (
     <TableContext.Provider value={{
+      getColorGroup,
       table,
       element,
       setTable,

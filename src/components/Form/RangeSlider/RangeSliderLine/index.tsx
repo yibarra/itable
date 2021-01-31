@@ -19,20 +19,22 @@ const Line = styled.svg`
 
 // range slider line
 const RangeSliderLine: FC<IRangeSliderLine> = ({ stroke, size, width, value }) => {
-  // padding
-  const leftMin = (value - (size + (size / 1.2)));
-  const rightMax = (value + (size + (size / 1.2)));
+  const val = value - 1;
 
-  const letTop = (value - (size / 1.2));
-  const rightTop = (value + (size / 1.2));
+  // padding
+  const leftMin = Math.floor(val - (size + (size / 1.5)));
+  const rightMax = Math.floor(val + (size + (size / 1.5)));
+
+  const letTop = Math.floor(val - (size / 1.5));
+  const rightTop = Math.floor(val + (size / 1.5));
 
   // render
   return (
     <Line width={width} height={size + 5}>
       <g transform="translate(0 2)">
         <path
-          d={`M0 1 H ${leftMin} V 1 H 0 L 0 2 Z
-            M${leftMin} 1C${letTop} 1 ${letTop} ${size} ${value} ${size} C${rightTop} ${size} ${rightTop} 1 ${rightMax} 1 
+          d={`M0 1 H ${leftMin} V 1 H 0 L 0 1 Z
+            M${leftMin} 1C${letTop} 1 ${letTop} ${size} ${val} ${size} C${rightTop} ${size} ${rightTop} 1 ${rightMax} 1 
             M${rightMax} 1 H ${width} V 1 H ${rightMax} L ${rightMax} 0 Z`}
           strokeWidth={stroke}
           strokeLinecap="round"

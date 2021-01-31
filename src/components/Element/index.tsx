@@ -10,7 +10,7 @@ const Element: FC<any> = ({ element }) => {
   // render
   return (
     <ElementContainer style={{
-      backgroundColor: element.color
+      backgroundColor: element?.color
     }}>
       <div className="element--container">
         {element && 

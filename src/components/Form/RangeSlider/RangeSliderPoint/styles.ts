@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 // range slider pointer container
 export const RangeSliderPointerContainer: any = styled.div`
-  background-color: ${({ theme }) => theme.text_color};
+  background-color: transparent;
+  border: 2px solid ${({ theme }) => theme.text_color};
   cursor: pointer;
   border-radius: 100%;
   position: absolute;

@@ -13,8 +13,8 @@ export const FiltersBlockItemContainer = styled.button`
   vertical-align: top;
 
   .block {
-    border: 2px solid transparent;
-    border-radius: 0;
+    border: 3px solid transparent;
+    border-radius: 100%;
     height: 16px;
     left: 0;
     padding: 1px 0 0;

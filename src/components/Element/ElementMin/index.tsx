@@ -3,6 +3,7 @@ import React, { FC, useCallback, useContext } from 'react';
 import ElementMinInfo from './ElementMinInfo';
 
 import { FiltersContext } from '../../../providers/FiltersProvider';
+import { TableContext } from '../../../providers/TableProvider';
 
 import { IElementMin } from './interfaces';
 
@@ -15,6 +16,7 @@ const ElementMin: FC<IElementMin> = ({
 }) => {
   const { atomicMass, atomicRadius, groupBlock, yearDiscovered } = element;
   const { filters, onSetFilterByKey }: any = useContext(FiltersContext);
+  const { getColorGroup }: any = useContext(TableContext);
 
   // on select
   const onSelect = useCallback((atomicNumber: any) => {
@@ -34,8 +36,8 @@ const ElementMin: FC<IElementMin> = ({
       data-group={onSetFilterByKey('groupBlock', groupBlock)}
       onClick={() => onSelect(element.atomicNumber)}
       style={{
-        borderColor: element.cpkHexColor,
-        color: element.cpkHexColor,
+        borderColor: getColorGroup(element),
+        color: getColorGroup(element),
       }}>
         <ElementMinInfo
           color={element.cpkHexColor}
@@ -43,10 +45,12 @@ const ElementMin: FC<IElementMin> = ({
           name={element.name}
           symbol={element.symbol} />
 
-        <span className="bg" style={{ backgroundColor: element.cpkHexColor }}></span>
+        <span className="bg" style={{ 
+          backgroundColor: getColorGroup(element) 
+        }}></span>
         
         <span className="radius" style={{
-          backgroundColor: element.cpkHexColor,
+          backgroundColor: getColorGroup(element),
           height: Math.round((element.atomicRadius / 30) * Math.PI * 1.5),
           width: Math.round((element.atomicRadius / 30) * Math.PI * 1.5)
         }}></span>
