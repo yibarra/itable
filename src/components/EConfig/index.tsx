@@ -1,4 +1,5 @@
 import React, { FC, useCallback } from 'react';
+
 import EOrbital from '../EOrbial';
 
 import EConfigGrid from './EConfigGrid';
@@ -7,6 +8,7 @@ import { IEConfig } from './interfaces';
 
 import { EConfigDiv } from './styles';
 
+// config
 const config = [
   { level: 1, name: 's', value: 2, pos: { x: 1, y: 1 } },
   { level: 2, name: 's', value: 2, pos: { x: 1, y: 2 } },
@@ -98,7 +100,7 @@ const EConfig: FC<IEConfig> = ({ atomicNumber, shells, eConfiguration }) => {
 
         <EOrbital
           shells={shells}
-          radius={42} />
+          radius={45} />
       </div>
     </EConfigDiv>
   );

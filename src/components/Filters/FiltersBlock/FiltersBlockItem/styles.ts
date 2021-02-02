@@ -7,6 +7,7 @@ export const FiltersBlockItemContainer = styled.button`
   float: none;
   margin: 2px;
   outline: none;
+  pointer-events: auto;
   padding: 7px 20px 5px 25px;
   position: relative;
   text-align: center;

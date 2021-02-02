@@ -22,6 +22,7 @@ export const HeaderTopDiv = styled.div`
     &--theme,
     &--search {
       float: right;
+      pointer-events: auto;
     }
   }
 

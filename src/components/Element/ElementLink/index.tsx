@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import Link from '../../Link';
+
 import { IElementLink } from './interfaces';
+
 import { ElementLinkContainer } from './styles';
 
 // element link

@@ -6,6 +6,7 @@ export interface IElement {
   bondingType: string;
   cpkHexColor: string,
   density: string;
+  color: string;
   electronAffinity: number;
   electronegativity: number;
   electronicConfiguration: string;

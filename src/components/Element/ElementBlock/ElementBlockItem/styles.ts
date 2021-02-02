@@ -16,12 +16,12 @@ export const ElementBlockItemDiv = styled.div`
 
   .arrow {
     border-radius: 100%;
-    height: 6px;
+    height: 8px;
     left: calc(100% + 5px);
     position: absolute;
     top: calc(50% + 1px);
     transform: translate(0, -50%);
-    width: 6px;
+    width: 8px;
 
     &:after {
       background-color: inherit;
@@ -52,6 +52,7 @@ export const ElementBlockItemDiv = styled.div`
   .value {
     font-weight: 300;
     overflow: hidden;
+    letter-spacing: -0.04em;
     padding: 0;
     position: absolute;
     text-overflow: ellipsis;
@@ -88,7 +89,7 @@ export const ElementBlockItemDiv = styled.div`
 
     .value {
       left: 100%;
-      padding-left: 15px;
+      padding-left: 20px;
     }
   }
 
@@ -102,7 +103,7 @@ export const ElementBlockItemDiv = styled.div`
 
     .value {
       left: initial;
-      padding: 0 15px 0 0;
+      padding: 0 20px 0 0;
       right: 100%;
     }
   }

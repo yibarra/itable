@@ -6,11 +6,11 @@ import ElementGraph from './ElementGraph';
 import { ElementContainer } from './styles';
 
 // element
-const Element: FC<any> = ({ element }) => {
+const Element: FC<any> = ({ element, color }) => {
   // render
   return (
     <ElementContainer style={{
-      backgroundColor: element?.color
+      backgroundColor: color
     }}>
       <div className="element--container">
         {element && 

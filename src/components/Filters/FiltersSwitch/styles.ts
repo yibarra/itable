@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const FiltersSwitchDiv = styled.div`
   float: left;
+  pointer-events: none;
   width: 100%;
 
   .filter-switch {
+
     &--item {
       float: none;
       padding: 20px 0;

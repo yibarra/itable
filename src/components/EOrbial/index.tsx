@@ -12,12 +12,14 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
 
     for (let i = 0; i < value; i++) {
       const angle = i * (Math.PI * 2) / value;
-      const x = Math.cos(angle) * (size);
-      const y = Math.sin(angle) * (size);
+      const x = Math.cos(angle) * size;
+      const y = Math.sin(angle) * size;
         
       atoms.push(<span
         className="atom"
-        style={{ transform: `rotate(${angle}deg) translate(${x}px, ${y}px)` }}
+        style={{
+          transform: `rotate(${angle}deg) translate(${x}px, ${y}px)`
+        }}
         key={`${i}-${key}`}></span>);
     }
 
@@ -36,7 +38,11 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
         data-active={false}
         data-level={i}
         key={i}
-        style={{ width: size, height: size }}>
+        style={{ 
+          width: size,
+          height: size,
+          animationDelay: `${(i) * 350}ms`
+        }}>
           {atoms(shells[i], i, Math.round(size / 2))}
         </div>);
     }
@@ -47,7 +53,10 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
   // render
   return (
     <EOrbitalDiv
-      style={{ width: Math.floor(shells.length * radius), height: Math.floor(shells.length * radius) }}>
+      style={{
+        width: Math.floor(shells.length * radius),
+        height: Math.floor(shells.length * radius)
+      }}>
       {shells && orbits()}
     </EOrbitalDiv>
   );

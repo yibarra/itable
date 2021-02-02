@@ -4,7 +4,6 @@ export const ElementMinDiv: any = styled.div`
   align-content: flex-end;
   align-items: center;
   border: 1px solid transparent;
-  cursor: pointer;
   display: inline-flex;
   flex-flow: row wrap;
   float: left;
@@ -20,7 +19,6 @@ export const ElementMinDiv: any = styled.div`
   vertical-align: top;
 
   .bg,
-  .radius,
   &:before {
     background-color: ${({ theme }) => theme.second_color};
     border: none;
@@ -42,42 +40,22 @@ export const ElementMinDiv: any = styled.div`
     width: 100%;
   }
 
-  .radius {
-    border-radius: 100%;
-    display: none;
-    height: 0px;
-    left: 50%;
-    top: calc(50% - 2px);
-    transition: all var(--animation-time) var(--animation-bezier);
-    transform: translate(-50%, -50%);
-    width: 0px;
-    z-index: 3;
-  }
-
   &[data-filter="true"] {
     pointer-events: none;
     opacity: 0.1;
 
     &[data-date="true"],
-    &[data-atomic-radius="true"],
-    &[data-atomic-mass="true"] {
+    &[data-group="true"],
+    &[data-atomic-mass="true"],
+    &[data-atomic-radius="true"] {
       pointer-events: auto;
       opacity: 1;
     }
   }
 
-  &[data-empty="true"] {
-    pointer-events: none;
-
-    &:before {
-      display: none;
-    }
-  }
-
   &[data-group="true"] {
-    opacity: 1;
-    
     .atomic-number,
+    .name,
     .symbol {
       color: ${({ theme }: any) => theme.background_color};
       opacity: 1;
@@ -85,9 +63,6 @@ export const ElementMinDiv: any = styled.div`
     }
 
     .name {
-      color: ${({ theme }: any) => theme.background_color};
-      opacity: 1;
-      transition-duration: 0s;
       transition-delay: 0s;
 
       &:before {
@@ -106,13 +81,11 @@ export const ElementMinDiv: any = styled.div`
     .symbol {
       color: inherit;
       opacity: 1;
+      transition: none;
       transition-delay: 0s;
     }
 
-    .bg {
-      opacity: 0;
-    }
-    
+    .bg,
     .symbol {
       opacity: 0;
     }
@@ -153,25 +126,20 @@ export const ElementMinDiv: any = styled.div`
 
   &[data-active="true"],
   &:hover {
-    .atomic-number,
-    .name,
-    .symbol {
-      opacity: 1;
-    }
-    
-    .atomic-number,
-    .symbol {
-      color: ${({ theme }: any) => theme.background_color};
-    }
-
     .bg {
       opacity: 1;
     }
 
+    .atomic-number,
+    .name,
+    .symbol {
+      color: ${({ theme }: any) => theme.background_color};
+      opacity: 1;
+    }
+
     .name {
-      &:before {
-        display: inline-block;
-      }
+      transition: none;
+      transition-delay: 0s;
     }
 
     &[data-group="true"] {
@@ -180,12 +148,6 @@ export const ElementMinDiv: any = styled.div`
           display: none;
         }
       }
-    }
-  }
-
-  @media(max-width: 480px) {
-    &[data-empty="true"] {
-      display: none;
     }
   }
 `;

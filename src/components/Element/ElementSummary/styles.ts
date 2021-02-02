@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ElementSummaryContainer = styled.p`
+export const ElementSummaryP = styled.p`
   color: ${({ theme }: any) => theme.background_color};
   font-size: 12px;
   margin: 20px 0 0;

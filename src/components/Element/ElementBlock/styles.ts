@@ -14,6 +14,7 @@ export const ElementBlockDiv = styled.div`
     font-size: 90px;
     height: 270px;
     line-height: 270px;
+    letter-spacing: -0.04em;
     left: 50%;
     position: absolute;
     top: 50%;
@@ -27,11 +28,11 @@ export const ElementBlockDiv = styled.div`
       border: 2px solid ${({ theme }: any) => theme.background_color};
       content: '';
       left: 50%;
-      height: calc(100% + 2px);
+      height: calc(100% + 4px);
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: calc(100% + 2px);
+      width: calc(100% + 4px);
     }
   }
 `;

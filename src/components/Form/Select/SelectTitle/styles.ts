@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SelectTitleDiv = styled.div`
-  background-color: ${({ theme }: any) => theme.background_color};
+  background-color: transparent;
   border: 2px solid ${({ theme }: any) => theme.text_color};
   cursor: pointer;
   border-radius: 0;

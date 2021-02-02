@@ -8,8 +8,13 @@ export const HeaderFiltersDiv = styled.div`
   .filters,
   .return {
     float: left;
+    pointer-events: auto;
     position: relative;
     width: 100%;
+  }
+
+  .filters {
+    pointer-events: none;
   }
 
   .return {

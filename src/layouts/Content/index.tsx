@@ -17,11 +17,8 @@ import { ContentContainerDiv } from './styles';
 // content
 const Content: FC<IContent> = ({ isLoading, value }) => {  
   // context
-  const tableContext: any = useContext<any>(TableContext);
-  const themeContext: any = useContext<any>(ThemeContext);
-
-  const { table, element, setElement, setTable } = tableContext;
-  const { onToggle }: IThemeContext = themeContext;
+  const { table, element, setElement, setTable, getColorGroup } = useContext<any>(TableContext);
+  const { onToggle }: IThemeContext = useContext<any>(ThemeContext);
 
   // use effect
   useEffect(() => {
@@ -46,7 +43,9 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
               element={element instanceof Object}
               setElement={setElement} />}
 
-          <Element element={element} />
+          <Element
+            element={element}
+            color={getColorGroup(element)} />
         </ContentContainerDiv>
       </FiltersProvider>
     </>

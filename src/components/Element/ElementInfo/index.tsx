@@ -2,22 +2,24 @@ import React, { FC } from 'react';
 
 import ElementDate from '../ElementDate';
 import ElementLink from '../ElementLink';
-import ElementSummary from '../ElementSummary';
 import ElementTable from '../ElementTable';
-import ElementTitle from '../ElementTitle';
 
-import { ElementInfoContainer } from './styles';
+import { IElementInfo } from './interfaces';
+
+import { ElementSummaryP } from '../ElementSummary/styles';
+import { ElementTitleHOne } from '../ElementTitle/styles';
+import { ElementInfoContainer,  } from './styles';
 
 // element info
-const ElementInfo: FC<any> = ({ element }) => {
+const ElementInfo: FC<IElementInfo> = ({ element }) => {
   const { name, summary, spectral_img, source, yearDiscovered } = element;
 
   // render
   return (
     <ElementInfoContainer>
-      <ElementTitle text={name} />
+      <ElementTitleHOne>{name}</ElementTitleHOne>
       <ElementDate text="Data discovery" year={yearDiscovered} />
-      <ElementSummary text={summary} />
+      <ElementSummaryP>{summary}</ElementSummaryP>
       <ElementTable element={element} />
 
       {source && <ElementLink text="Source" link={source} />}
