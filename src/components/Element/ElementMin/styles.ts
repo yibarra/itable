@@ -55,11 +55,13 @@ export const ElementMinDiv: any = styled.div`
   }
 
   &[data-filter="true"] {
+    pointer-events: none;
     opacity: 0.1;
 
     &[data-date="true"],
     &[data-atomic-radius="true"],
     &[data-atomic-mass="true"] {
+      pointer-events: auto;
       opacity: 1;
     }
   }

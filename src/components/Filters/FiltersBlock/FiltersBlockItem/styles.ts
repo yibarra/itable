@@ -13,7 +13,7 @@ export const FiltersBlockItemContainer = styled.button`
   vertical-align: top;
 
   .block {
-    border: 3px solid transparent;
+    border: 2px solid transparent;
     border-radius: 100%;
     height: 16px;
     left: 0;
@@ -25,16 +25,16 @@ export const FiltersBlockItemContainer = styled.button`
 
     &:before {
       background-color: ${({ theme }: any) => theme.background_color};
-      border: 2px solid ${({ theme }: any) => theme.background_color};
+      border: 3px solid transparent;
       border-radius: 100%;
       content: '';
-      height: calc(100% - 2px);
+      height: 0px;
       left: 50%;
       position: absolute;
       transform: translate(-50%, -50%);
       transition: all var(--animation-time) var(--animation-bezier);
       top: 50%;
-      width: calc(100% - 2px);
+      width: 0px;
     }
   }
 
@@ -52,7 +52,7 @@ export const FiltersBlockItemContainer = styled.button`
   &[data-active="true"] {
     .block {
       &:before {
-        background-color: transparent;
+        border-color: inherit;
       }
     }
   }

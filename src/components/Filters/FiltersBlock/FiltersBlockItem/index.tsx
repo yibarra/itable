@@ -15,7 +15,7 @@ const FiltersBlockItem: FC<IFiltersBlockItem> = ({ active, item, setItem }) => {
       onClick={() => setItem(item)}>
       <span
         className="block"
-        style={{ backgroundColor: color, borderColor: color }}></span>
+        style={{ borderColor: color }}></span>
       <span className="name">{name}</span>
     </FiltersBlockItemContainer>
   );
