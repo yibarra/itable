@@ -12,13 +12,14 @@ const TableProvider: FC<ITableProvider> = ({ children }) => {
   const [ element, setElement ] = useState<any>(null);
 
   // get element
-  const getColorGroup = useCallback((element: any) => {
+  const getColorGroup = useCallback((group: any) => {
+    if (!group) return false;
+
     const { groupBlock }: any = table;
 
-    if(Array.isArray(groupBlock)) {
-      const group = groupBlock.filter(({ id }: any) => id === element.groupBlock)[0];
-      
-      return group instanceof Object ? group.color : '';
+    if(Array.isArray(groupBlock) && groupBlock.length > 0) {
+      const block = groupBlock.filter(({ id }: any) => id === group)[0];
+      return block instanceof Object ? block.color : '';
     }
 
     return '';
@@ -36,7 +37,7 @@ const TableProvider: FC<ITableProvider> = ({ children }) => {
           atomicNumber === atomicNumberSearch);
         
         if (filterElement.length > 0) {
-          setElement({ ...filterElement[0], color: getColorGroup(filterElement[0]) });
+          setElement({ ...filterElement[0], color: getColorGroup(filterElement[0]?.groupBlock) });
         }
       }
     }

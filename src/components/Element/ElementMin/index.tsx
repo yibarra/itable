@@ -20,7 +20,7 @@ const ElementMin: FC<IElementMin> = ({
   const { getColorGroup }: any = useContext(TableContext);
 
   // color
-  const color = getColorGroup(element);
+  const color = getColorGroup(element?.groupBlock);
 
   // on select
   const onSelect = useCallback((atomicNumber: any) => {

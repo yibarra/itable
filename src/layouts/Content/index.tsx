@@ -45,7 +45,7 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
 
           <Element
             element={element}
-            color={getColorGroup(element)} />
+            color={getColorGroup(element?.groupBlock)} />
         </ContentContainerDiv>
       </FiltersProvider>
     </>
