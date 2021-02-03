@@ -10,6 +10,7 @@ export interface IEConfigLevel {
 
 export interface IEConfigItem {
   active: boolean;
+  color: string;
   diff: number;
   last: boolean;
   item: IEConfigLevel;

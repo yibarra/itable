@@ -8,7 +8,7 @@ import { IElementGraph } from './interfaces';
 import { ElementGraphDiv } from './styles';
 
 // element graph
-const ElementGraph: FC<IElementGraph> = ({ element }) => {
+const ElementGraph: FC<IElementGraph> = ({ element, color }) => {
   const { atomicNumber, electronicConfiguration, shells } = element;
 
   // render
@@ -19,6 +19,7 @@ const ElementGraph: FC<IElementGraph> = ({ element }) => {
       <EConfig
         atomicNumber={atomicNumber}
         shells={shells}
+        color={color}
         eConfiguration={electronicConfiguration} />
     </ElementGraphDiv>
   );

@@ -6,4 +6,9 @@ export const FiltersBlockContainer = styled.div`
   position: relative;
   text-align: center;
   width: 100%;
+
+  /* Extra Small Devices, Phones */ 
+  @media only screen and (max-width : 480px) {
+    padding: 10px 0 0;
+  }
 `;

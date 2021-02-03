@@ -5,7 +5,13 @@ import { IEConfigItem } from './interfaces';
 import { EConfigItemDiv } from './styles';
 
 // e config item
-const EConfigItem: FC<IEConfigItem> = ({ active, last, diff, item: { level, name, pos, value } }) => {
+const EConfigItem: FC<IEConfigItem> = ({
+  active,
+  color,
+  last,
+  diff,
+  item: { level, name, pos, value }
+  }) => {
   const padding = 50;
 
   // get last number
@@ -13,9 +19,7 @@ const EConfigItem: FC<IEConfigItem> = ({ active, last, diff, item: { level, name
     if (last) {
       const val = (diff - value);
 
-      if (val < 0) {
-        return Math.abs(val);
-      }
+      if (val < 0) return Math.abs(val);
     }
 
     return value;
@@ -38,7 +42,7 @@ const EConfigItem: FC<IEConfigItem> = ({ active, last, diff, item: { level, name
       style={{ transform: getPosition() }}>
       <span className="quote">{quote()}</span>
       <span className="level">{level}</span>
-      <span className="name">{name}</span>
+      <span className="name" style={{ borderColor: color }}>{name}</span>
     </EConfigItemDiv>
   );
 };

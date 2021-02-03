@@ -7,13 +7,15 @@ import { IEConfigGrid } from './interfaces';
 import { EConfigGridDiv } from './styles';
 
 // EConfig grid
-const EConfigGrid: FC<IEConfigGrid> = ({ config, difference, level, index }) => {
+const EConfigGrid: FC<IEConfigGrid> = (props) => {
+  const { difference, level, config, index } = props;
 
   // render
   return (
-    <EConfigGridDiv style={{ height: level.level * 70 }}>
+    <EConfigGridDiv style={{ height: level.level * 50 }}>
       {config && config.map((item: any, key: number) =>
         <EConfigItem
+          {...props}
           active={index < key}
           last={level === item}
           diff={difference}

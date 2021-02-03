@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { IFiltersBlockItem, IFiltersBlockItemElement } from './interfaces';
 
-import { FiltersBlockItemContainer } from './styles';
+import { FiltersBlockItemDiv } from './styles';
 
 // filters block item
 const FiltersBlockItem: FC<IFiltersBlockItem> = ({ active, item, setItem }) => {
@@ -10,14 +10,14 @@ const FiltersBlockItem: FC<IFiltersBlockItem> = ({ active, item, setItem }) => {
   
   // render
   return (
-    <FiltersBlockItemContainer
+    <FiltersBlockItemDiv
       data-active={active}
       onClick={() => setItem(item)}>
       <span
         className="block"
         style={{ borderColor: color }}></span>
       <span className="name">{name}</span>
-    </FiltersBlockItemContainer>
+    </FiltersBlockItemDiv>
   );
 };
 

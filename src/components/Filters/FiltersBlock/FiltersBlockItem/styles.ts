@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const FiltersBlockItemContainer = styled.button`
+export const FiltersBlockItemDiv = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -56,5 +56,10 @@ export const FiltersBlockItemContainer = styled.button`
         border-color: inherit;
       }
     }
+  }
+
+  /* Extra Small Devices, Phones */ 
+  @media only screen and (max-width : 480px) {
+    padding: 7px 10px 5px 25px;
   }
 `;

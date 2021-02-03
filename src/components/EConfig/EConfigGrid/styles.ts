@@ -9,5 +9,5 @@ export const EConfigGridDiv = styled.div`
   margin: 0;
   padding: 0 20px;
   position: relative;
-  width: 50%;
+  width: 100%;
 `;

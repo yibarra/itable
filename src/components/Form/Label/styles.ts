@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 // label text
-export const LabelTextContainer = styled.label`
+export const LabelTextLabel = styled.label`
   color: ${({ theme }: any) => theme.text_color};
   float: left;
   font-size: 12px;

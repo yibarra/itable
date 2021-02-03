@@ -54,7 +54,6 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
   return (
     <EOrbitalDiv
       style={{
-        width: Math.floor(shells.length * radius),
         height: Math.floor(shells.length * radius)
       }}>
       {shells && orbits()}

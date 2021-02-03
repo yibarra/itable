@@ -2,12 +2,14 @@ import styled from "styled-components";
 
 export const EOrbitalDiv = styled.div`
   float: left;
+  height: 245px;
   margin: 0 0 40px;
   padding: 0;
   position: relative;
+  width: 245px;
 
   .orbit {
-    animation: ani-circle 10s infinite ease;
+    animation: ani-circle 40s 5 ease;
     border: 2px solid ${({ theme }: any) => theme.background_color};
     border-radius: 100%;
     left: 50%;

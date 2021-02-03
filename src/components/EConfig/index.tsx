@@ -1,6 +1,7 @@
 import React, { FC, useCallback } from 'react';
 
 import EOrbital from '../EOrbial';
+import Label from '../Form/Label';
 
 import EConfigGrid from './EConfigGrid';
 
@@ -32,7 +33,7 @@ const config = [
 ];
 
 // e config
-const EConfig: FC<IEConfig> = ({ atomicNumber, shells, eConfiguration }) => {
+const EConfig: FC<IEConfig> = ({ atomicNumber, color, shells, eConfiguration }) => {
   // get value
   const getValue = useCallback((name: string): number => {
     switch (name) {
@@ -85,22 +86,24 @@ const EConfig: FC<IEConfig> = ({ atomicNumber, shells, eConfiguration }) => {
     <EConfigDiv>
       <div className="ec--item">
         <p className="ec--title">
-          <span className="label">Moeller Diagram</span>
-        </p>
-
-        <EConfigGrid
-          config={config}
-          {...getConfig(config)} />
-      </div>
-        
-      <div className="ec--item">
-        <p className="ec--title">
           <span className="label">Electronic Configuration</span>
         </p>
 
         <EOrbital
           shells={shells}
-          radius={45} />
+          radius={40} />
+      </div>
+
+      <div className="ec--item">
+        <p className="ec--title">
+          <span className="label">Moeller Diagram</span>
+          <Label text={eConfiguration} />
+        </p>
+
+        <EConfigGrid
+          color={color}
+          config={config}
+          {...getConfig(config)} />
       </div>
     </EConfigDiv>
   );

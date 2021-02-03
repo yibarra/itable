@@ -8,7 +8,7 @@ import { IElementInfo } from './interfaces';
 
 import { ElementSummaryP } from '../ElementSummary/styles';
 import { ElementTitleHOne } from '../ElementTitle/styles';
-import { ElementInfoContainer,  } from './styles';
+import { ElementInfoContainer } from './styles';
 
 // element info
 const ElementInfo: FC<IElementInfo> = ({ element }) => {
@@ -22,8 +22,11 @@ const ElementInfo: FC<IElementInfo> = ({ element }) => {
       <ElementSummaryP>{summary}</ElementSummaryP>
       <ElementTable element={element} />
 
-      {source && <ElementLink text="Source" link={source} />}
-      {spectral_img && <ElementLink text="Spectra Image" link={spectral_img} />}
+      {source &&
+        <ElementLink text="Source" link={source} />}
+
+      {spectral_img &&
+        <ElementLink text="Spectra Image" link={spectral_img} />}
     </ElementInfoContainer>
   );
 };
