@@ -48,7 +48,7 @@ const FiltersSwitch: FC<IFiltersSwitch> = ({ groupBlock, onSetFilterValue, value
           <RangeSlider
             min={1669}
             max={2007}
-            label="years"
+            label="a.c"
             size={16}
             callback={(value: number) => onSetFilterValue('yearDiscovered', value)} />
         </div>}

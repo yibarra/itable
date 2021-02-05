@@ -1,4 +1,5 @@
 import React, { FC } from 'react';
+
 import ThemeSwitch from '../../../components/ThemeSwitch';
 
 import { ReactComponent as Logo } from '../../../assets/svg/logo.svg';
@@ -14,6 +15,7 @@ const HeaderTop: FC<IHeaderTop> = ({ active, color, onToggle }) => {
       data-switch={active}>
       <div className="header--logo">
         <Logo />
+        <span className="subtitle">Periodic Table of Elements</span>
       </div>
 
       <div className="header--theme">

@@ -8,12 +8,26 @@ export const HeaderTopDiv = styled.div`
   .header {
     &--logo {
       float: left;
+      position: relative;
       width: 20px;
 
-      svg {
-        width: 50px;
+      .subtitle {
+        color: ${({ theme }: any) => theme.text_color};
+        position: absolute;
+        left: 70px;
+        font-size: 10px;
+        letter-spacing: 0.04em;
+        top: 50%;
+        transform: translate(0, -50%);
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
 
-        > path {
+      svg {
+        width: 60px;
+
+        path,
+        polygon {
           fill: ${({ theme }: any) => theme.text_color};
         }
       }
@@ -29,8 +43,13 @@ export const HeaderTopDiv = styled.div`
   &[data-switch="true"] {
     .header {
       &--logo {
+        .subtitle {
+          color: ${({ theme }: any) => theme.background_color};
+        }
+
         svg {
-          > path {
+          path,
+          polygon {
             fill: ${({ theme }: any) => theme.background_color};
           }
         }

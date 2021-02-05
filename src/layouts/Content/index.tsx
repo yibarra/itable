@@ -13,12 +13,15 @@ import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
 import { IContent } from './interfaces';
 
 import { ContentContainerDiv } from './styles';
+import Footer from '../Footer';
 
 // content
 const Content: FC<IContent> = ({ isLoading, value }) => {  
   // context
   const { table, element, setElement, setTable, getColorGroup } = useContext<any>(TableContext);
   const { onToggle }: IThemeContext = useContext<any>(ThemeContext);
+
+  const color = getColorGroup(element?.groupBlock);
 
   // use effect
   useEffect(() => {
@@ -29,9 +32,11 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
   return (
     <>
       <Loader isLoading={isLoading} />
+
       <FiltersProvider>
         <Header
           element={element}
+          color={color}
           setElement={setElement}
           onToggle={onToggle} />
 
@@ -45,9 +50,11 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
 
           <Element
             element={element}
-            color={getColorGroup(element?.groupBlock)} />
+            color={color} />
         </ContentContainerDiv>
       </FiltersProvider>
+
+      <Footer />
     </>
   );
 };

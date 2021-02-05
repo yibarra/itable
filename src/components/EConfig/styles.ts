@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const EConfigDiv = styled.div`
   float: left;
-  padding: 40px 0 0;
+  padding: 0;
   position: relative;
   width: 100%;
 

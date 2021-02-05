@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
+  background: transparent;
   float: left;
   padding: 0 20px 20px;
   pointer-events: none;

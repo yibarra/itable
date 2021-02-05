@@ -4,7 +4,7 @@ export const ElementGraphDiv = styled.div`
   float: left;
   padding: 0;
   position: relative;
-  width: 540px;
+  width: 500px;
 
   /* Small Devices, Tablets */
   @media only screen and (max-width : 768px) {

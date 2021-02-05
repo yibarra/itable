@@ -86,16 +86,6 @@ const EConfig: FC<IEConfig> = ({ atomicNumber, color, shells, eConfiguration }) 
     <EConfigDiv>
       <div className="ec--item">
         <p className="ec--title">
-          <span className="label">Electronic Configuration</span>
-        </p>
-
-        <EOrbital
-          shells={shells}
-          radius={40} />
-      </div>
-
-      <div className="ec--item">
-        <p className="ec--title">
           <span className="label">Moeller Diagram</span>
           <Label text={eConfiguration} />
         </p>
@@ -104,6 +94,16 @@ const EConfig: FC<IEConfig> = ({ atomicNumber, color, shells, eConfiguration }) 
           color={color}
           config={config}
           {...getConfig(config)} />
+      </div>
+
+      <div className="ec--item">
+        <p className="ec--title">
+          <span className="label">Electronic Configuration</span>
+        </p>
+
+        <EOrbital
+          shells={shells}
+          radius={40} />
       </div>
     </EConfigDiv>
   );

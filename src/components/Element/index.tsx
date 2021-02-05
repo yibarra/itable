@@ -15,10 +15,8 @@ const Element: FC<any> = ({ element, color }) => {
       <div className="element--container">
         {element && 
           <>
-            <ElementInfo element={element} />
-            <ElementGraph
-              element={element}
-              color={color} />
+            <ElementGraph element={element} color={color} />
+            <ElementInfo element={element} color={color} />
           </>}
       </div>
     </ElementContainer>

@@ -54,4 +54,25 @@ export default createGlobalStyle`
     --animation-bezier: cubic-bezier(0.45, 0.25, 0.60, 0.95);
     --max-width: 1060px;
   }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }: any) => theme?.text_color};
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }: any) => theme?.background_color};
+    border-radius: 0;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme }: any) => theme?.background_color};
+  }
 `;

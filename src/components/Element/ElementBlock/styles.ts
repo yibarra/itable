@@ -4,8 +4,10 @@ import styled from "styled-components";
 export const ElementBlockDiv = styled.div`
   float: left;
   height: 270px;
-  padding: 40px 0;
+  margin: 0 0 40px;
+  padding: 0;
   position: relative;
+  transform: translate(-13px, 0);
   width: 100%;
 
   .symbol {

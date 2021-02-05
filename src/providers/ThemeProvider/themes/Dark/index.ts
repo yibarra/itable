@@ -1,6 +1,6 @@
 export const Dark = {
-  background_color: '#2f2a40',
+  background_color: '#38314e',
   name: 'dark',
-  second_color: '#2f2a40',
+  second_color: '#38314e',
   text_color: "#ffffed",
 };

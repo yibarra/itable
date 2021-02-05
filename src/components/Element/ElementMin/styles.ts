@@ -40,9 +40,13 @@ export const ElementMinDiv: any = styled.div`
     width: 100%;
   }
 
+  .name {
+    transition: none;
+  }
+
   &[data-filter="true"] {
     pointer-events: none;
-    opacity: 0.1;
+    opacity: 0.05;
 
     &[data-date="true"],
     &[data-group="true"],
@@ -139,7 +143,6 @@ export const ElementMinDiv: any = styled.div`
 
     .name {
       transition: none;
-      transition-delay: 0s;
     }
 
     &[data-group="true"] {

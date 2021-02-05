@@ -41,7 +41,7 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
         style={{ 
           width: size,
           height: size,
-          animationDelay: `${(i) * 350}ms`
+          animationDelay: `${(i) * 450}ms`
         }}>
           {atoms(shells[i], i, Math.round(size / 2))}
         </div>);

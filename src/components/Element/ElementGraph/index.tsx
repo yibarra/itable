@@ -1,26 +1,26 @@
 import React, { FC } from 'react';
 
-import EConfig from '../../EConfig';
 import ElementBlock from '../ElementBlock';
+import ElementLink from '../ElementLink';
 
 import { IElementGraph } from './interfaces';
 
 import { ElementGraphDiv } from './styles';
 
 // element graph
-const ElementGraph: FC<IElementGraph> = ({ element, color }) => {
-  const { atomicNumber, electronicConfiguration, shells } = element;
+const ElementGraph: FC<IElementGraph> = ({ element }) => {
+  const { source, spectral_img } = element;
 
   // render
   return (
     <ElementGraphDiv>
       <ElementBlock element={element} />
 
-      <EConfig
-        atomicNumber={atomicNumber}
-        shells={shells}
-        color={color}
-        eConfiguration={electronicConfiguration} />
+      {source &&
+        <ElementLink text="Source" link={source} />}
+
+      {spectral_img &&
+        <ElementLink text="Spectra Image" link={spectral_img} />}
     </ElementGraphDiv>
   );
 };

@@ -8,8 +8,8 @@ import { IHeader } from './interfaces';
 import { HeaderContainer } from './styles';
 
 // header
-const Header: FC<IHeader> = ({ element, onToggle, setElement }) => {
-  const color: string = element instanceof Object ? element.cpkHexColor : '';
+const Header: FC<IHeader> = ({ element, color, onToggle, setElement }) => {
+  const active = element instanceof Object ? true : false;
 
   // render
   return (
@@ -17,12 +17,12 @@ const Header: FC<IHeader> = ({ element, onToggle, setElement }) => {
       data-switch={element instanceof Object}>
       <div className="header--content">
         <HeaderTop
-          active={element instanceof Object}
+          active={active}
           color={color}
           onToggle={onToggle} />
 
         <HeaderFilters
-          active={element instanceof Object}
+          active={active}
           color={color}
           setElement={setElement} />
       </div>

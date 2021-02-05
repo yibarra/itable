@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
+import EConfig from '../../EConfig';
 import ElementDate from '../ElementDate';
-import ElementLink from '../ElementLink';
 import ElementTable from '../ElementTable';
 
 import { IElementInfo } from './interfaces';
@@ -11,8 +11,8 @@ import { ElementTitleHOne } from '../ElementTitle/styles';
 import { ElementInfoContainer } from './styles';
 
 // element info
-const ElementInfo: FC<IElementInfo> = ({ element }) => {
-  const { name, summary, spectral_img, source, yearDiscovered } = element;
+const ElementInfo: FC<IElementInfo> = ({ element, color }) => {
+  const { atomicNumber, shells, electronicConfiguration, name, summary, yearDiscovered } = element;
 
   // render
   return (
@@ -22,11 +22,11 @@ const ElementInfo: FC<IElementInfo> = ({ element }) => {
       <ElementSummaryP>{summary}</ElementSummaryP>
       <ElementTable element={element} />
 
-      {source &&
-        <ElementLink text="Source" link={source} />}
-
-      {spectral_img &&
-        <ElementLink text="Spectra Image" link={spectral_img} />}
+      <EConfig
+        atomicNumber={atomicNumber}
+        shells={shells}
+        color={color}
+        eConfiguration={electronicConfiguration} />
     </ElementInfoContainer>
   );
 };
