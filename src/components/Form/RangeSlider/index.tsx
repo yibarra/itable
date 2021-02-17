@@ -54,6 +54,7 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, callback }) => {
         value={value}
         width={width}
         stroke={2}
+        setValue={onChange}
         size={size} />
 
       <RangeSliderLabel

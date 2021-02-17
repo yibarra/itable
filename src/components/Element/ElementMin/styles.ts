@@ -51,7 +51,7 @@ export const ElementMinDiv: any = styled.div`
     &[data-date="true"],
     &[data-group="true"],
     &[data-atomic-mass="true"],
-    &[data-atomic-radius="true"] {
+    &[data-radius="true"] {
       pointer-events: auto;
       opacity: 1;
     }
@@ -79,7 +79,7 @@ export const ElementMinDiv: any = styled.div`
     }
   }
 
-  &[data-atomic-radius="true"] {
+  &[data-radius="true"] {
     .atomic-number,
     .name,
     .symbol {

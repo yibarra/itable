@@ -9,8 +9,7 @@ import { RangeSliderPointerContainer } from './styles';
 const RangeSliderPoint: FC<IRangeSliderPoint> = ({ size, setValue, value, width }) => {  
   // on movement
   const onMovement = useCallback(({ down, offset: [x] }: any) => {
-    if (down)
-      setValue(x);
+    if (down) setValue(x);
   }, [ setValue ]);
 
   // drag

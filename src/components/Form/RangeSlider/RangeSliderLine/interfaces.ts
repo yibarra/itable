@@ -3,4 +3,5 @@ export interface IRangeSliderLine {
   size: number;
   value: number;
   width: number;
+  setValue(value: number): void;
 }

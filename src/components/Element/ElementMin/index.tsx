@@ -1,6 +1,7 @@
 import React, { FC, useCallback, useContext } from 'react';
 
 import ElementMinInfo from './ElementMinInfo';
+import ElementRadius from './ElementRadius';
 
 import { FiltersContext } from '../../../providers/FiltersProvider';
 import { TableContext } from '../../../providers/TableProvider';
@@ -8,7 +9,6 @@ import { TableContext } from '../../../providers/TableProvider';
 import { IElementMin } from './interfaces';
 
 import { ElementMinDiv } from './styles';
-import ElementRadius from './ElementRadius';
 
 // element min
 const ElementMin: FC<IElementMin> = ({
@@ -22,6 +22,16 @@ const ElementMin: FC<IElementMin> = ({
   // color
   const color = getColorGroup(element?.groupBlock);
 
+  // set properties
+  const setProperties = useCallback(() => {
+    return {
+      'data-atomic-mass': onSetFilterByKey('atomicMass', atomicMass),
+      'data-date': onSetFilterByKey('yearDiscovered', yearDiscovered),
+      'data-radius': onSetFilterByKey('atomicRadius', atomicRadius),
+      'data-group': onSetFilterByKey('groupBlock', groupBlock)
+    }
+  }, [ onSetFilterByKey, atomicMass, yearDiscovered, atomicRadius, groupBlock ]);
+
   // on select
   const onSelect = useCallback((atomicNumber: any) => {
     if (Number.isInteger(atomicNumber)) {
@@ -33,11 +43,8 @@ const ElementMin: FC<IElementMin> = ({
   // render
   return (
     <ElementMinDiv
+      {...setProperties()}
       data-filter={Object.keys(filters).length > 0}
-      data-atomic-mass={onSetFilterByKey('atomicMass', atomicMass)}
-      data-date={onSetFilterByKey('yearDiscovered', yearDiscovered)}
-      data-atomic-radius={onSetFilterByKey('atomicRadius', atomicRadius)}
-      data-group={onSetFilterByKey('groupBlock', groupBlock)}
       onClick={() => onSelect(element.atomicNumber)}
       style={{
         borderColor: color,

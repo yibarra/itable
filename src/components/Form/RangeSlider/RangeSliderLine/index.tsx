@@ -1,14 +1,22 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 
 import { IRangeSliderLine } from './interfaces';
 
 import { Line } from './styles';
 
 // range slider line
-const RangeSliderLine: FC<IRangeSliderLine> = ({ stroke, size, width, value }) => {
+const RangeSliderLine: FC<IRangeSliderLine> = ({ stroke, size, width, value, setValue }) => {
   // padding
   const leftMin = Math.floor(value - (size / 2));
   const rightMax = Math.floor(value + (size / 2));
+
+  // set value percent
+  const setValuePercent = useCallback(({ clientX, target }: any) => {
+    const element = target.getBoundingClientRect();
+
+    if (element)
+      setValue((clientX - element.left));
+  }, [ setValue ]);
 
   // render
   return (
@@ -19,7 +27,8 @@ const RangeSliderLine: FC<IRangeSliderLine> = ({ stroke, size, width, value }) =
             M${rightMax} 1 H ${width} V 1 H ${rightMax} L ${rightMax} 0 Z`}
           strokeWidth={stroke}
           strokeLinecap="round"
-          fill= "none" />
+          fill= "none"
+          onClick={(e: any) => setValuePercent(e)} />
       </g>
     </Line>
   );

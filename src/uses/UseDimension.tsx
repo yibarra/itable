@@ -17,7 +17,9 @@ const UseDimension = (ref: any) => {
         setDimensions({ width, height });
       });
     });
+
     if (ref.current) resizeObserverRef.current.observe(ref.current);
+    
     return () => {
       if (resizeObserverRef.current) resizeObserverRef.current.disconnect();
     };

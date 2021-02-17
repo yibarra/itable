@@ -8,6 +8,8 @@ export const Line = styled.svg`
 
   g {
     path {
+      cursor: pointer;
+      pointer-events: auto;
       stroke: ${({ theme }) => theme.text_color};
     }
   }

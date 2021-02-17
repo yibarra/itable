@@ -31,7 +31,7 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
       case 'groupBlock':
         return filters.groupBlock === value;
       case 'yearDiscovered':
-        return (Number.isInteger(parseInt(value)) && value === 'Ancient') || parseInt(value, 10) <= filters.yearDiscovered;
+        return parseInt(value, 10) <= filters.yearDiscovered || value === 'Ancient';
     }
   }, [ filters ]);
 
