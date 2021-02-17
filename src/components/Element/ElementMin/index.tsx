@@ -9,13 +9,14 @@ import { TableContext } from '../../../providers/TableProvider';
 import { IElementMin } from './interfaces';
 
 import { ElementMinDiv } from './styles';
+import ElementRadioActive from '../ElementRadioActive';
 
 // element min
 const ElementMin: FC<IElementMin> = ({
   element,
   setElement
 }) => {
-  const { atomicMass, atomicRadius, groupBlock, yearDiscovered } = element;
+  const { atomicMass, atomicRadius, radioactive, groupBlock, yearDiscovered } = element;
   const { filters, onSetFilterByKey }: any = useContext(FiltersContext);
   const { getColorGroup }: any = useContext(TableContext);
 
@@ -28,9 +29,10 @@ const ElementMin: FC<IElementMin> = ({
       'data-atomic-mass': onSetFilterByKey('atomicMass', atomicMass),
       'data-date': onSetFilterByKey('yearDiscovered', yearDiscovered),
       'data-radius': onSetFilterByKey('atomicRadius', atomicRadius),
+      'data-radio-active': onSetFilterByKey('radioActive', radioactive),
       'data-group': onSetFilterByKey('groupBlock', groupBlock)
     }
-  }, [ onSetFilterByKey, atomicMass, yearDiscovered, atomicRadius, groupBlock ]);
+  }, [ onSetFilterByKey, atomicMass, yearDiscovered, atomicRadius, groupBlock, radioactive ]);
 
   // on select
   const onSelect = useCallback((atomicNumber: any) => {
@@ -60,6 +62,9 @@ const ElementMin: FC<IElementMin> = ({
         
         <ElementRadius
           atomicRadius={atomicRadius} color={color} />
+
+        <ElementRadioActive
+          active={radioactive && onSetFilterByKey('radioActive', radioactive)} color={color} />
     </ElementMinDiv>
   );
 };

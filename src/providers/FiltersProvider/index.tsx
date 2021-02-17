@@ -30,6 +30,8 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
         return filters.atomicRadius >= parseInt(value, 10);
       case 'groupBlock':
         return filters.groupBlock === value;
+      case 'radioActive':
+        return value === true && filters.radioActive === '';
       case 'yearDiscovered':
         const check = (filters.yearDiscovered === '') ? true : false;
         return check ? parseInt(value, 10) <= filters.yearDiscovered || value === 'Ancient' : false;

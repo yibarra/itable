@@ -28,9 +28,10 @@ const Filters: FC<IFilters> = () => {
               optionDefault={{ value: 'none', name: 'Default' }}
               items={[
                 { value: 'none', name: 'Default' },
-                { value: 'groupBlock', name: 'Blocks' },
                 { value: 'atomicMass', name: 'Atomic Mass' },
                 { value: 'atomicRadius', name: 'Atomic Radius '},
+                { value: 'groupBlock', name: 'Blocks' },
+                { value: 'radioActive', name: 'Radio Active' },
                 { value: 'yearDiscovered', name: 'Year Discovered' }
               ]} />
         </div>

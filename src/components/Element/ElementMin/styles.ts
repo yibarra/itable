@@ -49,11 +49,34 @@ export const ElementMinDiv: any = styled.div`
     opacity: 0.05;
 
     &[data-date="true"],
+    &[data-radio-active="true"],
     &[data-group="true"],
     &[data-atomic-mass="true"],
     &[data-radius="true"] {
       pointer-events: auto;
       opacity: 1;
+    }
+  }
+
+  &[data-radio-active="true"] {
+    .symbol {
+      opacity: 0;
+    }
+
+    .bg {
+      opacity: 0;
+    }
+
+    &:hover {
+      .symbol {
+        opacity: 0;
+      }
+
+      div[data-active] {
+        span {
+          color: ${({ theme }: any) => theme.background_color} !important;
+        }
+      }
     }
   }
 
