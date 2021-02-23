@@ -37,12 +37,12 @@ export const ContentContainerDiv = styled.div`
     0% {
       opacity: 0;
       padding: 0;
-      top: -100vh;
+      top: 100vh;
     }
     50% {
       opacity: 0;
       padding: 120px 20px 60px;
-      top: -100vh;
+      top: 100vh;
     }
     100% {
       opacity: 1;

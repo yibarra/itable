@@ -5,7 +5,7 @@ import { IEOrbital } from './interfaces';
 import { EOrbitalDiv } from './styles';
 
 // e orbital
-const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
+const EOrbital: FC<IEOrbital> = ({ shells, radius, color }) => {
   // atoms
   const atoms = useCallback((value: number, key: number, size: number) => {
     const atoms = [];
@@ -56,6 +56,7 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius }) => {
       style={{
         height: Math.floor(shells.length * radius)
       }}>
+      <span className="icon-plus" style={{ color }}>&#43;</span>
       {shells && orbits()}
     </EOrbitalDiv>
   );

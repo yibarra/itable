@@ -32,6 +32,17 @@ export const EOrbitalDiv = styled.div`
     }
   }
 
+  .icon-plus {
+    font-size: 11px;
+    font-weight: 700;
+    left: 50%;
+    line-height: 11px;
+    position: absolute;
+    top: calc(50% - 1px);
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+
   &:before {
     background-color: ${({ theme }: any) => theme.background_color};
     content: '';

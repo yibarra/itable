@@ -3,10 +3,12 @@ import React, { FC } from 'react';
 import ElementInfo from './ElementInfo';
 import ElementGraph from './ElementGraph';
 
+import { IElementDiv } from './interfaces';
+
 import { ElementContainer } from './styles';
 
 // element
-const Element: FC<any> = ({ element, color }) => {
+const Element: FC<IElementDiv> = ({ element, color }) => {
   // render
   return (
     <ElementContainer style={{

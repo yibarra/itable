@@ -15,7 +15,6 @@ const HeaderTop: FC<IHeaderTop> = ({ active, color, onToggle }) => {
       data-switch={active}>
       <div className="header--logo">
         <Logo />
-        <span className="subtitle">Periodic Table of Elements</span>
       </div>
 
       <div className="header--theme">

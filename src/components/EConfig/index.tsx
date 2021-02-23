@@ -102,6 +102,7 @@ const EConfig: FC<IEConfig> = ({ atomicNumber, color, shells, eConfiguration }) 
         </p>
 
         <EOrbital
+          color={color}
           shells={shells}
           radius={40} />
       </div>

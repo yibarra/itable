@@ -11,18 +11,6 @@ export const HeaderTopDiv = styled.div`
       position: relative;
       width: 20px;
 
-      .subtitle {
-        color: ${({ theme }: any) => theme.text_color};
-        position: absolute;
-        left: 70px;
-        font-size: 10px;
-        letter-spacing: 0.04em;
-        top: 50%;
-        transform: translate(0, -50%);
-        text-transform: uppercase;
-        white-space: nowrap;
-      }
-
       svg {
         width: 60px;
 

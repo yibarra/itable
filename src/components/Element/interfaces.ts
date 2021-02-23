@@ -29,3 +29,8 @@ export interface IElement {
   ypos: number;
   index: number;
 }
+
+export interface IElementDiv {
+  element?: any;
+  color?: any;
+}

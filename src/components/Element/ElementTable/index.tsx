@@ -55,7 +55,10 @@ const ElementTable: FC<any> = ({ element }) => {
       const oneColumn = items[i];
       const twoColumn = items[i+1];
 
-      rows.push(<li className="row" key={i}>
+      rows.push(<li
+        className="row"
+        key={i}
+        style={{ animationDelay: `${((i) * 60) + 700}ms` }}>
         <ElementTableItem
           color={cpkHexColor}
           label={oneColumn.label}
