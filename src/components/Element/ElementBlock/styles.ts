@@ -11,6 +11,7 @@ export const ElementBlockDiv = styled.div`
   width: 100%;
 
   .symbol {
+    animation: scale-in-center 0.5s 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     background-color: ${({ theme }: any) => theme.background_color};
     font-weight: 600;
     font-size: 90px;

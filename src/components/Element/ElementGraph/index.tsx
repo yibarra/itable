@@ -16,11 +16,13 @@ const ElementGraph: FC<IElementGraph> = ({ element }) => {
     <ElementGraphDiv>
       <ElementBlock element={element} />
 
-      {source &&
-        <ElementLink text="Source" link={source} />}
+      <div className="sources">
+        {source &&
+          <ElementLink text="Source" link={source} />}
 
-      {spectral_img &&
-        <ElementLink text="Spectra Image" link={spectral_img} />}
+        {spectral_img &&
+          <ElementLink text="Spectra Image" link={spectral_img} />}
+      </div>
     </ElementGraphDiv>
   );
 };

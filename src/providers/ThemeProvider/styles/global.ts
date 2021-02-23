@@ -122,4 +122,17 @@ export default createGlobalStyle`
       opacity: 1;
     }
   }
+
+  @keyframes scale-in-center {
+    0% {
+      transform: scale(0) translate(-50%, -50%);
+      transform-origin: left top;
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) translate(-50%, -50%);
+      transform-origin: left top;
+      opacity: 1;
+    }
+  }
 `;

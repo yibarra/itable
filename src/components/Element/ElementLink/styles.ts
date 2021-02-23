@@ -23,6 +23,12 @@ export const ElementLinkContainer = styled.div`
     }
 
     .text {
+      float: left;
+      overflow: hidden;
+      padding: 0;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
       &:before {
         background-color: ${({ theme }: any) => theme.background_color};
       }

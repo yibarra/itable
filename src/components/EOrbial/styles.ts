@@ -33,9 +33,9 @@ export const EOrbitalDiv = styled.div`
   }
 
   .icon-plus {
-    font-size: 11px;
-    font-weight: 700;
-    left: 50%;
+    font-size: 14px;
+    font-weight: 300;
+    left: calc(50% + 1px);
     line-height: 11px;
     position: absolute;
     top: calc(50% - 1px);

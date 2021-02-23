@@ -67,7 +67,7 @@ export const ElementBlockItemDiv = styled.div`
   &[data-type="atomic-number"],
   &[data-type="electro-negativity"],
   &[data-type="oxidation-states"] {
-    animation: fade-in-left 0.6s 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-left 0.6s 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     
     .label {
       .arrow {
@@ -86,7 +86,7 @@ export const ElementBlockItemDiv = styled.div`
   &[data-type="name"],
   &[data-type="ionization-energy"],
   &[data-type="atomic-mass"] {
-    animation: fade-in-right 0.6s 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: fade-in-right 0.6s 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     left: initial;
     right: calc(50% + 110px);
 
