@@ -1,7 +1,9 @@
 import React, { FC, useContext, useEffect } from 'react';
+import { useSpring, config } from 'react-spring';
 
 import Header from '../Header';
 import Element from '../../components/Element';
+import Footer from '../Footer';
 import Grid from '../../components/Grid';
 import Loader from '../../components/Loader';
 
@@ -13,7 +15,6 @@ import { IThemeContext } from '../../providers/ThemeProvider/interfaces';
 import { IContent } from './interfaces';
 
 import { ContentContainerDiv } from './styles';
-import Footer from '../Footer';
 
 // content
 const Content: FC<IContent> = ({ isLoading, value }) => {  
@@ -23,10 +24,27 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
 
   const color = getColorGroup(element?.groupBlock);
 
+  // y position scroll top
+  const [, setY ] = useSpring(() => ({
+    immediate: false,
+    delay: 1000,
+    config: config.slow,
+    y: 0,
+    onFrame: (props: any) => {
+      window.scroll(0, props.y);
+    }
+  }));
+
   // use effect
   useEffect(() => {
-    if (!table && isLoading === false) setTable(value);
-  }, [ isLoading, setTable, table, value ]);
+    if (!table && isLoading === false) {
+      setTable(value);
+    }
+
+    if (element instanceof Object) {
+      setY({ y: 0 });
+    }
+  }, [ isLoading, setTable, table, value, setY, element ]);
 
   // render
   return (
