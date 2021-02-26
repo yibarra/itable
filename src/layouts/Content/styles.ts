@@ -22,12 +22,12 @@ export const ContentContainerDiv = styled.div`
       &:first-child {
         left: 50%;
         position: absolute;
-        transform: translate(-50%, 0);
         top: 0;
+        transform: translate(-50%, 0);
       }
 
       &:last-child {
-        animation: element-in var(--animation-time) var(--animation-bezier) 0s forwards;
+        animation: element-in 0.9s var(--animation-bezier) 0s forwards;
         display: inline-block;
       }
     }

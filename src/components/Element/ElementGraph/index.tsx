@@ -8,13 +8,15 @@ import { IElementGraph } from './interfaces';
 import { ElementGraphDiv } from './styles';
 
 // element graph
-const ElementGraph: FC<IElementGraph> = ({ element }) => {
+const ElementGraph: FC<IElementGraph> = ({ element, color }) => {
   const { source, spectral_img } = element;
 
   // render
   return (
     <ElementGraphDiv>
-      <ElementBlock element={element} />
+      <ElementBlock
+        element={element}
+        color={color} />
 
       <div className="sources">
         {source &&

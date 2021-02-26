@@ -8,7 +8,7 @@ export const ElementInfoContainer = styled.div`
 
   /* Small Devices, Tablets */
   @media only screen and (max-width : 768px) {
-    padding: 0;
+    padding: 30px 0;
     width: 100%;
   }
 `;

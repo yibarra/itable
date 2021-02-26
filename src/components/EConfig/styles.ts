@@ -2,11 +2,12 @@ import styled from "styled-components";
 
 export const EConfigDiv = styled.div`
   float: left;
-  padding: 0;
+  padding: 30px 0 0;
   position: relative;
   width: 100%;
 
   .ec--item {
+    animation: swing-in-top-fwd 0.6s 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
     float: left;
     width: 50%;
 
@@ -53,8 +54,14 @@ export const EConfigDiv = styled.div`
 
   /* Extra Small Devices, Phones */ 
   @media only screen and (max-width : 480px) {
+
     .ec--item {
       width: 100%;
+
+      &:first-child {
+        margin-top: 30px;
+        margin-bottom: 70px;
+      }
     }
   }
 `;

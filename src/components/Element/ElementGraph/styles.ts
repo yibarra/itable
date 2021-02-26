@@ -14,7 +14,7 @@ export const ElementGraphDiv = styled.div`
 
   /* Small Devices, Tablets */
   @media only screen and (max-width : 768px) {
-    padding: 60px 0 0;
+    padding: 0;
     width: 100%;
   }
 `;

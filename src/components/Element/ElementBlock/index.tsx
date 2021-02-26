@@ -4,8 +4,8 @@ import { IElementBlock } from './interfaces';
 import { ElementBlockDiv } from './styles';
 
 // element block
-const ElementBlock: FC<IElementBlock> = ({ element }) => {
-  const { cpkHexColor, symbol } = element;
+const ElementBlock: FC<IElementBlock> = ({ element, color }) => {
+  const { symbol } = element;
 
   // get label
   const getLabel = useCallback((label: any) => {
@@ -40,7 +40,7 @@ const ElementBlock: FC<IElementBlock> = ({ element }) => {
 
         if (label) {
           items.push(<ElementBlockItem
-            color={cpkHexColor}
+            color={color}
             label={label.toString()}
             value={text}
             key={index} />);
@@ -49,13 +49,13 @@ const ElementBlock: FC<IElementBlock> = ({ element }) => {
     }
 
     return items;
-  }, [ element, getLabel, cpkHexColor ]);
+  }, [ element, getLabel, color ]);
 
   // render
   return (
     <ElementBlockDiv>
       {properties()}
-      <div className="symbol" style={{ color: cpkHexColor }}>{symbol}</div>
+      <div className="symbol" style={{ color }}>{symbol}</div>
     </ElementBlockDiv>
   );
 };
