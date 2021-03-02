@@ -63,8 +63,23 @@ export const ElementMinDiv: any = styled.div`
       opacity: 0;
     }
 
+    .atomic-number,
+    .name {
+      color: ${({ theme }: any) => theme.background_color};
+    }
+
+    > div[data-active] {
+      span {
+        color: ${({ theme }: any) => theme.background_color} !important;
+      }
+    }
+
     .bg {
-      opacity: 0;
+      opacity: 1;
+    }
+
+    &:before {
+      display: none;
     }
 
     &:hover {
@@ -72,10 +87,20 @@ export const ElementMinDiv: any = styled.div`
         opacity: 0;
       }
 
-      div[data-active] {
+      .atomic-number,
+      .name {
+        color: inherit;
+      }
+
+      > div[data-active] {
+        color: inherit !important;
         span {
-          color: ${({ theme }: any) => theme.background_color} !important;
+          color: inherit !important;
         }
+      }
+
+      .bg {
+        opacity: 0;
       }
     }
   }
