@@ -1,11 +1,7 @@
 import React, { FC, useState, useRef, useCallback, memo } from 'react';
 
 import RangeSliderLabel from './RangeSliderLabel';
-import RangeSliderPoint from './RangeSliderPoint';
-import RangeSliderLine from './RangeSliderLine';
 import RangeSliderLabelMinMax from './RangeSliderLabel/RangeSliderLabelMinMax';
-
-import UseDimension from '../../../uses/UseDimension';
 
 import { IRangeSlider } from './interfaces';
 
@@ -18,49 +14,30 @@ const RangeSlider: FC<IRangeSlider> = ({ min, max, label, size, callback }) => {
 
   // element
   const element = useRef<HTMLDivElement | null>(null);
-  const { width } = UseDimension(element);
-
-  // get value
-  const getValue = useCallback((value: number): number => {
-    if (!width) return 0;
-
-    const percent = ((value / width) * 100);
-
-    if (min > 0) {
-      return Math.round((((max - min) * percent) / 100) + (min));
-    }
-    
-    return Math.round((max / 100) * percent);
-  }, [ width, max, min ]);
 
   // on change
   const onChange = useCallback((value: any) => {
     if (value !== undefined || isNaN(value) === false) {
-      setTimeout(() => callback(getValue(value)), 400);
+      setTimeout(() => callback(value), 400);
       setValue(value);
     }
-  }, [ setValue, callback, getValue ]);
+  }, [ setValue, callback ]);
 
   // render
   return (
     <RangeSliderContainer ref={element}>
-      <RangeSliderPoint
+      <input
+        type="range"
+        className="slider"
+        min={min}
+        max={max}
         value={value}
-        width={width}
-        setValue={onChange}
-        size={size} />
-
-      <RangeSliderLine
-        value={value}
-        width={width}
-        stroke={2}
-        setValue={onChange}
-        size={size} />
+        onChange={(e) => onChange(e.target.value)} />
 
       <RangeSliderLabel
         label={label}
         size={size}
-        value={getValue(value)} />
+        value={value} />
 
       <RangeSliderLabelMinMax
         min={min}

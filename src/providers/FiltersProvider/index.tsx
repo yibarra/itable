@@ -33,7 +33,7 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
       case 'radioActive':
         return value === true && filters.radioActive === '';
       case 'yearDiscovered':
-        const check = (filters.yearDiscovered === '') ? true : false;
+        const check = (filters.yearDiscovered === '') ? false : true;
         return check ? parseInt(value, 10) <= filters.yearDiscovered || value === 'Ancient' : false;
     }
   }, [ filters ]);
