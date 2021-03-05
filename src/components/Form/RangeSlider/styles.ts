@@ -29,15 +29,15 @@ export const RangeSliderContainer = styled.div`
     border: 2px solid ${({ theme }) => theme.text_color};
     border-radius: 100%;
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
   }
   
   .slider::-moz-range-thumb {
     background-color: ${({ theme }) => theme.background_color};
     border: 2px solid ${({ theme }) => theme.text_color};
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 16px;
+    width: 16px;
   }
 `;

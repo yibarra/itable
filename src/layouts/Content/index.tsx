@@ -17,7 +17,7 @@ import { IContent } from './interfaces';
 import { ContentContainerDiv } from './styles';
 
 // content
-const Content: FC<IContent> = ({ isLoading, value }) => {  
+const Content: FC<IContent> = ({ isLoading, value }) => {
   // context
   const { table, element, setElement, setTable, getColorGroup } = useContext<any>(TableContext);
   const { onToggle }: IThemeContext = useContext<any>(ThemeContext);
@@ -27,7 +27,7 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
   // y position scroll top
   const [, setY ] = useSpring(() => ({
     immediate: false,
-    delay: 1000,
+    delay: 0,
     config: config.slow,
     y: 0,
     onFrame: (props: any) => {

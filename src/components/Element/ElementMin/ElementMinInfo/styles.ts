@@ -60,7 +60,7 @@ export const ElementMinInfoContainer = styled.div`
   .symbol {
     font-size: 20px;
     letter-spacing: -0.07em;
-    margin: 0 0 6px;
+    margin: 0 0 5px;
     text-indent: -2px;
     transition-duration: 0s;
   }

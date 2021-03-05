@@ -7,6 +7,7 @@ import { FirebaseDatabaseProvider, FirebaseDatabaseNode } from '@react-firebase/
 import Content from '../Content';
 
 import { config } from './config';
+import AudioProvider from '../../providers/AudioProvider';
 
 // main
 const Main: FC<any> = () => {
@@ -14,7 +15,11 @@ const Main: FC<any> = () => {
   return (
     <FirebaseDatabaseProvider firebase={firebase} {...config}>
       <FirebaseDatabaseNode path="/">
-        {(value: any) => <Content {...value} />}
+          {(value: any) => 
+            <AudioProvider>
+              <Content {...value} />
+            </AudioProvider>
+          }
       </FirebaseDatabaseNode>
     </FirebaseDatabaseProvider>
   );

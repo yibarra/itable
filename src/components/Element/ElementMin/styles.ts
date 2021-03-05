@@ -59,10 +59,7 @@ export const ElementMinDiv: any = styled.div`
   }
 
   &[data-radio-active="true"] {
-    .symbol {
-      opacity: 0;
-    }
-
+    .symbol,
     .atomic-number,
     .name {
       color: ${({ theme }: any) => theme.background_color};
@@ -83,10 +80,7 @@ export const ElementMinDiv: any = styled.div`
     }
 
     &:hover {
-      .symbol {
-        opacity: 0;
-      }
-
+      .symbol,
       .atomic-number,
       .name {
         color: inherit;
@@ -94,6 +88,7 @@ export const ElementMinDiv: any = styled.div`
 
       > div[data-active] {
         color: inherit !important;
+
         span {
           color: inherit !important;
         }
