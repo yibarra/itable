@@ -4,17 +4,19 @@ import AudioAnalyser from '../AudioAnalyser';
 import { AudioContext } from '../../providers/AudioProvider';
 
 import { SearchDiv } from './styles';
+import { ButtonClearButton } from '../Form/Buttons/ButtonClear/styles';
 
 const Search: FC<any> = () => {
   const { audio, toggleMicrophone }: any = useContext(AudioContext);
 
   return (
-    <SearchDiv>
-      <button onClick={toggleMicrophone}>
-        {audio ? 'Stop microphone' : 'Get microphone input'}
-      </button>
+    <SearchDiv data-active={audio instanceof Object}>
+      <ButtonClearButton onClick={() => toggleMicrophone()}>
+        <span className="material-icons">{audio instanceof Object ? 'mic_off' : 'mic'}</span>
+      </ButtonClearButton>
 
-      {audio && <AudioAnalyser audio={audio} />}
+      {audio instanceof Object &&
+        <AudioAnalyser audio={audio} />}
     </SearchDiv>
   );
 };

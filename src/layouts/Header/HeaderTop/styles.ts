@@ -26,6 +26,12 @@ export const HeaderTopDiv = styled.div`
       float: right;
       pointer-events: auto;
     }
+
+    &--theme {
+      right: 20px;
+      position: absolute;
+      top: 20px;
+    }
   }
 
   &[data-switch="true"] {

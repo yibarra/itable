@@ -22,12 +22,12 @@ const AudioProvider: FC<IAudioProvider> = ({ children }) => {
   // stop microphone
   const stopMicrophone = useCallback(() => {
     audio.getTracks().forEach((track: any) => track.stop());
-    setAudio(audio);
+    setAudio(null);
   }, [ audio, setAudio ]);
 
   // toggle microphone
   const toggleMicrophone = useCallback(() => {
-    if (audio) {
+    if (audio instanceof Object) {
       stopMicrophone();
     } else {
       getMicrophone();
@@ -38,6 +38,7 @@ const AudioProvider: FC<IAudioProvider> = ({ children }) => {
   return (
     <AudioContext.Provider value={{
       audio,
+      stopMicrophone,
       toggleMicrophone,
     }}>
       {children}
