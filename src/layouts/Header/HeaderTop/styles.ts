@@ -28,6 +28,10 @@ export const HeaderTopDiv = styled.div`
     }
 
     &--theme {
+      align-items: flex-end;
+      display: inline-flex;
+      flex-flow: column wrap;
+      justify-content: flex-end;
       right: 20px;
       position: absolute;
       top: 20px;

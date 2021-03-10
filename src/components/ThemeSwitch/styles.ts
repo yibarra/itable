@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const ThemeSwitchContainer = styled.div`
   display: inline-flex;
   flex-flow: column wrap;
-  float: left;
+  margin: 5px 0 0;
+  float: right;
   text-align: left;
   width: auto;
 

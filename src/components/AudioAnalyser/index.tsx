@@ -1,5 +1,6 @@
 import { Component, createRef} from 'react';
 
+import { AudioAnalyserDiv } from './styles';
 class AudioAnalyser extends Component {
   public analyser: any = null;
   public audioContext: any = null;
@@ -78,10 +79,12 @@ class AudioAnalyser extends Component {
   };
 
   render() {
-    return <canvas
-      height="10"
-      width="220"
-      ref={this.element} />;
+    return <AudioAnalyserDiv>
+      <canvas
+        height="10"
+        width="165"
+        ref={this.element} />
+    </AudioAnalyserDiv>;
   }
 }
 
