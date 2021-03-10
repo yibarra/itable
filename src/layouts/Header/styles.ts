@@ -15,6 +15,7 @@ export const HeaderContainer = styled.header`
       float: none;
       max-width: var(--max-width);
       padding: 20px 0;
+      position: relative;
       width: 100%;
     }
   }
