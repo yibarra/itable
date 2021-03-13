@@ -62,7 +62,7 @@ class AudioAnalyser extends Component {
     let x = 0;
 
     context.lineWidth = 2;
-    context.strokeStyle = '#000000';
+    context.strokeStyle = this.props.color;
     context.clearRect(0, 0, width, height);
 
     context.beginPath();

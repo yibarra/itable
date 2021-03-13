@@ -19,6 +19,7 @@ export const HeaderFiltersDiv = styled.div`
 
   .return {
     display: none;
+    margin: 20px 0 0;
   }
 
   &[data-switch="true"] {

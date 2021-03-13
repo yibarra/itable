@@ -11,28 +11,34 @@ export const SearchDiv = styled.div`
   button {
     padding: 0;
     width: 20px;
+
+    &.btn {
+      .material-icons {
+        color: ${({ theme }) => theme.text_color};
+      }
+    }
   }
 
   &[data-active="true"] {
     text-align: left;
-    width: 210px;
+    width: 350px;
 
     p {
       margin-right: 40px;
-      
     }
   }
-`;
 
-export const SearchTermP = styled.p`
-  font-size: 14px;
-  right: calc(100% - 20px);
-  margin: 0;
-  letter-spacing: -0.04em;
-  position: absolute;
-  text-align: right;
-  text-transform: capitalize;
-  top: 50%;
-  transform: translate(0, -50%);
-  width: 100px;
+  &[data-switch="true"] {
+    button {
+      &.btn {
+        .material-icons {
+          color: ${({ theme }) => theme.background_color};
+        }
+      }
+    }
+
+    p {
+      color: ${({ theme }) => theme.background_color};
+    }
+  }
 `;

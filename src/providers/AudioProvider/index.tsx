@@ -13,6 +13,8 @@ const AudioProvider: FC<IAudioProvider> = ({ children }) => {
 
   // stop microphone
   const stopMicrophone = useCallback(() => {
+    if (audio instanceof Object === false) return false;
+    
     audio.getTracks().forEach((track: any) => track.stop());
     setAudio(null);
   }, [ audio, setAudio ]);
@@ -56,6 +58,7 @@ const AudioProvider: FC<IAudioProvider> = ({ children }) => {
     }
   }, [ stopMicrophone, getMicrophone, audio ]);
 
+  // use effect
   useEffect(() => {
     if (value) {
       setTimeout(() => {

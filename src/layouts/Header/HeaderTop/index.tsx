@@ -10,7 +10,11 @@ import { IHeaderTop } from './interfaces';
 import { HeaderTopDiv } from './styles';
 
 // header top
-const HeaderTop: FC<IHeaderTop> = ({ active, color, onToggle }) => {
+const HeaderTop: FC<IHeaderTop> = ({
+  active,
+  color,
+  onToggle
+}) => {
   return (
     <HeaderTopDiv
       data-switch={active}>
@@ -19,7 +23,7 @@ const HeaderTop: FC<IHeaderTop> = ({ active, color, onToggle }) => {
       </div>
 
       <div className="header--theme">
-        <Search />
+        <Search active={active} />
 
         <ThemeSwitch
           color={color}

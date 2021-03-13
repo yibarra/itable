@@ -32,7 +32,7 @@ export const HeaderTopDiv = styled.div`
       display: inline-flex;
       flex-flow: column wrap;
       justify-content: flex-end;
-      right: 20px;
+      right: 0;
       position: absolute;
       top: 20px;
     }
