@@ -48,6 +48,7 @@ export const ElementMinDiv: any = styled.div`
     pointer-events: none;
     opacity: 0.05;
 
+    &[data-search="true"],
     &[data-date="true"],
     &[data-radio-active="true"],
     &[data-group="true"],

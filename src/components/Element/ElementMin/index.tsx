@@ -16,7 +16,14 @@ const ElementMin: FC<IElementMin> = ({
   element,
   setElement
 }) => {
-  const { atomicMass, atomicRadius, radioactive, groupBlock, yearDiscovered } = element;
+  const {
+    atomicMass,
+    atomicRadius,
+    radioactive,
+    groupBlock,
+    yearDiscovered,
+    name 
+  } = element;
   const { filters, onSetFilterByKey }: any = useContext(FiltersContext);
   const { getColorGroup }: any = useContext(TableContext);
 
@@ -26,13 +33,14 @@ const ElementMin: FC<IElementMin> = ({
   // set properties
   const setProperties = useCallback(() => {
     return {
+      'data-search': onSetFilterByKey('search', name),
       'data-atomic-mass': onSetFilterByKey('atomicMass', atomicMass),
       'data-date': onSetFilterByKey('yearDiscovered', yearDiscovered),
       'data-radius': onSetFilterByKey('atomicRadius', atomicRadius),
       'data-radio-active': onSetFilterByKey('radioActive', radioactive),
       'data-group': onSetFilterByKey('groupBlock', groupBlock)
     }
-  }, [ onSetFilterByKey, atomicMass, yearDiscovered, atomicRadius, groupBlock, radioactive ]);
+  }, [ onSetFilterByKey, atomicMass, name, yearDiscovered, atomicRadius, groupBlock, radioactive ]);
 
   // on select
   const onSelect = useCallback((atomicNumber: any) => {

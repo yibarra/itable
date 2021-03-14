@@ -6,7 +6,7 @@ export const SearchDiv = styled.div`
   padding: 0;
   position: relative;
   text-align: right;
-  width: 100%;
+  width: auto;
 
   button {
     padding: 0;
@@ -21,7 +21,7 @@ export const SearchDiv = styled.div`
 
   &[data-active="true"] {
     text-align: left;
-    width: 350px;
+    width: 200px;
 
     p {
       margin-right: 40px;

@@ -4,6 +4,7 @@ import AudioAnalyser from '../AudioAnalyser';
 import SearchInput from './SearchInput';
 
 import { AudioContext } from '../../providers/AudioProvider';
+import { FiltersContext } from '../../providers/FiltersProvider';
 import { ThemeContext } from '../../providers/ThemeProvider';
 
 import { ButtonClearButton } from '../Form/Buttons/ButtonClear/styles';
@@ -12,21 +13,30 @@ import { SearchDiv } from './styles';
 const Search: FC<any> = ({
   active 
 }) => {
+  const { onSetFilterValue } = useContext(FiltersContext);
   const { audio, speech, toggleMicrophone }: any = useContext(AudioContext);
   const { theme }: any = useContext(ThemeContext);
 
   const [ value, setValue ] = useState<string>('');
 
   // on search term
-  const onSearchTerm = useCallback((value: any) =>
-    setValue(value), [ setValue ]);
+  const onSearchTerm = useCallback((value: any) => {
+    setValue(value);
+    
+    if (value === '') {
+      onSetFilterValue('none', {});
+    } else {
+      onSetFilterValue('search', value);
+    }
+  }, [ setValue, onSetFilterValue ]);
 
   // use effect
   useEffect(() => {
     if (speech.value) {
       setValue(speech.value);
+      onSetFilterValue('search', speech.value);
     }
-  }, [ speech.value ]);
+  }, [ speech.value, onSetFilterValue ]);
 
   // render
   return (
@@ -34,6 +44,7 @@ const Search: FC<any> = ({
       data-active={audio instanceof Object}
       data-switch={active}>
         <SearchInput
+          active={active}
           value={value}
           onSearchTerm={onSearchTerm} />
 

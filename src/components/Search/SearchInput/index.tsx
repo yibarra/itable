@@ -6,6 +6,7 @@ import { ButtonClearButton } from '../../Form/Buttons/ButtonClear/styles';
 import { SearchInputDiv, SearchTermI } from './styles';
 
 const SearchInput: FC<ISearchInput> = ({
+  active,
   onSearchTerm,
   value
 }) => {
@@ -22,8 +23,16 @@ const SearchInput: FC<ISearchInput> = ({
     }
   }, [ value, element, onSearchTerm ]);
 
+  // width letters
+  const widthLetters = useCallback(() => {
+    const init = !value.length ? 1 : value.length;
+
+    return init * 9;
+  }, [ value ]);
+
   return (
-    <SearchInputDiv>
+    <SearchInputDiv 
+      data-switch={active}>
       <ButtonClearButton
         className="btn-icon"
         onClick={() => toggle()}>
@@ -34,7 +43,8 @@ const SearchInput: FC<ISearchInput> = ({
         ref={element}
         type="text"
         value={value}
-        onChange={(event: any) => onSearchTerm(event.target.value)} />
+        onChange={(event: any) => onSearchTerm(event.target.value)}
+        style={{ width: widthLetters() }} />
     </SearchInputDiv>
   );
 };

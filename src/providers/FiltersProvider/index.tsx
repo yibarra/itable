@@ -24,6 +24,10 @@ const FiltersProvider: FC<IFilterProvider> = ({ children }) => {
   // set filter by key
   const onSetFilterByKey = useCallback((type: string, value: any) => {
     switch (type) {
+      case 'search':
+        if (!filters.search) return false;
+        
+        return filters.search.toLowerCase() === value.toLowerCase();
       case 'atomicMass':
         return Math.round(filters.atomicMass) >= parseInt(value, 10);
       case 'atomicRadius':
