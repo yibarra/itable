@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useContext } from 'react';
+import React, { FC, useCallback, useContext, useMemo } from 'react';
 
 import ElementMinInfo from './ElementMinInfo';
 import ElementRadioActive from '../ElementRadioActive';
@@ -33,17 +33,42 @@ const ElementMin: FC<IElementMin> = ({
   // color
   const color = getColorGroup(element?.groupBlock);
 
+  // search
+  const radioActiveSearch = useMemo(() =>
+    onSetFilterByKey('radioActive', radioactive), [
+      onSetFilterByKey,
+      radioactive
+    ]);
+  
+  const atomicRadiusSearch = useMemo(() =>
+    onSetFilterByKey('atomicRadius', atomicRadius), [
+      onSetFilterByKey,
+      atomicRadius
+    ]);
+
   // set properties
   const setProperties = useCallback(() => {
+    if (filters.length === 0) return {};
+
     return {
       'data-search': onSetFilterByKey('search', name) || onSetFilterByKey('search', symbol),
       'data-atomic-mass': onSetFilterByKey('atomicMass', atomicMass),
       'data-date': onSetFilterByKey('yearDiscovered', yearDiscovered),
-      'data-radius': onSetFilterByKey('atomicRadius', atomicRadius),
-      'data-radio-active': onSetFilterByKey('radioActive', radioactive),
+      'data-radius': atomicRadiusSearch,
+      'data-radio-active': radioActiveSearch,
       'data-group': onSetFilterByKey('groupBlock', groupBlock)
     }
-  }, [ onSetFilterByKey, atomicMass, name, yearDiscovered, atomicRadius, groupBlock, symbol, radioactive ]);
+  },[
+    filters,
+    onSetFilterByKey,
+    atomicMass,
+    name,
+    yearDiscovered,
+    atomicRadiusSearch,
+    groupBlock,
+    symbol,
+    radioActiveSearch
+  ]);
 
   // on select
   const onSelect = useCallback((atomicNumber: any) => {
@@ -71,12 +96,11 @@ const ElementMin: FC<IElementMin> = ({
 
         <span className="bg" style={{ backgroundColor: color }}></span>
         
-        <ElementRadius
-          atomicRadius={atomicRadius} color={color} />
+        {atomicRadiusSearch &&
+          <ElementRadius atomicRadius={atomicRadius} color={color} />}
 
-        <ElementRadioActive
-          active={radioactive && onSetFilterByKey('radioActive', radioactive)}
-          color={color} />
+        {radioActiveSearch &&
+          <ElementRadioActive active={radioactive} color={color} />}
     </ElementMinDiv>
   );
 };

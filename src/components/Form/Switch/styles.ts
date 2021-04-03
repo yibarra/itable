@@ -14,7 +14,7 @@ export const SwitchContainer = styled(a.div)`
 
   .point {
     background-color: transparent;
-    border: 3px solid ${({ theme }: any) => theme.text_color};
+    border: 2px solid ${({ theme }: any) => theme.text_color};
     border-radius: 100%;
     float: left;
     height: 16px;

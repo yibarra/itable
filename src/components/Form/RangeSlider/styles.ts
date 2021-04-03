@@ -26,7 +26,7 @@ export const RangeSliderContainer = styled.div`
     -webkit-appearance: none;
     appearance: none;
     background-color: ${({ theme }) => theme.background_color};
-    border: 3px solid ${({ theme }) => theme.text_color};
+    border: 2px solid ${({ theme }) => theme.text_color};
     border-radius: 100%;
     cursor: pointer;
     height: 16px;

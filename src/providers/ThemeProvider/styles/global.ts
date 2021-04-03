@@ -62,12 +62,12 @@ export default createGlobalStyle`
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: ${({ theme }: any) => theme?.text_color};
+    background: ${({ theme }: any) => theme?.background_color};
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }: any) => theme?.background_color};
+    background: ${({ theme }: any) => theme?.text_color};
     border-radius: 0;
   }
 

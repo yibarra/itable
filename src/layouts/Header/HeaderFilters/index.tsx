@@ -20,7 +20,7 @@ const HeaderFilters: FC<IHeaderFilters> = ({ active, color, setElement }) => {
         <ButtonReturn
           active={active}
           callback={setElement}
-          text="Return" />
+          text="" />
       </div>
     </HeaderFiltersDiv>
   );

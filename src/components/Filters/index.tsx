@@ -20,8 +20,6 @@ const Filters: FC<IFilters> = () => {
   return (
     <FiltersContainer>
       <div className="filters-container">
-        <p className="filters-container--title">View</p>
-
         <div className="filters-container--list">
           <Select
               callback={(value: any) => onSetFilterValue(value.value, '')}

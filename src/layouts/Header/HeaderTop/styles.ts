@@ -12,11 +12,21 @@ export const HeaderTopDiv = styled.div`
       width: 20px;
 
       svg {
-        width: 60px;
+        left: -2px;
+        position: relative;
+        width: 30px;
 
-        path,
-        polygon {
+        .st0 {
+          fill: none;
+          stroke: ${({ theme }: any) => theme.text_color};
+          stroke-width: 3;
+          stroke-miterlimit: 10;
+        }
+
+        .st1 {
           fill: ${({ theme }: any) => theme.text_color};
+          fill-rule: evenodd;
+          clip-rule: evenodd;
         }
       }
     }
@@ -34,7 +44,7 @@ export const HeaderTopDiv = styled.div`
       justify-content: flex-end;
       right: 0;
       position: absolute;
-      top: 20px;
+      top: 10px;
     }
   }
 
@@ -46,8 +56,7 @@ export const HeaderTopDiv = styled.div`
         }
 
         svg {
-          path,
-          polygon {
+          .st0 {
             fill: ${({ theme }: any) => theme.background_color};
           }
         }

@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, memo, useCallback } from 'react';
 
 import ElementMin from '../Element/ElementMin';
 import RowColumn from './RowColumn';
@@ -41,12 +41,10 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
   // render
   return (
     <GridDiv
-      style={{
-        height: 67 * 9
-      }}>
+      style={{ height: 67 * 9 }}>
       {elements instanceof Object && getElementTable(elements)}
     </GridDiv>
   );
 };
 
-export default Grid;
+export default memo(Grid);

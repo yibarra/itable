@@ -1,4 +1,5 @@
 import React, { FC, memo, useCallback, useRef } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import { useSpring } from 'react-spring';
 
 import UseDimension from '../../../uses/UseDimension';
@@ -9,6 +10,11 @@ import { RowColumnDiv } from './styles';
 
 // row column
 const RowColumn: FC<IRowColumn> = ({ info, children, xpos, ypos }) => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
+  const element = useRef<any>(null);
+  const { height, width } = UseDimension(element);
+  
   const { y, opacity }: any = useSpring({
     to: { y: 0, opacity: 1 },
     from: { y: 100, opacity: 0 },
@@ -18,9 +24,6 @@ const RowColumn: FC<IRowColumn> = ({ info, children, xpos, ypos }) => {
     },
     delay: Math.abs((ypos - ((ypos / 2) * (xpos / 2))) + (ypos + 1)) * 60 
   });
-
-  const element = useRef<any>(null);
-  const { height, width } = UseDimension(element);
 
   // type position
   const typePosition = useCallback(() => {
@@ -54,7 +57,8 @@ const RowColumn: FC<IRowColumn> = ({ info, children, xpos, ypos }) => {
         left: `${Math.floor(width * (xpos - 1))}px`,
         top: `${Math.floor(height * (ypos - 1))}px`,
         opacity: opacity.interpolate((value: any) => value),
-        transform: y.interpolate((value: any) => `translate(0px, ${value}%)`)
+        transform: !isMobile 
+          ? y.interpolate((value: any) => `translate(0px, ${value}%)`) : 'none'
       }}>
       <>
         {typePosition()}
