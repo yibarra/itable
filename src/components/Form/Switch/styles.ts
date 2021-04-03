@@ -14,14 +14,14 @@ export const SwitchContainer = styled(a.div)`
 
   .point {
     background-color: transparent;
-    border: 2px solid ${({ theme }: any) => theme.text_color};
+    border: 3px solid ${({ theme }: any) => theme.text_color};
     border-radius: 100%;
     float: left;
-    height: 15px;
+    height: 16px;
     margin: 0;
     position: relative;
     transform: translate(-50%, 0);
-    width: 15px;
+    width: 16px;
 
     &:before,
     &:after {
@@ -35,11 +35,11 @@ export const SwitchContainer = styled(a.div)`
     }
 
     &:before {
-      left: 100%;
+      left: calc(100% + 2px);
     }
 
     &:after {
-      right: 100%;
+      right: calc(100% + 2px);
     }
   }
 

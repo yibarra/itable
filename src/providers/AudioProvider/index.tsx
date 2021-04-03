@@ -63,7 +63,7 @@ const AudioProvider: FC<IAudioProvider> = ({ children }) => {
     if (value) {
       setTimeout(() => {
         stop();
-      }, 1000);
+      }, 500);
     }
   }, [ value, stop ]);
 
