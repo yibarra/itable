@@ -10,7 +10,7 @@ export const EOrbitalDiv = styled.div`
 
   .orbit {
     animation: ani-circle 20s infinite linear;
-    border: 2px solid ${({ theme }: any) => theme.background_color};
+    border: 1px dashed ${({ theme }: any) => theme.second_color};
     border-radius: 100%;
     left: 50%;
     position: absolute;
@@ -18,7 +18,7 @@ export const EOrbitalDiv = styled.div`
     top: 50%;
 
     .atom {
-      background-color: ${({ theme }: any) => theme.background_color};
+      background-color: ${({ theme }: any) => theme.second_color};
       height: 8px;
       border-radius: 100%;
       left: calc(50% - 4px);
@@ -44,7 +44,7 @@ export const EOrbitalDiv = styled.div`
   }
 
   &:before {
-    background-color: ${({ theme }: any) => theme.background_color};
+    background-color: ${({ theme }: any) => theme.second_color};
     content: '';
     border-radius: 100%;
     height: 20px;

@@ -20,6 +20,15 @@ export const HeaderFiltersDiv = styled.div`
   .return {
     display: none;
     margin: 20px 0 0;
+    pointer-events: none;
+
+    > button {
+      pointer-events: auto;
+
+      .material-icons {
+        color: ${({ theme }) => theme.second_color};
+      }
+    }
   }
 
   &[data-switch="true"] {

@@ -26,7 +26,7 @@ export const ElementTableContainer = styled.ul`
       }
 
       &:after {
-        background-color: ${({ theme }: any) => theme.background_color};
+        background-color: ${({ theme }: any) => theme.second_color};
         border-radius: 0;
         content: '';
         height: 100%;

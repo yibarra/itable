@@ -57,12 +57,12 @@ export const HeaderTopDiv = styled.div`
 
         svg {
           .st0 {
-            stroke: ${({ theme }: any) => theme.background_color};
+            stroke: ${({ theme }: any) => theme.second_color};
             fill: none;
           }
 
           .st1 {
-            fill: ${({ theme }: any) => theme.background_color};
+            fill: ${({ theme }: any) => theme.second_color};
           }
         }
       }

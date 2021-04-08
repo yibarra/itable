@@ -45,16 +45,16 @@ export const SwitchContainer = styled(a.div)`
 
   &[data-switch="true"] {
     .point {
-      border: 2px solid ${({ theme }: any) => theme.background_color};
+      border: 2px solid ${({ theme }: any) => theme.second_color};
 
       &:after,
       &:before {
-        background-color: ${({ theme }: any) => theme.background_color};
+        background-color: ${({ theme }: any) => theme.second_color};
       }
     }
 
     &:before {
-      background-color: ${({ theme }: any) => theme.background_color};
+      background-color: ${({ theme }: any) => theme.second_color};
     }
   }
 `;

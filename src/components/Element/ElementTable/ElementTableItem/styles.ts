@@ -12,7 +12,7 @@ export const ElementTableItemContainer = styled.p`
 
   .label,
   .text {
-    color: ${({ theme }: any) => theme.background_color};
+    color: ${({ theme }: any) => theme.second_color};
     float: left;
     line-height: 1em;
     letter-spacing: -0.04em;

@@ -29,6 +29,9 @@ export const SearchDiv = styled.div`
   }
 
   &[data-switch="true"] {
+    opacity: 0;
+    pointer-events: none;
+
     button {
       &.btn {
         .material-icons {

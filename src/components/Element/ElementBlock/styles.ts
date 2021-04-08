@@ -12,7 +12,7 @@ export const ElementBlockDiv = styled.div`
 
   .symbol {
     animation: scale-in-center 0.5s 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    background-color: ${({ theme }: any) => theme.background_color};
+    background-color: ${({ theme }: any) => theme.second_color};
     font-weight: 600;
     font-size: 90px;
     height: 270px;
@@ -28,7 +28,7 @@ export const ElementBlockDiv = styled.div`
 
     &:before {
       background: transparent;
-      border: 2px solid ${({ theme }: any) => theme.background_color};
+      border: 2px solid ${({ theme }: any) => theme.second_color};
       content: '';
       left: 50%;
       height: calc(100% + 4px);

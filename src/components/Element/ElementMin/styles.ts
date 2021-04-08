@@ -63,12 +63,12 @@ export const ElementMinDiv: any = styled.div`
     .symbol,
     .atomic-number,
     .name {
-      color: ${({ theme }: any) => theme.background_color};
+      color: ${({ theme }: any) => theme.second_color};
     }
 
     > div[data-active] {
       span {
-        color: ${({ theme }: any) => theme.background_color} !important;
+        color: ${({ theme }: any) => theme.second_color} !important;
       }
     }
 
@@ -105,7 +105,7 @@ export const ElementMinDiv: any = styled.div`
     .atomic-number,
     .name,
     .symbol {
-      color: ${({ theme }: any) => theme.background_color};
+      color: ${({ theme }: any) => theme.second_color};
       opacity: 1;
       transition-duration: 0s;
     }
@@ -153,7 +153,7 @@ export const ElementMinDiv: any = styled.div`
 
       .atomic-number,
       .name {
-        color: ${({ theme }: any) => theme.background_color};
+        color: ${({ theme }: any) => theme.second_color};
       }
 
       .name {
@@ -163,7 +163,7 @@ export const ElementMinDiv: any = styled.div`
       }
 
       .radius {
-        background-color: ${({ theme }: any) => theme.background_color} !important;
+        background-color: ${({ theme }: any) => theme.second_color} !important;
       }
     }
 
@@ -181,7 +181,7 @@ export const ElementMinDiv: any = styled.div`
     .atomic-number,
     .name,
     .symbol {
-      color: ${({ theme }: any) => theme.background_color};
+      color: ${({ theme }: any) => theme.second_color};
       opacity: 1;
     }
 

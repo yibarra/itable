@@ -25,7 +25,7 @@ export const EConfigDiv = styled.div`
     label,
     .label,
     .text {
-      color: ${({ theme }: any) => theme.background_color};
+      color: ${({ theme }: any) => theme.second_color};
       float: left;
       font-weight: 600;
       letter-spacing: -0.04em;

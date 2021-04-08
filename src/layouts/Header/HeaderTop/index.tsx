@@ -23,7 +23,8 @@ const HeaderTop: FC<IHeaderTop> = ({
       </div>
 
       <div className="header--theme">
-        <Search active={active} />
+        <Search
+          active={active} />
 
         <ThemeSwitch
           color={color}

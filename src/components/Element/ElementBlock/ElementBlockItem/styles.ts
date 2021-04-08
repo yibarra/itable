@@ -38,7 +38,7 @@ export const ElementBlockItemDiv = styled.div`
   }
 
   .label {
-    color: ${({ theme }: any) => theme.background_color};
+    color: ${({ theme }: any) => theme.second_color};
     font-size: 12px;
     padding: 0 10px;
     white-space: nowrap;

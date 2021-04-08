@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ElementDateP = styled.p`
   animation: swing-in-top-fwd 0.6s 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
   align-items: flex-end;
-  color: ${({ theme }: any) => theme.background_color};
+  color: ${({ theme }: any) => theme.second_color};
   display: inline-flex;
   flex-flow: row nowrap;
   float: left;
