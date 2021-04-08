@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 
 import HeaderFilters from './HeaderFilters';
 import HeaderTop from './HeaderTop';
@@ -15,6 +15,13 @@ const Header: FC<IHeader> = ({
   setElement
 }) => {
   const active = element instanceof Object ? true : false;
+  
+  // get color
+  const getColor = useCallback((): Object => {
+    if (!color) return {};
+
+    return { backgroundColor: color };
+  }, [ color ]);
 
   // render
   return (
@@ -32,7 +39,7 @@ const Header: FC<IHeader> = ({
           setElement={setElement} />
 
         <HeaderContainerBgDiv
-          style={{ backgroundColor: color ? color : 'inherit' }}>
+          style={getColor()}>
         </HeaderContainerBgDiv>
       </div>
     </HeaderDiv>

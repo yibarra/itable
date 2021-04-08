@@ -26,7 +26,6 @@ export const HeaderDiv = styled.header`
         &:last-child {
           border: none;
           border-bottom: 1px solid ${({ theme }) => theme.background_color};
-          height: 100%;
         }
       }
     }
@@ -48,7 +47,7 @@ export const HeaderDiv = styled.header`
 `;
 
 export const HeaderContainerBgDiv = styled.div`
-  background-color: ${({ theme }) => theme.background_color};
+  background: ${({ theme }) => theme.background_color};
   height: 100%;
   left: 50%;
   opacity: 0.95;

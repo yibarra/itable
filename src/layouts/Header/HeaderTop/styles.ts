@@ -57,6 +57,11 @@ export const HeaderTopDiv = styled.div`
 
         svg {
           .st0 {
+            stroke: ${({ theme }: any) => theme.background_color};
+            fill: none;
+          }
+
+          .st1 {
             fill: ${({ theme }: any) => theme.background_color};
           }
         }
