@@ -20,7 +20,7 @@ export const ElementMinDiv: any = styled.div`
 
   .bg,
   &:before {
-    background-color: ${({ theme }) => theme.second_color};
+    background-color: ${({ theme }) => theme.background_item};
     border: none;
     content: '';
     height: 100%;
@@ -172,6 +172,7 @@ export const ElementMinDiv: any = styled.div`
     }
   }
 
+  &[data-search="true"],
   &[data-active="true"],
   &:hover {
     .bg {

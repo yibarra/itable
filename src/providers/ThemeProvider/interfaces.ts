@@ -3,6 +3,7 @@ import { DefaultTheme } from "styled-components";
 
 export interface ITheme {
   background_color: string;
+  background_item: string;
   name: string;
   text_color: string;  
 }
