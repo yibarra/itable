@@ -20,17 +20,6 @@ export const HeaderDiv = styled.header`
     }
   }
 
-  &[data-switch="true"] {
-    .header--content {
-      > div {
-        &:last-child {
-          border: none;
-          border-bottom: 1px solid ${({ theme }) => theme.background_color};
-        }
-      }
-    }
-  }
-
   &[data-switch="false"] {
     .header--content {
       > div {
@@ -50,7 +39,7 @@ export const HeaderContainerBgDiv = styled.div`
   background: ${({ theme }) => theme.background_color};
   height: 100%;
   left: 50%;
-  opacity: 0.95;
+  opacity: 0.9;
   position: absolute;
   top: 0;
   transform: translate(-50%, 0);

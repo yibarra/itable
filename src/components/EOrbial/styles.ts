@@ -10,7 +10,6 @@ export const EOrbitalDiv = styled.div`
 
   .orbit {
     animation: ani-circle 20s infinite linear;
-    border: 1px dashed ${({ theme }: any) => theme.second_color};
     border-radius: 100%;
     left: 50%;
     position: absolute;
@@ -29,6 +28,20 @@ export const EOrbitalDiv = styled.div`
 
     &[data-active="true"] {
       opacity: 0.1;
+    }
+
+    &:before {
+      animation: ani-circle 20s infinite linear;
+      animation-direction: reverse;
+      border: 1px dashed ${({ theme }: any) => theme.second_color};
+      border-radius: 100%;
+      content: '';
+      height: 100%;
+      left: 50%;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      width: 100%;
     }
   }
 

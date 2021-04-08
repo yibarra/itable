@@ -85,7 +85,7 @@ export const EConfigItemDiv = styled.div`
     .name {
       &:before {
         background-color: transparent;
-        border: 1px dashed ${({ theme }: any) => rgba(theme.background_color, 0.4)};
+        border: 1px dashed ${({ theme }: any) => rgba(theme.second_color, 0.4)};
         border-left-color: transparent;
         border-radius: 0;
         bottom: initial;
