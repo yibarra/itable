@@ -1,7 +1,7 @@
 export const Light = {
-  background_color: '#FAF2E6',
+  background_color: '#fff0db',
   name: 'light',
-  background_item: '#FAF2E6',
+  background_item: '#fffbf3',
   second_color: '#332033',
   text_color: "#332033",
 };

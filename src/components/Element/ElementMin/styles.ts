@@ -7,20 +7,20 @@ export const ElementMinDiv: any = styled.div`
   display: inline-flex;
   flex-flow: row wrap;
   float: left;
-  left: 1px;
+  left: 0;
   height: calc(100% - 2px);
   margin: 0;
   padding: 0;
   position: relative;
   transition: all var(--animation-time) var(--animation-bezier);
   text-align: center;
-  top: 1px;
+  top: 0;
   width: calc(100% - 2px);
   vertical-align: top;
 
   .bg,
   &:before {
-    background-color: ${({ theme }) => theme.background_item};
+    background-color: ${({ theme }) => theme.background_color};
     border: none;
     content: '';
     height: 100%;

@@ -48,6 +48,19 @@ export const RowColumnDiv = styled(a.div)`
     }
   }
 
+  &:before {
+    background: ${({ theme }) => theme.background_item};
+    content: '';
+    height: calc(100% + 2px);
+    left: -2px;
+    opacity: 1;
+    position: absolute;
+    top: -2px;
+    transition: all var(--animation-time) var(--animation-bezier);
+    width: calc(100% + 2px);
+    z-index: -2;
+  }
+
   @media only screen and (max-width : 1024px) {
     .label {
       display: none;
