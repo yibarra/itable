@@ -20,10 +20,10 @@ const ElementGraph: FC<IElementGraph> = ({ element, color }) => {
 
       <div className="sources">
         {source &&
-          <ElementLink text="Source" link={source} />}
+          <ElementLink text="Fuente" link={source} />}
 
         {spectral_img &&
-          <ElementLink text="Spectra Image" link={spectral_img} />}
+          <ElementLink text="Imagen Espectros" link={spectral_img} />}
       </div>
     </ElementGraphDiv>
   );

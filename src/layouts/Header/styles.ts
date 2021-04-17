@@ -38,6 +38,7 @@ export const HeaderDiv = styled.header`
 export const HeaderContainerBgDiv = styled.div`
   background: ${({ theme }) => theme.background_color};
   height: 100%;
+  max-height: 100px;
   left: 50%;
   opacity: 0.9;
   position: absolute;

@@ -18,7 +18,7 @@ const ElementInfo: FC<IElementInfo> = ({ element, color }) => {
   return (
     <ElementInfoContainer>
       <ElementTitleHOne>{name}</ElementTitleHOne>
-      <ElementDate text="Data discovery" year={yearDiscovered} />
+      <ElementDate text="Fecha de Descubrimiento" year={yearDiscovered} />
       <ElementSummaryP>{summary}</ElementSummaryP>
       <ElementTable element={element} />
 

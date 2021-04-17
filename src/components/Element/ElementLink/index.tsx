@@ -6,7 +6,10 @@ import { IElementLink } from './interfaces';
 import { ElementLinkContainer } from './styles';
 
 // element link
-const ElementLink: FC<IElementLink> = ({ link, text }) => {
+const ElementLink: FC<IElementLink> = ({
+  link,
+  text
+}) => {
   // render
   return (
     <ElementLinkContainer>

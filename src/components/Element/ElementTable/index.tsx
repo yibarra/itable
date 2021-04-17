@@ -1,51 +1,13 @@
 import React, { FC, useCallback } from 'react';
+import UseLabels from '../../../uses/UseLabels';
 import ElementTableItem from './ElementTableItem';
 
 import { ElementTableContainer } from './styles';
 
 // element table
 const ElementTable: FC<any> = ({ element }) => {
+  const { getLabel } = UseLabels();
   const { cpkHexColor } = element;
-
-  // get label
-  const getLabel = useCallback((label: any) => {
-    switch (label) {
-      case 'atomicMass':
-        return 'Atomic Mass';
-      case 'atomicNumber':
-        return 'Atomic Number';
-      case 'atomicRadius':
-        return 'Atomic Radius';
-      case 'boilingPoint':
-        return 'Boiling Point';
-      case 'bondingType':
-        return 'Bonding Type';
-      case 'density':
-        return 'Density';
-      case 'electronAffinity':
-        return 'Electron Affinity';
-      case 'electronegativity':
-        return 'Electro-Negativity';
-      case 'period':
-        return 'Period';
-      case 'name':
-        return 'Name';
-      case 'groupBlock':
-        return 'Group Block';
-      case 'electronicConfiguration':
-        return 'EC';
-      case 'ionizationEnergy':
-        return 'Ionization Energy';
-      case 'ionRadius':
-        return 'Ion Radius';
-      case 'standardState':
-        return 'Standard State';
-      case 'meltingPoint':
-        return 'Melting Point';
-      default: 
-        return false;
-    }
-  }, []);
 
   // table
   const rows = useCallback((items: any[]) => {
@@ -86,7 +48,7 @@ const ElementTable: FC<any> = ({ element }) => {
         const label = getLabel(key);
 
         if (label) {
-          items.push({ label, text, key: index });
+          items.push({ label: label.label, text, key: index });
         }
       });
     }

@@ -5,10 +5,14 @@ import { IElementBlockItem } from './interfaces';
 import { ElementBlockItemDiv } from './styles';
 
 // element block item
-const ElementBlockItem: FC<IElementBlockItem> = ({ color, label, value = '' }) => {
+const ElementBlockItem: FC<IElementBlockItem> = ({
+  color,
+  label,
+  value = ''
+}) => {
   // format
   const format = useCallback(() => {
-    switch (label) {
+    switch (label?.name) {
       case 'Oxidation States':
         if (!value || value === '')  {
           return false;
@@ -31,10 +35,13 @@ const ElementBlockItem: FC<IElementBlockItem> = ({ color, label, value = '' }) =
   // render
   return (
     <ElementBlockItemDiv
-      data-type={label.replace(' ', '-').toString().toLowerCase()}>
+      data-type={label?.name.replace(' ', '-').toString().toLowerCase()}>
       <label className="label">
-        <span className="arrow" style={{ backgroundColor: color, borderColor: color }}></span>
-        {label}
+        <span className="arrow" style={{
+          backgroundColor: color,
+          borderColor: color
+        }}></span>
+        {label?.label}
       </label>
       <label className="value" style={{ color }}>{format()}</label>
     </ElementBlockItemDiv>

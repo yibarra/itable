@@ -1,5 +1,8 @@
 export interface IElementBlockItem {
   color: string;
-  label: string;
+  label?: {
+    name: string;
+    label: string;
+  };
   value: string;
 }

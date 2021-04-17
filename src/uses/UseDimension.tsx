@@ -11,8 +11,8 @@ const UseDimension = (ref: any) => {
 
   // use effect
   useEffect(() => {
-    resizeObserverRef.current = new ResizeObserver((entries = []) => {
-      entries.forEach((entry) => {
+    resizeObserverRef.current = new ResizeObserver((entries: any = []) => {
+      entries.forEach((entry: any) => {
         const { width, height } = entry.contentRect;
         setDimensions({ width, height });
       });
