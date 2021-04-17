@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 // label
-export const RangeSliderLabelContainer = styled.p`
-  float: left;
+export const RangeSliderLabelDiv = styled.div`
+  float: none;
   margin: 0;
-  padding: 20px 10px 0;
+  padding: 0 10px 0;
   position: relative;
   text-align: center;
   width: 100%;
@@ -12,10 +12,6 @@ export const RangeSliderLabelContainer = styled.p`
   .label,
   .value {
     color: ${({ theme }) => theme.text_color};
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: -0.04em;
-    line-height: 1em;
   }
 
   .label {
@@ -23,6 +19,6 @@ export const RangeSliderLabelContainer = styled.p`
   }
 
   .value {
-    font-size: 16px;
+    font-size: 14px;
   }
 `;

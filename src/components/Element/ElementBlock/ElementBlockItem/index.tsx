@@ -1,4 +1,5 @@
 import React, { FC, useCallback } from 'react';
+import { TextP } from '../../../Typography/Text/styles';
 
 import { IElementBlockItem } from './interfaces';
 
@@ -36,14 +37,16 @@ const ElementBlockItem: FC<IElementBlockItem> = ({
   return (
     <ElementBlockItemDiv
       data-type={label?.name.replace(' ', '-').toString().toLowerCase()}>
-      <label className="label">
+      
+      <TextP className="label">
         <span className="arrow" style={{
           backgroundColor: color,
           borderColor: color
         }}></span>
         {label?.label}
-      </label>
-      <label className="value" style={{ color }}>{format()}</label>
+      </TextP>
+
+      <TextP className="value" style={{ color }}>{format()}</TextP>
     </ElementBlockItemDiv>
   );
 };

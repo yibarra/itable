@@ -2,16 +2,21 @@ import React, { FC } from 'react';
 
 import { IRangeSliderLabel } from './interfaces';
 
-import { RangeSliderLabelContainer } from './styles';
+import { TextP } from '../../../Typography/Text/styles';
+import { RangeSliderLabelDiv } from './styles';
 
 // range
-const RangeSliderLabel: FC<IRangeSliderLabel> = ({ label, size, value }) => {
+const RangeSliderLabel: FC<IRangeSliderLabel> = ({
+  label,
+  size,
+  value
+}) => {
   // render
   return (
-    <RangeSliderLabelContainer style={{ marginTop: size }}>
-      <span className="value">{value}</span>
-      <span className="label">{label}</span>
-    </RangeSliderLabelContainer>
+    <RangeSliderLabelDiv style={{ marginTop: size }}>
+      <TextP className="value">{value}</TextP>
+      <TextP className="label">{label}</TextP>
+    </RangeSliderLabelDiv>
   );
 };
 

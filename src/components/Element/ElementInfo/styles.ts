@@ -7,7 +7,7 @@ export const ElementInfoContainer = styled.div`
   width: calc(100% - 500px);
 
   h1 {
-    margin: 0 0 9px;
+    margin: 0 0 13px;
   }
 
   /* Small Devices, Tablets */

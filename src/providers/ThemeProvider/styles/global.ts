@@ -6,6 +6,7 @@ export default createGlobalStyle`
   body * {
     box-sizing: border-box;
     display: inline-block;
+    position: relative;
     vertical-align: top;
   }
 

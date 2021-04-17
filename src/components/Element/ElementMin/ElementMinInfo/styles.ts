@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ElementMinInfoContainer = styled.div`
+export const ElementMinInfoDiv = styled.div`
   float: left;
   width: 100%;
 
@@ -9,8 +9,6 @@ export const ElementMinInfoContainer = styled.div`
   .symbol {
     color: inherit;
     float: left;
-    line-height: 1em;
-    letter-spacing: -0.04em;
     padding: 0 5px;
     pointer-events: none;
     text-align: center;
@@ -25,7 +23,7 @@ export const ElementMinInfoContainer = styled.div`
     position: absolute;
     text-align: right;
     transition-duration: 0s;
-    top: 5px;
+    top: -10px;
     width: auto;
   }
 
@@ -59,9 +57,8 @@ export const ElementMinInfoContainer = styled.div`
 
   .symbol {
     font-size: 20px;
+    margin: 0;
     letter-spacing: -0.07em;
-    margin: 0 0 5px;
-    text-indent: -2px;
     transition-duration: 0s;
   }
 

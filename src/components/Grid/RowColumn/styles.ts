@@ -19,7 +19,7 @@ export const RowColumnDiv = styled(a.div)`
 
     &.l {
       left: -20px;
-      top: 50%;
+      top: calc(50% - 4px);
       transform: translate(0, -50%);
     }
 
@@ -31,7 +31,7 @@ export const RowColumnDiv = styled(a.div)`
 
     &.e {
       left: -20px;
-      top: 50%;
+      top: calc(50% - 3px);
       transform: translate(0, -50%);
 
       &:before {

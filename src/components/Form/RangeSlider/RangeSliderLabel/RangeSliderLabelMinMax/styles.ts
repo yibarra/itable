@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // label min
-export const RangeSliderLabelMinMaxContainer = styled.p`
+export const RangeSliderLabelMinMaxDiv = styled.div`
   bottom: 20px;
   left: 0;
   margin: 0;
@@ -12,9 +12,7 @@ export const RangeSliderLabelMinMaxContainer = styled.p`
 
   .min,
   .max {
-    font-size: 12px;
-    letter-spacing: -0.04em;
-    font-weight: 400;
+    top: -20px;
   }
 
   .min,

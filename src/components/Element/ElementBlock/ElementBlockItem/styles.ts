@@ -4,16 +4,6 @@ export const ElementBlockItemDiv = styled.div`
   position: absolute;
   z-index: 2;
 
-  .arrow,
-  .label,
-  .value {
-    font-size: 14px;
-    float: left;
-    letter-spacing: -0.04em;
-    line-height: 1em;
-    position: relative;
-  }
-
   .arrow {
     border-radius: 100%;
     height: 8px;
@@ -39,7 +29,6 @@ export const ElementBlockItemDiv = styled.div`
 
   .label {
     color: ${({ theme }: any) => theme.second_color};
-    font-size: 12px;
     padding: 0 10px;
     white-space: nowrap;
 
@@ -118,23 +107,22 @@ export const ElementBlockItemDiv = styled.div`
     z-index: 2;
 
     .label {
-      left: 20px;
-      padding: 0 0 0 20px;
+      left: 30px;
+      padding: 0 0 0 10px;
       position: absolute;
       top: 0;
 
       .arrow {
         &:after {
-          width: 15px;
+          width: 7px;
         }
       }
     }
 
     .value {
       bottom: 0;
-      font-size: 12px;
       left: 0;
-      line-height: 1.4em;
+      line-height: 1.2;
       padding: 15px 0 0;
       position: relative;
 
@@ -163,7 +151,7 @@ export const ElementBlockItemDiv = styled.div`
   }
 
   &[data-type="e-config"] {
-    top: 245px;
+    bottom: 10px;
 
     .value {
       width: 180px;

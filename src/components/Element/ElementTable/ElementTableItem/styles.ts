@@ -16,10 +16,13 @@ export const ElementTableItemContainer = styled.p`
     float: left;
     line-height: 1em;
     letter-spacing: -0.04em;
+    overflow: hidden;
     position: relative;
+    text-overflow: ellipsis;
     text-transform: capitalize;
     width: auto;
     vertical-align: top;
+    white-space: nowrap;
   }
 
   .label {

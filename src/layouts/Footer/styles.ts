@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FooterDiv = styled.footer`
-  bottom: 20px;
+  bottom: 10px;
   left: 20px;
   position: fixed;
 
@@ -22,7 +22,7 @@ export const FooterDiv = styled.footer`
       font-size: 12px;
       margin-right: 5px;
       position: relative;
-      top: -5px;
+      top: -3px;
     }
 
     .text {
