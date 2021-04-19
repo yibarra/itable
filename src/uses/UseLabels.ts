@@ -8,82 +8,82 @@ const UseLabels = () => {
       case 'atomicMass':
         return {
           name: 'Atomic Mass',
-          label: 'Masa Atómica'
+          label: 'Atomic Mass'
         };
       case 'atomicNumber':
         return {
           name: 'Atomic Number',
-          label: 'Numero Atómico'
+          label: 'Atomic Number'
         };
       case 'electronegativity':
         return {
           name: 'Electro-Negativity',
-          label: 'Electronegatividad'
+          label: 'Electro-Negativity'
         };
       case 'name':
         return {
           name: 'Name',
-          label: 'Nombre'
+          label: 'Name'
         };
       case 'electronicConfiguration':
         return {
-          name: 'E Config',
-          label: 'Config. Electronica'
+          name: 'E. Config',
+          label: 'E. Config'
         };
       case 'ionizationEnergy':
         return {
           name: 'Ionization Energy',
-          label: 'Energía Ionización'
+          label: 'Ionization Energy'
         };
       case 'oxidationStates':
         return {
           name: 'Oxidation States',
-          label: 'Estados Oxidación'
+          label: 'Oxidation States'
         };
       case 'boilingPoint':
         return {
           name: 'Boiling Point',
-          label: 'Punto Ebullición'
+          label: 'Boiling Point'
         };
       case 'bondingType':
         return {
           name: 'Bonding Type',
-          label: 'Tipo Vinculación'
+          label: 'Bonding Type'
         };
       case 'density':
         return {
           name: 'Density',
-          label: 'Densidad'
+          label: 'Density'
         };
       case 'electronAffinity':
         return {
           name: 'Electron Affinity',
-          label: 'Afinidad Electronica'
+          label: 'Electron Affinity'
         };
       case 'period':
         return {
           name: 'Period',
-          label: 'Período'
+          label: 'Period'
         };
       case 'groupBlock':
         return {
           name: 'Group Block',
-          label: 'Bloque Grupo'
+          label: 'Group Block'
         };
       case 'ionRadius':
         return {
           name: 'Ion Radius',
-          label: 'Radio de Iones'
+          label: 'Ion Radius'
         };
       case 'standardState':
         return {
           name: 'Standard State',
-          label: 'Estado Estándar'
+          label: 'Standard State'
         };
       case 'meltingPoint':
         return {
           name: 'Melting Point',
-          label: 'Punto Fusion'
+          label: 'Melting Point'
         };
       default: 
         return false;
@@ -96,37 +96,37 @@ const UseLabels = () => {
       case 'atomicMass':
         return {
           name: 'Atomic Mass',
-          label: 'Masa Atómica'
+          label: 'Atomic Mass'
         };
       case 'atomicNumber':
         return {
           name: 'Atomic Number',
-          label: 'Numero Atómica'
+          label: 'Atomic Number'
         };
       case 'electronegativity':
         return {
           name: 'Electro-Negativity',
-          label: 'Electronegatividad'
+          label: 'Electro-Negativity'
         };
       case 'name':
         return {
           name: 'Name',
-          label: 'Nombre'
+          label: 'Name'
         };
       case 'electronicConfiguration':
         return {
           name: 'E Config',
-          label: 'Config. Electronica'
+          label: 'E Config'
         };
       case 'ionizationEnergy':
         return {
           name: 'Ionization Energy',
-          label: 'Energía Ionización'
+          label: 'Ionization Energy'
         };
       case 'oxidationStates':
         return {
           name: 'Oxidation States',
-          label: 'Estados Oxidación'
+          label: 'Oxidation States'
         };
       default: 
         return false;

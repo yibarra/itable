@@ -7,7 +7,7 @@ export const RangeSliderLabelDiv = styled.div`
   padding: 0 10px 0;
   position: relative;
   text-align: center;
-  width: 100%;
+  width: auto;
 
   .label,
   .value {

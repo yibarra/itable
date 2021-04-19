@@ -9,7 +9,7 @@ export const EOrbitalDiv = styled.div`
   width: 245px;
 
   .orbit {
-    animation: ani-circle 20s infinite linear;
+    animation: ani-circle 13s infinite linear;
     border-radius: 100%;
     left: 50%;
     position: absolute;
@@ -46,14 +46,31 @@ export const EOrbitalDiv = styled.div`
   }
 
   .icon-plus {
-    font-size: 14px;
-    font-weight: 300;
-    left: calc(50% + 1px);
-    line-height: 11px;
+    left: 50%;
     position: absolute;
-    top: calc(50% - 1px);
+    top: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
+
+    &:after,
+    &:before {
+      border: 1px solid ${({ theme }: any) => theme.second_color};
+      background-color: inherit;
+      content: '';
+      height: 8px;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      width: 1px;
+    }
+
+    &:after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+
+    &:before {
+      transform: translate(-50%, -50%);
+    }
   }
 
   &:before {

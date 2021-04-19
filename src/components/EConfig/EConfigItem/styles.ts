@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { rgba } from 'polished';
 
 export const EConfigItemDiv = styled.div`
   align-items: center;
@@ -23,16 +22,34 @@ export const EConfigItemDiv = styled.div`
     font-size: 16px;
   }
 
-  .name {
-    position: relative;
-  }
-
   .quote {
     font-size: 9px;
     font-weight: 500;
     left: calc(50% + 10px);
     position: absolute;
     top: 10px;
+
+    &:before,
+    &:after {
+      border: none;
+      border-top: 1px dashed ${({ theme }: any) => theme.second_color};
+      bottom: -17px;
+      content: '';
+      height: 0;
+      left: -25px;
+      position: absolute;
+      transform: rotate(-45deg) translate(-26px,-2px);
+      width: 77px;
+    }
+
+    &:before {
+      border: 1px dashed ${({ theme }: any) => theme.second_color};
+      border-right: none;
+      height: 3px;
+      bottom: 1px;
+      transform: rotate(-45deg) translate(-56px, 36px);
+      width: 3px;
+    }
   }
 
   &:after,
@@ -85,18 +102,19 @@ export const EConfigItemDiv = styled.div`
     .name {
       &:before {
         background-color: transparent;
-        border: 1px dashed ${({ theme }: any) => rgba(theme.second_color, 0.4)};
+        border: 1px dashed ${({ theme }: any) => theme.second_color};
         border-left-color: transparent;
+        border-top-color: transparent;
         border-radius: 0;
         bottom: initial;
         content: '';
-        height: 34px;
-        left: -5px;
+        height: 30px;
+        left: -3px;
         right: initial;
         position: absolute;
-        top: calc(100% + 4px);
-        transform: rotate(-45deg);
-        width: 50px;
+        top: 100%;
+        transform: rotate(-45deg) translate(0, 7px);
+        width: 45px;
         z-index: -1;
       }
     }
@@ -107,13 +125,50 @@ export const EConfigItemDiv = styled.div`
   &:nth-child(10) {
     .name {
       &:before {
-        left: 49px;
+        border-top: 1px dashed ${({ theme }) => theme.second_color};
+        left: 35px;
         top: calc(100% - 50px);
+        transform: rotate(-45deg) translate(-13px, 10px);
+        width: 60px;
+      }
+    }
+  }
+
+  &:nth-child(3),
+  &:nth-child(5),
+  &:nth-child(7),
+  &:nth-child(8),
+  &:nth-child(10),
+  &:nth-child(11),
+  &:nth-child(13),
+  &:nth-child(14),
+  &:nth-child(15),
+  &:nth-child(17),
+  &:nth-child(18) {
+    .quote {
+      &:before {
+        display: none;
+      }
+    }
+  }
+
+  &:nth-child(17),
+  &:nth-child(18) {
+    .quote {
+      &:after {
+        display: none;
       }
     }
   }
 
   &:last-child {
+    .quote {
+      &:after,
+      &:before {
+        display: none;
+      }
+    }
+
     &:after {
       display: inline-block;
     }

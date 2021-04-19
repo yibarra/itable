@@ -56,7 +56,7 @@ const EOrbital: FC<IEOrbital> = ({ shells, radius, color }) => {
       style={{
         height: Math.floor(shells.length * radius)
       }}>
-      <span className="icon-plus" style={{ color }}>&#43;</span>
+      <span className="icon-plus" style={{ backgroundColor: color }}></span>
       {shells && orbits()}
     </EOrbitalDiv>
   );

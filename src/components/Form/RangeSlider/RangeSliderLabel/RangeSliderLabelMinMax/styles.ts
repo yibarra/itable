@@ -12,7 +12,7 @@ export const RangeSliderLabelMinMaxDiv = styled.div`
 
   .min,
   .max {
-    top: -20px;
+    top: -22px;
   }
 
   .min,
