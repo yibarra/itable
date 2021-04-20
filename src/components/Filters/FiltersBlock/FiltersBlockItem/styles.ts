@@ -47,6 +47,7 @@ export const FiltersBlockItemDiv = styled.button`
     line-height: 1em;
     margin: 1px 0 0;
     letter-spacing: 0.04em;
+    white-space: nowrap;
   }
 
   &:hover,

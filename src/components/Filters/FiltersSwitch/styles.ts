@@ -47,4 +47,17 @@ export const FiltersSwitchDiv = styled.div`
       }
     }
   }
+
+  &:before {
+    background-color: ${({ theme }) => theme.background_color};
+    content: '';
+    height: 100%;
+    left: 50%;
+    opacity: 0.95;
+    padding: 0 0 10px;
+    position: absolute;
+    top: 5px;
+    transform: translate(-50%, 0);
+    width: 100vw;
+  }
 `;
