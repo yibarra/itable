@@ -60,11 +60,10 @@ const Content: FC<IContent> = ({ isLoading, value }) => {
 
         <ContentContainerDiv
           data-switch={element instanceof Object}>
-          {isLoading === false &&
-            <Grid
-              {...table}
-              element={element instanceof Object}
-              setElement={setElement} />}
+          <Grid
+            {...table}
+            element={element instanceof Object}
+            setElement={setElement} />
 
           <Element
             element={element}

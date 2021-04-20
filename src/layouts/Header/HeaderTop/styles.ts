@@ -44,7 +44,7 @@ export const HeaderTopDiv = styled.div`
       justify-content: flex-end;
       right: 0;
       position: absolute;
-      top: 10px;
+      top: 0;
     }
   }
 

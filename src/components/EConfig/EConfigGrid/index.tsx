@@ -12,7 +12,7 @@ const EConfigGrid: FC<IEConfigGrid> = (props) => {
 
   // render
   return (
-    <EConfigGridDiv style={{ height: level.level * 50 }}>
+    <EConfigGridDiv>
       {config && config.map((item: any, key: number) =>
         <EConfigItem
           {...props}

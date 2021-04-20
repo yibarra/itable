@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const TextP = styled.p`
+export const P = styled.p`
   font-size: 12px;
   float: left;
   margin: 0;

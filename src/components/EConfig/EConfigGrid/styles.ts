@@ -6,6 +6,7 @@ export const EConfigGridDiv = styled.div`
   display: inline-flex;
   float: left;
   justify-content: flex-start;
+  height: 380px;
   margin: 0;
   padding: 0 20px;
   position: relative;

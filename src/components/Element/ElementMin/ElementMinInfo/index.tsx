@@ -1,6 +1,6 @@
 import React, { FC, useCallback } from 'react';
 
-import { TextP } from '../../../Typography/Text/styles';
+import { P } from '../../../Typography/Text/styles';
 import { ElementMinInfoDiv } from './styles';
 
 // element min info
@@ -16,9 +16,9 @@ const ElementMinInfo: FC<any> = ({
   // render
   return (
     <ElementMinInfoDiv>
-      <TextP className="atomic-number">{decimalDigit()}</TextP>
-      <TextP className="symbol">{symbol}</TextP>
-      <TextP className="name">{name}</TextP>
+      <P className="atomic-number">{decimalDigit()}</P>
+      <P className="symbol">{symbol}</P>
+      <P className="name">{name}</P>
     </ElementMinInfoDiv>
   );
 };

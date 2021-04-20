@@ -19,7 +19,7 @@ export const HeaderFiltersDiv = styled.div`
 
   .return {
     display: none;
-    margin: 20px 0 0;
+    margin: 10px 0 0 2px;
     pointer-events: none;
 
     > button {

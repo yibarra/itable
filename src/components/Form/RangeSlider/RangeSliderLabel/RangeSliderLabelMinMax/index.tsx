@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { IRangeSliderLabelMinMax } from './interfaces';
 
-import { TextP } from '../../../../Typography/Text/styles';
+import { P } from '../../../../Typography/Text/styles';
 import { RangeSliderLabelMinMaxDiv } from './styles';
 
 // range slider label min max
@@ -14,8 +14,8 @@ const RangeSliderLabelMinMax: FC<IRangeSliderLabelMinMax> = ({
   return (
     <RangeSliderLabelMinMaxDiv>
       {(min > 0 && max) && <>
-        <TextP className="min">{min}</TextP>
-        <TextP className="max">{max}</TextP>
+        <P className="min">{min}</P>
+        <P className="max">{max}</P>
       </>}
     </RangeSliderLabelMinMaxDiv>
   );

@@ -38,13 +38,13 @@ export const HeaderDiv = styled.header`
 export const HeaderContainerBgDiv = styled.div`
   background: ${({ theme }) => theme.background_color};
   height: 100%;
-  max-height: 100px;
+  max-height: 90px;
   left: 50%;
-  opacity: 0.9;
+  opacity: 0.95;
   position: absolute;
   top: 0;
   transform: translate(-50%, 0);
-  transition: all var(--animation-time) var(--animation-bezier);
+  transition: all 200ms var(--animation-bezier);
   transition-delay: 300ms;
   width: 100vw;
   z-index: -1;

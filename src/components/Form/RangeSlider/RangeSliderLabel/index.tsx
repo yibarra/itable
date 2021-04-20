@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { IRangeSliderLabel } from './interfaces';
 
-import { TextP } from '../../../Typography/Text/styles';
+import { P } from '../../../Typography/Text/styles';
 import { RangeSliderLabelDiv } from './styles';
 
 // range
@@ -14,8 +14,8 @@ const RangeSliderLabel: FC<IRangeSliderLabel> = ({
   // render
   return (
     <RangeSliderLabelDiv style={{ marginTop: size }}>
-      <TextP className="value">{value}</TextP>
-      <TextP className="label">{label}</TextP>
+      <P className="value">{value}</P>
+      <P className="label">{label}</P>
     </RangeSliderLabelDiv>
   );
 };

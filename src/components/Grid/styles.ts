@@ -11,6 +11,7 @@ export const GridDiv = styled.div`
 
   @media only screen and (max-width : 768px) {
     height: auto !important;
+    margin: 160px 0 80px;
     padding: 0 10px;
   }
 `;

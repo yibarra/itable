@@ -17,11 +17,11 @@ export const SwitchContainer = styled(a.div)`
     border: 2px solid ${({ theme }: any) => theme.text_color};
     border-radius: 100%;
     float: left;
-    height: 16px;
+    height: 14px;
     margin: 0;
     position: relative;
     transform: translate(-50%, 0);
-    width: 16px;
+    width: 14px;
 
     &:before,
     &:after {

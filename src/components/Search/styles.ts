@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const SearchDiv = styled.div`
   float: left;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   padding: 0;
   position: relative;
   text-align: right;

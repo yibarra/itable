@@ -4,6 +4,7 @@ export const ThemeSwitchContainer = styled.div`
   display: inline-flex;
   flex-flow: column wrap;
   margin: 0;
+  left: 5px;
   float: right;
   text-align: left;
   width: auto;

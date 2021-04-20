@@ -6,10 +6,9 @@ export const FiltersSwitchDiv = styled.div`
   width: 100%;
 
   .filter-switch {
-
     &--item {
       float: none;
-      padding: 20px 0;
+      padding: 5px 0 0;
       position: relative;
       width: 100%;
 
@@ -33,6 +32,18 @@ export const FiltersSwitchDiv = styled.div`
 
       &[data-filter="yearDiscovered"] {
         max-width: 740px;
+      }
+
+      &:before {
+        background-color: ${({ theme }) => theme.background_color};
+        content: '';
+        height: calc(100% - 10px);
+        left: 50%;
+        opacity: 0.95;
+        position: absolute;
+        top: 0;
+        transform: translate(-50%, 0);
+        width: 100vw;
       }
     }
   }

@@ -9,7 +9,7 @@ export const EOrbitalDiv = styled.div`
   width: 245px;
 
   .orbit {
-    animation: ani-circle 13s infinite linear;
+    animation: ani-circle 30s infinite linear;
     border-radius: 100%;
     left: 50%;
     position: absolute;

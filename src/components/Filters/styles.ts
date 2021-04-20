@@ -17,7 +17,7 @@ export const FiltersContainer = styled.div`
     }
 
     &--list {
-      padding: 10px 0 10px 2px;
+      padding: 0 0 10px 2px;
     }
   }
 `;
