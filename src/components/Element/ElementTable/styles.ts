@@ -45,45 +45,40 @@ export const ElementTableContainer = styled.ul`
     .row {
       width: 100%;
 
-      &:after {
-        display: none;
+      p {
+        .label,
+        .text {
+          color: inherit;
+        }
       }
 
+      &:nth-child(even),
       &:nth-child(odd) {
+        &:after {
+          background-color: ${({ theme }: any) => theme.second_color};
+          content: '';
+          height: 50%;
+          position: absolute;
+          top: 0;
+          transform: translate(0, 0);
+          width: 100%;
+          z-index: -1;
+        }
+        
         p {
           &:first-child {
-            background-color: ${({ theme }: any) => theme.background_color};
-            
             .label,
             .text {
               color: inherit;
             }
           }
 
-        }
-
-        .label,
-        .text {
-          color: ${({ theme }: any) => theme.background_color};
-        }
-      }
-
-      &:nth-child(even) {
-        p {
-          &:first-child {
-            background-color: ${({ theme }: any) => theme.background_color};
-            
+          &:last-child {
             .label,
             .text {
-              color: inherit;
+              color: ${({ theme }: any) => theme.second_color};
             }
           }
-
-        }
-
-        .label,
-        .text {
-          color: ${({ theme }: any) => theme.background_color};
         }
       }
     }

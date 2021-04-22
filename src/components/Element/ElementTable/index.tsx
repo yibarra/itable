@@ -1,5 +1,7 @@
 import React, { FC, useCallback } from 'react';
+
 import UseLabels from '../../../uses/UseLabels';
+
 import ElementTableItem from './ElementTableItem';
 
 import { ElementTableContainer } from './styles';
