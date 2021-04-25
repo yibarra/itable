@@ -34,12 +34,20 @@ export const FiltersSwitchDiv = styled.div`
         max-width: 740px;
       }
 
+      &[data-filter="atomicRadius"],
+      &[data-filter="atomicMass"],
+      &[data-filter="yearDiscovered"] {
+        &:before {
+          display: none;
+        }
+      }
+
       &:before {
         background-color: ${({ theme }) => theme.background_color};
         content: '';
         height: calc(100% - 10px);
         left: 50%;
-        opacity: 0.95;
+        opacity: 0.9;
         position: absolute;
         top: 0;
         transform: translate(-50%, 0);
@@ -53,7 +61,7 @@ export const FiltersSwitchDiv = styled.div`
     content: '';
     height: 100%;
     left: 50%;
-    opacity: 0.95;
+    opacity: 0.9;
     padding: 0 0 10px;
     position: absolute;
     top: 5px;

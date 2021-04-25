@@ -40,7 +40,7 @@ export const HeaderContainerBgDiv = styled.div`
   height: 100%;
   max-height: 90px;
   left: 50%;
-  opacity: 0.95;
+  opacity: 0.9;
   position: absolute;
   top: 0;
   transform: translate(-50%, 0);

@@ -9,15 +9,21 @@ import { IRowColumn } from './interfaces';
 import { RowColumnDiv } from './styles';
 
 // row column
-const RowColumn: FC<IRowColumn> = ({ info, children, xpos, ypos }) => {
+const RowColumn: FC<IRowColumn> = ({
+  active, 
+  info,
+  children,
+  xpos,
+  ypos
+}) => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
 
   const element = useRef<any>(null);
   const { height, width } = UseDimension(element);
   
   const { y, opacity }: any = useSpring({
-    to: { y: 0, opacity: 1 },
-    from: { y: 100, opacity: 0 },
+    to: { y: active ? 100 : 0, opacity: active ? 0 : 1 },
+    from: { y: active ? 0 : 100, opacity: active ? 1 : 0 },
     config: {
       tension: 70,
       friction: 10

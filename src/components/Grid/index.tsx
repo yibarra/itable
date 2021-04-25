@@ -8,7 +8,7 @@ import { IGrid } from './interfaces';
 import { GridDiv } from './styles';
 
 // Grid
-const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
+const Grid: FC<IGrid> = ({ element, elements, grid, setElement }) => {
   // get element
   const getElement = useCallback((x: number, y: number) =>
     grid.filter(({ xy }: any) => xy[0] === y && xy[1] === x)[0], [ grid ]);
@@ -24,6 +24,7 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
 
       if (item instanceof Object) {
         items.push(<RowColumn
+          active={element}
           info={getElement(item.xpos, item.ypos)}
           xpos={item.xpos}
           ypos={item.ypos}
@@ -36,7 +37,7 @@ const Grid: FC<IGrid> = ({ elements, grid, setElement }) => {
     }
 
     return items;
-  }, [ getElement, setElement ]);
+  }, [ getElement, setElement, element ]);
 
   // render
   return (
