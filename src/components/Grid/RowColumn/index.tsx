@@ -28,7 +28,7 @@ const RowColumn: FC<IRowColumn> = ({
       tension: 70,
       friction: 10
     },
-    delay: Math.abs((ypos - ((ypos / 2) * (xpos / 2))) + (ypos + 1)) * 60 
+    delay: Math.abs((ypos - ((ypos / 2) * (xpos / 2))) + (ypos + 1)) * 40 
   });
 
   // type position

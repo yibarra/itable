@@ -13,7 +13,6 @@ export const ContentContainerDiv = styled.div`
 
     &:last-child {
       display: none;
-      opacity: 0;
     }
   }
 
@@ -27,8 +26,8 @@ export const ContentContainerDiv = styled.div`
       }
 
       &:last-child {
-        animation: element-in 0.9s var(--animation-bezier) 0s forwards;
         display: inline-block;
+        z-index: 2;
       }
     }
   }

@@ -44,8 +44,7 @@ export const HeaderContainerBgDiv = styled.div`
   position: absolute;
   top: 0;
   transform: translate(-50%, 0);
-  transition: all 200ms var(--animation-bezier);
-  transition-delay: 300ms;
+  transition: none;
   width: 100vw;
   z-index: -1;
 `;

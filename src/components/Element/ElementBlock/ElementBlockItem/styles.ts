@@ -157,4 +157,11 @@ export const ElementBlockItemDiv = styled.div`
       width: 180px;
     }
   }
+
+  /* Extra Small Devices, Phones */ 
+  @media only screen and (max-width : 480px) {
+    .label {
+      opacity: 0;
+    }
+  }
 `;

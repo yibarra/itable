@@ -68,4 +68,17 @@ export const FiltersSwitchDiv = styled.div`
     transform: translate(-50%, 0);
     width: 100vw;
   }
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : 768px) {
+    .filter-switch {
+      &--item {
+        padding: 10px 0 0;
+      }
+    }
+
+    &:before {
+      padding: 0;
+    }
+  }
 `;

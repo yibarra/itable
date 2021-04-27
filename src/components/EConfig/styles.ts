@@ -54,13 +54,18 @@ export const EConfigDiv = styled.div`
 
   /* Extra Small Devices, Phones */ 
   @media only screen and (max-width : 480px) {
-
+    padding: 0;
+    
     .ec--item {
       width: 100%;
 
       &:first-child {
         margin-top: 30px;
         margin-bottom: 70px;
+      }
+
+      &:last-child {
+        padding-left: 0;
       }
     }
   }

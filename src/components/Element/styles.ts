@@ -16,4 +16,9 @@ export const ElementContainer = styled.div`
       width: 100%;
     }
   }
+
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : 768px) {
+    padding: 90px 20px !important;
+  }
 `;

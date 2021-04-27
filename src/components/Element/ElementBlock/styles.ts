@@ -38,4 +38,9 @@ export const ElementBlockDiv = styled.div`
       width: calc(100% + 4px);
     }
   }
+  
+  /* Small Devices, Tablets */
+  @media only screen and (max-width : 768px) {
+    transform: translate(0, 0);
+  }
 `;

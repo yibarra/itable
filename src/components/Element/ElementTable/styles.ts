@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const ElementTableContainer = styled.ul`
+  animation: swing-in-top-fwd 0.6s 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
   float: left;
   margin: 20px 0 0;
   padding: 20px 0;
@@ -9,7 +10,6 @@ export const ElementTableContainer = styled.ul`
   vertical-align: top;
 
   .row {
-    animation: swing-in-top-fwd 0.6s 0.7s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
     align-items: center;
     display: inline-flex;
     flex-flow: row wrap;
