@@ -161,7 +161,7 @@ export const ElementBlockItemDiv = styled.div`
   /* Extra Small Devices, Phones */ 
   @media only screen and (max-width : 480px) {
     .label {
-      opacity: 0;
+      opacity: 1;
     }
   }
 `;

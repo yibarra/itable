@@ -22,13 +22,19 @@ const RowColumn: FC<IRowColumn> = ({
   const { height, width } = UseDimension(element);
   
   const { y, opacity }: any = useSpring({
-    to: { y: active ? 100 : 0, opacity: active ? 0 : 1 },
-    from: { y: active ? 0 : 100, opacity: active ? 1 : 0 },
+    to: {
+      y: active ? 100 : 0,
+      opacity: active ? 0 : 1
+    },
+    from: {
+      y: active ? 0 : 100,
+      opacity: active ? 1 : 0
+    },
     config: {
       tension: 70,
       friction: 10
     },
-    delay: Math.abs((ypos - ((ypos / 2) * (xpos / 2))) + (ypos + 1)) * 40 
+    delay: !isMobile ? Math.abs((ypos - ((ypos / 2) * (xpos / 2))) + (ypos + 1)) * 40 : 0
   });
 
   // type position

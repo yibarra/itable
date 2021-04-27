@@ -4,6 +4,7 @@ import { IElementBlockItem } from './interfaces';
 
 import { P } from '../../../Typography/Text/styles';
 import { ElementBlockItemDiv } from './styles';
+import { useMediaQuery } from 'react-responsive';
 
 // element block item
 const ElementBlockItem: FC<IElementBlockItem> = ({
@@ -11,6 +12,8 @@ const ElementBlockItem: FC<IElementBlockItem> = ({
   label,
   value = ''
 }) => {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
   // format
   const format = useCallback(() => {
     switch (label?.name) {
@@ -43,7 +46,7 @@ const ElementBlockItem: FC<IElementBlockItem> = ({
           backgroundColor: color,
           borderColor: color
         }}></span>
-        {label?.label}
+        <span style={{ opacity: isMobile ? 0 : 1 }}>{label?.label}</span>
       </P>
 
       <P className="value" style={{ color }}>{format()}</P>
