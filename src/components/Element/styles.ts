@@ -11,9 +11,13 @@ export const ElementContainer = styled.div`
   .element {
     &--container {
       float: none;
-      max-width: var(--max-width);
-      text-align: left;
+      max-width: 800px;
+      text-align: center;
       width: 100%;
+
+      > div {
+        text-align: left;
+      }
     }
   }
 

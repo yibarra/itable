@@ -13,7 +13,7 @@ const RangeSliderLabel: FC<IRangeSliderLabel> = ({
 }) => {
   // render
   return (
-    <RangeSliderLabelDiv style={{ marginTop: size }}>
+    <RangeSliderLabelDiv>
       <P className="value">{value}</P>
       <P className="label">{label}</P>
     </RangeSliderLabelDiv>

@@ -12,7 +12,9 @@ export const RangeSliderLabelMinMaxDiv = styled.div`
 
   .min,
   .max {
+    text-align: center;
     top: -22px;
+    width: 20px;
   }
 
   .min,
@@ -23,10 +25,10 @@ export const RangeSliderLabelMinMaxDiv = styled.div`
   }
 
   .min {
-    left: 0;
+    left: -8px;
   }
 
   .max {
-    right: 0;
+    right: -10px;
   }
 `;

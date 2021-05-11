@@ -5,6 +5,7 @@ export const SelectContentDiv = styled(a.div)`
   background-color: ${({ theme }: any) => theme.text_color};
   border: 2px solid ${({ theme }: any) => theme.text_color};
   border-bottom: none;
+  border-right: none;
   border-top: none;
   border-radius: 0;
   float: left;

@@ -9,10 +9,20 @@ import { IElementInfo } from './interfaces';
 import { ElementSummaryP } from '../ElementSummary/styles';
 import { ElementTitleHOne } from '../ElementTitle/styles';
 import { ElementInfoContainer } from './styles';
+import ElementLink from '../ElementLink';
 
 // element info
 const ElementInfo: FC<IElementInfo> = ({ element, color }) => {
-  const { atomicNumber, shells, electronicConfiguration, name, summary, yearDiscovered } = element;
+  const {
+    atomicNumber,
+    shells,
+    electronicConfiguration,
+    name,
+    source,
+    spectral_img,
+    summary,
+    yearDiscovered
+  } = element;
 
   // render
   return (
@@ -21,6 +31,14 @@ const ElementInfo: FC<IElementInfo> = ({ element, color }) => {
       <ElementDate text="Discovery Date" year={yearDiscovered} />
       <ElementSummaryP>{summary}</ElementSummaryP>
       <ElementTable element={element} />
+
+      <div className="sources">
+        {source &&
+          <ElementLink text="Source" link={source} />}
+
+        {spectral_img &&
+          <ElementLink text="Spectral Image" link={spectral_img} />}
+      </div>
 
       <EConfig
         atomicNumber={atomicNumber}

@@ -16,7 +16,7 @@ const RowColumn: FC<IRowColumn> = ({
   xpos,
   ypos
 }) => {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 1024 });
 
   const element = useRef<any>(null);
   const { height, width } = UseDimension(element);

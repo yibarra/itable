@@ -33,7 +33,7 @@ export const EOrbitalDiv = styled.div`
     &:before {
       animation: ani-circle 20s infinite linear;
       animation-direction: reverse;
-      border: 1px dashed ${({ theme }: any) => theme.second_color};
+      border: 1px dotted ${({ theme }: any) => theme.second_color};
       border-radius: 100%;
       content: '';
       height: 100%;

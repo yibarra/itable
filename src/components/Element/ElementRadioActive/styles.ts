@@ -11,17 +11,34 @@ export const ElementRadioActiveDiv = styled.div`
   top: 0;
   width: 20px;
 
-  span {
+  svg {
     animation:spin 4s linear infinite;
-    height: 30px;
-    font-size: 20px;
-    left: -10px;
+    height: 10px;
+    left: -2px;
     pointer-events: none;
     position: absolute;
-    top: -5px;
+    top: 2px;
     transform: rotate(0deg);
     transform-origin: center;
-    width: 30px;
+    width: 10px;
+
+    .path {
+      &-active,
+      &-bg {
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+
+      &-active {
+        z-index: 2;
+      }
+
+      &-bg {
+        fill: ${({ theme }) => theme.second_color};
+        z-index: 1;
+      }
+    }
   }
 
   &[data-active="true"] {

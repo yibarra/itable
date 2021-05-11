@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // range slider container
 export const RangeSliderContainer = styled.div`
   float: left;
-  padding: 0 0 20px;
+  padding: 0 0 15px;
   position: relative;
   width: 100%;
 
@@ -11,6 +11,7 @@ export const RangeSliderContainer = styled.div`
     appearance: none;
     background-color: ${({ theme }) => theme.text_color};
     left: 50%;
+    border-radius: 4px;
     height: 2px;
     opacity: 1;
     outline: none;
@@ -37,6 +38,7 @@ export const RangeSliderContainer = styled.div`
   .slider::-moz-range-thumb {
     background-color: ${({ theme }) => theme.background_color};
     border: 2px solid ${({ theme }) => theme.text_color};
+    border-radius: 2px;
     cursor: pointer;
     height: 14px;
     width: 14px;

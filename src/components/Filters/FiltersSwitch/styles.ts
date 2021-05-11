@@ -8,7 +8,7 @@ export const FiltersSwitchDiv = styled.div`
   .filter-switch {
     &--item {
       float: none;
-      padding: 5px 0 0;
+      padding: 15px 0 0;
       position: relative;
       width: 100%;
 
@@ -59,10 +59,10 @@ export const FiltersSwitchDiv = styled.div`
   &:before {
     background-color: ${({ theme }) => theme.background_color};
     content: '';
-    height: 100%;
+    height: calc(100% - 10px);
     left: 50%;
     opacity: 0.9;
-    padding: 0 0 10px;
+    padding: 0;
     position: absolute;
     top: 5px;
     transform: translate(-50%, 0);

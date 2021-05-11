@@ -32,7 +32,7 @@ export const EConfigItemDiv = styled.div`
     &:before,
     &:after {
       border: none;
-      border-top: 1px dashed ${({ theme }: any) => theme.second_color};
+      border-top: 1px dotted ${({ theme }: any) => theme.second_color};
       bottom: -17px;
       content: '';
       height: 0;
@@ -43,7 +43,7 @@ export const EConfigItemDiv = styled.div`
     }
 
     &:before {
-      border: 1px dashed ${({ theme }: any) => theme.second_color};
+      border: 1px dotted ${({ theme }: any) => theme.second_color};
       border-right: none;
       height: 3px;
       bottom: 1px;
@@ -71,7 +71,7 @@ export const EConfigItemDiv = styled.div`
   &:after {
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
-    border-right: 4px solid ${({ theme }: any) => theme.second_color};
+    border-right: 4px dotted ${({ theme }: any) => theme.second_color};
     height: 0;
     display: none;
     bottom: -25px;
@@ -102,7 +102,7 @@ export const EConfigItemDiv = styled.div`
     .name {
       &:before {
         background-color: transparent;
-        border: 1px dashed ${({ theme }: any) => theme.second_color};
+        border: 1px dotted ${({ theme }: any) => theme.second_color};
         border-left-color: transparent;
         border-top-color: transparent;
         border-radius: 0;
@@ -125,7 +125,7 @@ export const EConfigItemDiv = styled.div`
   &:nth-child(10) {
     .name {
       &:before {
-        border-top: 1px dashed ${({ theme }) => theme.second_color};
+        border-top: 1px dotted ${({ theme }) => theme.second_color};
         left: 35px;
         top: calc(100% - 50px);
         transform: rotate(-45deg) translate(-13px, 10px);

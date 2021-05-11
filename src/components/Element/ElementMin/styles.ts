@@ -66,14 +66,20 @@ export const ElementMinDiv: any = styled.div`
       color: ${({ theme }: any) => theme.second_color};
     }
 
-    > div[data-active] {
-      span {
-        color: ${({ theme }: any) => theme.second_color} !important;
-      }
-    }
-
     .bg {
       opacity: 1;
+    }
+
+    svg {
+      .path {
+        &-active {
+          display: none;
+        }
+
+        &-bg {
+          display: inline-block;
+        }
+      }
     }
 
     &:before {
@@ -90,8 +96,14 @@ export const ElementMinDiv: any = styled.div`
       > div[data-active] {
         color: inherit !important;
 
-        span {
-          color: inherit !important;
+        .path {
+          &-active {
+            display: inline-block;
+          }
+
+          &-bg {
+            display: none;
+          }
         }
       }
 
